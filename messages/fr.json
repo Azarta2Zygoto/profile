@@ -5,5 +5,8 @@
     "Metadata": {
         "title": "Mon Profil",
         "description": "Site web faisant office de portfolio"
+    },
+    "Bar": {
+        "alt-profile-picture": "Photo de profil"
     }
 }
