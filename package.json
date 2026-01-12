@@ -1,0 +1,43 @@
+{
+    "name": "profile",
+    "version": "0.1.0",
+    "private": true,
+    "author": {
+        "name": "Quentin Potiron",
+        "email": "quentin.potiron@gmail.com"
+    },
+    "description": "Mise en place d'un site web portfolio",
+    "keywords": [
+        "resume",
+        "CV",
+        "portfolio",
+        "site personnel",
+        "présentation"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint",
+        "format": "prettier --write . "
+    },
+    "dependencies": {
+        "next": "16.1.1",
+        "next-intl": "^4.7.0",
+        "react": "19.2.3",
+        "react-dom": "19.2.3"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4",
+        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.1.1",
+        "prettier": "^3.7.4",
+        "tailwindcss": "^4",
+        "typescript": "^5"
+    }
+}
