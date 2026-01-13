@@ -4,6 +4,7 @@
     --bg: #ffffff;
     --fg: #171717;
     --color-special: #6496fa;
+    --color-special-shadow: #6496fa80;
     --color-page: #f3ede6;
 }
 
@@ -12,6 +13,7 @@
         --bg: #171717;
         --fg: #ffffff;
         --color-special: #4e7ae1;
+        --color-special-shadow: #4e7ae180;
         --color-page: #1f1f1f;
     }
 }
@@ -56,6 +58,18 @@ body {
     overflow: auto;
     overscroll-behavior: contain;
 }
+.notfound-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -102,9 +116,37 @@ li {
     margin: 0.5rem 0;
     padding: 0.5rem;
 }
-
+.h1-primary {
+    font-size: 2rem;
+    margin: 0.5rem 0 1rem 0;
+    text-align: center;
+}
 .h2-primary {
     font-size: 1.5rem;
     margin: 0.5rem 0 1rem 0;
     text-align: center;
+}
+
+.btn-text {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--fg);
+    border: 2px solid var(--fg);
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: none;
+    transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+}
+
+.btn-text:hover {
+    border-color: var(--color-special-shadow);
+}
+.btn-text:focus-visible,
+.btn-text:active {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-special-shadow);
 }

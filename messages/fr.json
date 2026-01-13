@@ -8,5 +8,16 @@
     },
     "Bar": {
         "alt-profile-picture": "Photo de profil"
+    },
+    "NotFound": {
+        "title": "Page non trouvée",
+        "description": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+        "back-home": "Retour à l'accueil"
+    },
+    "ErrorPage": {
+        "title": "Oups ! Une erreur est survenue",
+        "description": "Il semble y avoir un problème avec votre demande.",
+        "retry": "Réessayer",
+        "back-to-home": "Retourner à l'accueil"
     }
 }
