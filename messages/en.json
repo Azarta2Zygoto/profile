@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "Welcome to my profile"
+    },
+    "Metadata": {
+        "title": "My Profile",
+        "description": "Website serving as a portfolio"
+    },
+    "Bar": {
+        "alt-profile-picture": "Profile picture"
+    },
+    "NotFound": {
+        "title": "Page Not Found",
+        "description": "Sorry, the page you are looking for does not exist or has been moved.",
+        "back-home": "Back to Home"
+    },
+    "ErrorPage": {
+        "title": "Oops! An error occurred",
+        "description": "There seems to be a problem with your request.",
+        "retry": "Retry",
+        "back-to-home": "Back to Home"
+    }
+}
