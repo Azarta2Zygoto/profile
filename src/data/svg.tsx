@@ -32,7 +32,7 @@ export function Linkedin({
 export function Github({
     height = 24,
     width = 24,
-    fill = "currentColor",
+    fill = "var(--fg)",
     arialLabel = "GitHub Logo",
 }: SvgProps): JSX.Element {
     return (
@@ -127,7 +127,7 @@ export function FranceFlag({
 }
 
 export function UKFlag({
-    height = 15,
+    height = 18,
     width = 30,
     arialLabel = "United Kingdom Flag",
 }: SvgProps): JSX.Element {
@@ -135,41 +135,36 @@ export function UKFlag({
         <svg
             height={height}
             width={width}
-            viewBox="0 0 60 30"
+            viewBox="0 0 50 30"
             xmlns="http://www.w3.org/2000/svg"
             focusable="false"
             role="img"
             arial-label={arialLabel}
         >
             <clipPath id="t">
-                <path d="M0,0 v30 h60 v-30 z" />
+                <path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z" />
             </clipPath>
-            <g clipPath="url(#t)">
-                <path
-                    d="M0,0 v30 h60 v-30 z"
-                    fill="#012169"
-                />
-                <path
-                    d="M0,0 L60,30 M60,0 L0,30"
-                    stroke="#fff"
-                    strokeWidth="6"
-                />
-                <path
-                    d="M0,0 L60,30 M60,0 L0,30"
-                    stroke="#C8102E"
-                    strokeWidth="4"
-                />
-                <path
-                    d="M30,0 v30 M0,15 h60"
-                    stroke="#fff"
-                    strokeWidth="10"
-                />
-                <path
-                    d="M30,0 v30 M0,15 h60"
-                    stroke="#C8102E"
-                    strokeWidth="6"
-                />
-            </g>
+            <path
+                d="M0,0v30h50v-30z"
+                fill="#012169"
+            />
+            <path
+                d="M0,0 50,30M50,0 0,30"
+                stroke="#fff"
+                strokeWidth="6"
+            />
+            <path
+                d="M0,0 50,30M50,0 0,30"
+                clipPath="url(#t)"
+                stroke="#C8102E"
+                strokeWidth="4"
+            />
+            <path
+                d="M-1 11h22v-12h8v12h22v8h-22v12h-8v-12h-22z"
+                fill="#C8102E"
+                stroke="#FFF"
+                strokeWidth="2"
+            />
         </svg>
     );
 }

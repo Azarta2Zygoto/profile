@@ -2,7 +2,100 @@
     "HomePage": {
         "title": "Bienvenue sur mon profil",
         "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
-        "study": "Formations"
+        "study": "Formations",
+        "tools": "Boîte à outils : ",
+        "other-languages": "Autres languages utilisés : ",
+        "see-more": "Voir plus d'informations",
+        "some-lessons": "Quelques cours suivis :",
+        "studyContent": [
+            {
+                "name": "Centrale Lyon",
+                "city": "Lyon",
+                "title": "École d'ingénieurs généraliste",
+                "description": "Programme généraliste couvrant des domaines tels que les mathématiques, la physique, l'informatique, la mécanique, l'électronique, la gestion de projet et les sciences humaines.",
+                "period": "2023 - Présent",
+                "lessons": [
+                    {
+                        "name": "Visualisation interactive de données",
+                        "description": "Apprentissage de techniques de visualisation pour représenter des données (simples, complexes, en grande quantité) de manière interactive et compréhensible.",
+                        "tools": ["D3.js", "Tableau", "Observablehq"],
+                        "languages": ["JavaScript"]
+                    },
+                    {
+                        "name": "Base de données relationnelles",
+                        "description": "Étude des concepts des bases de données relationnelles, leur optimisation (formes normales) et leur manipulation via le langage SQL.",
+                        "tools": ["SQLite"],
+                        "languages": ["SQL", "Python"]
+                    },
+                    {
+                        "name": "Analyse de données",
+                        "description": "Introduction aux concepts de l'analyse de données : nettoyage, exploration (clustering), visualisation et modélisation prédictive incluant du machine learning.",
+                        "tools": [
+                            "Pandas",
+                            "NumPy",
+                            "Scikit-learn",
+                            "Networkx"
+                        ],
+                        "languages": ["Python"]
+                    }
+                ]
+            },
+            {
+                "name": "Université Claude Bernard Lyon 1",
+                "city": "Lyon",
+                "title": "Master en Traitement de l'informatique et du web",
+                "description": "En double master avec Centrale Lyon, c'est une formation allant vers concepts informatiques avancés et vers les nouvelles technologies dans le domaine des systèmes d’information. Le master couvre plus particulièrement la programmation web côté serveur et client, le cloud computing, le big data, les architectures orientées services, le Web sémantique, la sécurité et la gestion des données au sens large.",
+                "period": "2025 - Présent",
+                "lessons": [
+                    {
+                        "name": "Analyse de données",
+                        "description": "Étude des concepts du cloud computing, y compris les services cloud, la virtualisation, le déploiement d'applications dans le cloud et la gestion des ressources cloud.",
+                        "tools": [
+                            "OLAP",
+                            "Dash",
+                            "Numpy",
+                            "Plotly",
+                            "Networkx"
+                        ],
+                        "languages": ["Python"]
+                    },
+                    {
+                        "name": "Gestion de grandes masses de données (Big Data)",
+                        "link": "https://offre-de-formations.univ-lyon1.fr/front_fiche_ue.php?UE_ID=26003",
+                        "description": "Cet enseignement apporte des compétences théoriques et pratiques pour identifier les solutions les plus appropriées face à une problématique de passage à l’échelle dans le traitementde grandes masses de données. Il y ait abordé les architectures distribuées, le paragdigme MapReduce, la gestion de flux de données (streaming) et les bonnes pratiques d'un projet Big Data.",
+                        "tools": ["Hadoop", "Spark", "Spark Streaming"],
+                        "languages": ["Python", "Java"]
+                    }
+                ]
+            },
+            {
+                "name": "Pierre de Fermat",
+                "city": "Toulouse",
+                "title": "Classe préparatoire MPSI",
+                "description": "Programme intensif axé sur les mathématiques, la physique, la chimie et les sciences de l'ingénieur, visant à préparer aux concours d'entrée des grandes écoles d'ingénieurs.",
+                "period": "2021 - 2023",
+                "lessons": [
+                    {
+                        "name": "Informatique",
+                        "description": "Introduction aux concepts fondamentaux de l'informatique : les algorithmes, la récursivité et la complexité algorithmique sous Python.",
+                        "tools": [],
+                        "languages": ["Python"]
+                    },
+                    {
+                        "name": "Mathématiques avancées",
+                        "description": "Étude approfondie des mathématiques couvrant l'analyse, l'algèbre et les probabilités.",
+                        "tools": [],
+                        "languages": []
+                    },
+                    {
+                        "name": "Physique",
+                        "description": "Exploration large des grands principes de la physique couvrant les domaines de la mécanique, l'électronique, l'électomagnétisme, l'optique et la physique quantique.",
+                        "tools": [],
+                        "languages": []
+                    }
+                ]
+            }
+        ]
     },
     "Metadata": {
         "title": "Mon Profil",
