@@ -34,7 +34,24 @@ export default function HomePage({
             </header>
             <main>
                 <Bar />
-                <div className="page-container">{t("title")}</div>
+                <div className="page-container">
+                    <h1 className="h1-primary">{t("title")}</h1>
+                    <section>
+                        {t.rich("introduction", {
+                            link: (chunks) => (
+                                <a
+                                    className="inline-link"
+                                    href="https://www.ec-lyon.fr/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {chunks}
+                                </a>
+                            ),
+                        })}
+                    </section>
+                    <h2 className="h2-primary">{t("study")}</h2>
+                </div>
             </main>
             <Footer />
         </Fragment>

@@ -130,20 +130,21 @@ img {
     flex-direction: column;
     width: 20rem;
     height: min-content;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem clamp(1rem, 2vw, 2.5rem);
     margin-top: 5rem;
     border-right: 1px solid var(--fg);
 }
 .img-profile {
     border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
     margin: 0 auto 1rem auto;
 }
 
 .page-container {
+    max-width: 70vw;
     flex-grow: 1;
-    padding: 20px;
+    padding: 1rem 2.5rem;
 }
 .inline-icon {
     display: inline-flex;
@@ -165,12 +166,12 @@ li {
 .h1-primary {
     font-size: 2rem;
     margin: 0.5rem 0 1rem 0;
-    text-align: center;
+    text-align: left;
 }
 .h2-primary {
     font-size: 1.5rem;
     margin: 0.5rem 0 1rem 0;
-    text-align: center;
+    text-align: left;
 }
 
 .btn {
@@ -230,6 +231,13 @@ li {
 .btn.btn-selected:hover {
     background-color: var(--selected-bg);
 }
+.inline-link {
+    color: var(--color-special);
+    text-decoration: dotted;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+    font-style: italic;
+}
 .rows {
     display: flex;
     flex-direction: row;
@@ -257,6 +265,7 @@ li {
     align-items: center;
     gap: 0.5rem;
     background-color: var(--color-special-shadow);
+    cursor: pointer;
 }
 .thumb-switch {
     background-color: var(--color-special);

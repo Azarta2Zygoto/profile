@@ -1,4 +1,4 @@
-"client";
+"use client";
 
 import { JSX, useState } from "react";
 
@@ -7,6 +7,14 @@ import { Switch } from "@/components/ui/switch";
 export default function ThemeSwitch(): JSX.Element {
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== "undefined") {
+            const storedTheme = localStorage.getItem("theme");
+            if (storedTheme) {
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    storedTheme,
+                );
+                return storedTheme === "dark";
+            }
             return window.matchMedia("(prefers-color-scheme: dark)").matches;
         }
     });
@@ -15,6 +23,7 @@ export default function ThemeSwitch(): JSX.Element {
         setIsDark(checked);
         const next = isDark ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
     }
 
     return (

@@ -1,13 +1,16 @@
 {
     "HomePage": {
-        "title": "Bienvenue sur mon profil"
+        "title": "Bienvenue sur mon profil",
+        "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
+        "study": "Formations"
     },
     "Metadata": {
         "title": "Mon Profil",
         "description": "Site web faisant office de portfolio"
     },
     "Bar": {
-        "alt-profile-picture": "Photo de profil"
+        "alt-profile-picture": "Photo de profil",
+        "student": "Étudiant "
     },
     "NotFound": {
         "title": "Page non trouvée",

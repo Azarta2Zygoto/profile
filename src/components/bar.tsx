@@ -22,6 +22,7 @@ export default function Bar() {
                 {data.prenom} {data.nom}
             </h2>
             <ul>
+                <li>{t("student") + data.job}</li>
                 <li>
                     <a
                         className="inline-icon"
