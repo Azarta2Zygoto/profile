@@ -7,6 +7,14 @@ import "./globals.css";
 export default function NotFound() {
     return (
         <html lang="fr">
+            <head>
+                <title>Erreur - Profil</title>
+                <meta
+                    name="description"
+                    content="Page d'erreur 404 du site web faisant office de
+                    portfolio"
+                />
+            </head>
             <body>
                 <main className="notfound-main">
                     <h1 className="h1-primary">Page non trouvée</h1>
