@@ -1,16 +1,42 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment } from "react";
+import { Fragment, use } from "react";
 
 import Bar from "@/components/bar";
+import Footer from "@/components/footer";
+import { FlagSelectMenu } from "@/components/personal/flagSelectMenu";
+import ThemeSwitch from "@/components/personal/themeSwitch";
+import locales_json from "@/data/locales.json";
 
-export default function HomePage() {
+const correctedLocale: { label: string; value: string }[] = Object.entries(
+    locales_json,
+).map(([key, locale]) => ({
+    label: locale.name as string,
+    value: key,
+}));
+
+export default function HomePage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = use(params);
     const t = useTranslations("HomePage");
     return (
         <Fragment>
-            <Bar />
-            <div className="page-container">{t("title")}</div>
+            <header>
+                <ThemeSwitch />
+                <FlagSelectMenu
+                    options={correctedLocale}
+                    selectedOption={locale}
+                />
+            </header>
+            <main>
+                <Bar />
+                <div className="page-container">{t("title")}</div>
+            </main>
+            <Footer />
         </Fragment>
     );
 }

@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
+import "./globals.css";
+
 export default function Error({
     error,
     reset,
@@ -32,20 +34,20 @@ export default function Error({
                     </h1>
                     <p>Il semble y avoir un problème avec votre demande.</p>
                     <div
-                        className="row m-800-"
+                        className="rows"
                         style={{ marginTop: "1.5rem", gap: "1rem" }}
                     >
                         <button
-                            className="btn-text"
-                            style={{ width: 175 }}
+                            className="btn"
+                            style={{ width: 200, height: "3rem" }}
                             onClick={() => reset()}
                         >
                             Réessayer
                         </button>
                         <Link
                             href="/"
-                            style={{ width: 175 }}
-                            className="btn-text"
+                            style={{ width: 200, height: "3rem" }}
+                            className="btn"
                         >
                             Retourner à l&apos;accueil
                         </Link>

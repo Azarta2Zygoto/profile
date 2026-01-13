@@ -19,5 +19,8 @@
         "description": "There seems to be a problem with your request.",
         "retry": "Retry",
         "back-to-home": "Back to Home"
+    },
+    "Footer": {
+        "copyright": "© 2026 My Profile. All rights reserved."
     }
 }

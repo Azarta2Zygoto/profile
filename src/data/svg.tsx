@@ -54,7 +54,6 @@ export function Github({
 export function Gmail({
     height = 24,
     width = 24,
-    fill = "currentColor",
     arialLabel = "Gmail Logo",
 }: SvgProps): JSX.Element {
     return (
@@ -64,10 +63,8 @@ export function Gmail({
             viewBox="0 0 514 514"
             xmlns="http://www.w3.org/2000/svg"
             focusable="false"
-            fill={fill}
             role="img"
             arial-label={arialLabel}
-            rx="15%"
         >
             <path
                 d="M158 391v-142l-82-63V361q0 30 30 30"
@@ -89,6 +86,90 @@ export function Gmail({
                 d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26"
                 fill="#fbbc04"
             />
+        </svg>
+    );
+}
+
+export function FranceFlag({
+    height = 24,
+    width = 36,
+    arialLabel = "France Flag",
+}: SvgProps): JSX.Element {
+    return (
+        <svg
+            height={height}
+            width={width}
+            viewBox="0 0 3 2"
+            xmlns="http://www.w3.org/2000/svg"
+            focusable="false"
+            role="img"
+            arial-label={arialLabel}
+        >
+            <rect
+                width="1"
+                height="2"
+                fill="#000091"
+            />
+            <rect
+                x="1"
+                width="1"
+                height="2"
+                fill="#FFF"
+            />
+            <rect
+                x="2"
+                width="1"
+                height="2"
+                fill="#E1000F"
+            />
+        </svg>
+    );
+}
+
+export function UKFlag({
+    height = 15,
+    width = 30,
+    arialLabel = "United Kingdom Flag",
+}: SvgProps): JSX.Element {
+    return (
+        <svg
+            height={height}
+            width={width}
+            viewBox="0 0 60 30"
+            xmlns="http://www.w3.org/2000/svg"
+            focusable="false"
+            role="img"
+            arial-label={arialLabel}
+        >
+            <clipPath id="t">
+                <path d="M0,0 v30 h60 v-30 z" />
+            </clipPath>
+            <g clipPath="url(#t)">
+                <path
+                    d="M0,0 v30 h60 v-30 z"
+                    fill="#012169"
+                />
+                <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    stroke="#fff"
+                    strokeWidth="6"
+                />
+                <path
+                    d="M0,0 L60,30 M60,0 L0,30"
+                    stroke="#C8102E"
+                    strokeWidth="4"
+                />
+                <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#fff"
+                    strokeWidth="10"
+                />
+                <path
+                    d="M30,0 v30 M0,15 h60"
+                    stroke="#C8102E"
+                    strokeWidth="6"
+                />
+            </g>
         </svg>
     );
 }

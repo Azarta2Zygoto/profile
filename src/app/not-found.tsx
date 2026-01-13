@@ -26,7 +26,7 @@ export default function NotFound() {
                     </section>
                     <Link
                         href="/"
-                        className="btn-text"
+                        className="btn"
                         style={{ marginTop: "1.5rem" }}
                     >
                         Retour à l&apos;accueil

@@ -19,5 +19,11 @@
         "description": "Il semble y avoir un problème avec votre demande.",
         "retry": "Réessayer",
         "back-to-home": "Retourner à l'accueil"
+    },
+    "DefaultTexts": {
+        "selectAnOption": "Sélectionnez une option"
+    },
+    "Footer": {
+        "copyright": "© 2026 Mon Profil. Tous droits réservés."
     }
 }

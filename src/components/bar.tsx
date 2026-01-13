@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-import data from "@/data/data.json";
+import data from "@/data/personal_data.json";
 import { Github, Gmail, Linkedin } from "@/data/svg";
 
 export default function Bar() {
