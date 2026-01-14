@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { type Locale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -6,9 +6,18 @@ import Bar from "@/components/bar";
 import Footer from "@/components/footer";
 import { GlobalProvider } from "@/components/globalProvider";
 import Header from "@/components/header";
+import { base_url } from "@/data/env";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
+
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+    themeColor: "#6496fa",
+    colorScheme: "light dark",
+};
 
 export async function generateMetadata(props: {
     params: Promise<{ locale: string }>;
@@ -17,8 +26,37 @@ export async function generateMetadata(props: {
     const t = await getTranslations({ locale });
 
     return {
+        metadataBase: new URL(base_url),
         title: t("Metadata.title"),
         description: t("Metadata.description"),
+        keywords: t("Metadata.keywords"),
+        icons: {
+            icon: "/profile/logo-128.png",
+            shortcut: "/profile/logo-128.png",
+            apple: "/profile/logo-128.png",
+        },
+        authors: [
+            {
+                name: "Quentin Potiron",
+            },
+        ],
+        openGraph: {
+            title: t("Metadata.title"),
+            description: t("Metadata.description"),
+            url: "/",
+            images: "/logo-128.svg",
+            type: "website",
+            siteName: t("Metadata.siteName"),
+            locale: "fr_FR",
+            alternateLocale: "en_US",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: t("Metadata.title"),
+            creator: "@QuentinPotiron",
+            description: t("Metadata.description"),
+            images: "/logo-128.svg",
+        },
     };
 }
 

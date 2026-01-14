@@ -15,9 +15,11 @@
         "visit-website": "Visiter le site web: ",
         "studyContent": [
             {
+                "id": "centrale",
                 "name": "Centrale Lyon",
                 "city": "Lyon",
                 "title": "École d'ingénieurs généraliste",
+                "link": "https://www.ec-lyon.fr/",
                 "description": "Programme généraliste couvrant des domaines tels que les mathématiques, la physique, l'informatique, la mécanique, l'électronique, la gestion de projet et les sciences humaines.",
                 "period": "2023 - Présent",
                 "lessons": [
@@ -31,7 +33,8 @@
                         "name": "Base de données relationnelles",
                         "description": "Étude des concepts des bases de données relationnelles, leur optimisation (formes normales) et leur manipulation via le langage SQL.",
                         "tools": ["SQLite"],
-                        "languages": ["SQL", "Python"]
+                        "languages": ["SQL", "Python"],
+                        "projects": ["conference"]
                     },
                     {
                         "name": "Analyse de données",
@@ -42,14 +45,17 @@
                             "Scikit-learn",
                             "Networkx"
                         ],
-                        "languages": ["Python"]
+                        "languages": ["Python"],
+                        "projects": ["moteur-recherche"]
                     }
                 ]
             },
             {
+                "id": "univ",
                 "name": "Université Claude Bernard Lyon 1",
                 "city": "Lyon",
                 "title": "Master en Traitement de l'informatique et du web",
+                "link": "https://www.univ-lyon1.fr/",
                 "description": "En double master avec Centrale Lyon, c'est une formation allant vers concepts informatiques avancés et vers les nouvelles technologies dans le domaine des systèmes d’information. Le master couvre plus particulièrement la programmation web côté serveur et client, le cloud computing, le big data, les architectures orientées services, le Web sémantique, la sécurité et la gestion des données au sens large.",
                 "period": "2025 - Présent",
                 "lessons": [
@@ -63,7 +69,8 @@
                             "Plotly",
                             "Networkx"
                         ],
-                        "languages": ["Python"]
+                        "languages": ["Python"],
+                        "projects": ["data-dash"]
                     },
                     {
                         "name": "Gestion de grandes masses de données (Big Data)",
@@ -75,9 +82,11 @@
                 ]
             },
             {
+                "id": "fermat",
                 "name": "Pierre de Fermat",
                 "city": "Toulouse",
                 "title": "Classe préparatoire MPSI",
+                "link": "https://fermat.mon-ent-occitanie.fr/",
                 "description": "Programme intensif axé sur les mathématiques, la physique, la chimie et les sciences de l'ingénieur, visant à préparer aux concours d'entrée des grandes écoles d'ingénieurs.",
                 "period": "2021 - 2023",
                 "lessons": [
@@ -108,6 +117,7 @@
                 "name": "L'inclusivité : le jeu",
                 "commanditaire": "Métropole de Lyon",
                 "study": "centrale",
+                "large": true,
                 "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
                 "period": "Octobre 2024 - Avril 2025",
                 "languages": ["Angular", "TypeScript", "HTML", "CSS"],
@@ -118,6 +128,7 @@
                 "name": "Le Challenger",
                 "commanditaire": "Association étudiante Challenge - Centrale Lyon",
                 "study": "centrale",
+                "large": true,
                 "description": "Développement de la gestion de permanences pour la gestion de bénévoles lors d'un grand événement sportif étudiant",
                 "period": "Octobre 2023 - Juin 2024",
                 "languages": ["PHP", "SQL", "HTML", "CSS"],
@@ -130,12 +141,40 @@
                 "period": "Octobre 2025",
                 "languages": ["React", "TypeScript", "HTML", "CSS"],
                 "tools": ["NEXT.JS"]
+            },
+            {
+                "id": "conference",
+                "name": "Système de gestion de conférences",
+                "study": "centrale",
+                "description": "Application web permettant la gestion d'une base de données factices de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire une interface utilisature simple.",
+                "period": "octobre 2024 - Décembre 2024",
+                "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
+                "tools": ["SQLite", "Flask", "NEXT.JS"]
+            },
+            {
+                "id": "data-dash",
+                "name": "Application de visualisation de données",
+                "study": "univ",
+                "description": "interface utilisateur interactive pour visualiser et analyser un grand ensemble de données (ici Covid).",
+                "period": "octobre 2024 - Novembre 2024",
+                "languages": ["Python"],
+                "tools": ["Clustering", "Dash", "Plotly", "Pandas"],
+                "websites": [
+                    {
+                        "name": "Covid Dashboard",
+                        "url": "https://azarta2zygoto.github.io/dashboard-covid/"
+                    }
+                ],
+                "repo": "https://github.com/Azarta2Zygoto/dashboard-covid"
             }
         ]
     },
     "Metadata": {
         "title": "Quentin Potiron - My Profile",
-        "description": "Website serving as a portfolio"
+        "siteName": "My Profile",
+        "description": "Website serving as a portfolio",
+        "keywords": "Portfolio, Profile, Web Development, Data Analysis, Computer Science",
+        "locale": "en_US"
     },
     "Bar": {
         "alt-profile-picture": "Profile picture",
