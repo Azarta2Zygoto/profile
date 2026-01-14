@@ -8,8 +8,8 @@
     --color-special: #6496fa;
     --color-special-shadow: #6496fa80;
     --color-page: #f3ede6;
-    --hover-bg: #e0e0e0;
-    --selected-bg: #d0d0d0;
+    --hover-bg: #ececfc;
+    --selected-bg: #cfe4ff;
     --border-color: #333;
 }
 
@@ -187,6 +187,7 @@ li {
     text-align: left;
 }
 .h3-primary {
+    display: inline;
     font-size: 1.5rem;
     margin-top: 0.5rem;
     text-align: left;
@@ -241,8 +242,8 @@ p {
     background: transparent;
     color: var(--fg);
     border: none;
-    padding: 0;
-    margin: 0;
+    padding: 0.2rem;
+    margin: 0.2rem;
 }
 .btn.btn-ghost:hover {
     background: var(--hover-bg);
@@ -384,14 +385,45 @@ nav {
     justify-content: center;
     color: inherit;
     text-decoration: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
 }
 .clickable-icon:hover {
     background-color: #17171710;
 }
-.clickable-icon:active {
-    background-color: #17171720;
+.clickable-icon:focus-visible {
+    border: 2px solid var(--color-text-special);
+    outline: none;
+}
+.external-link {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+.external-link:hover {
+    color: var(--color-text-special);
+}
+.external-link:focus-visible {
+    color: var(--color-text-special);
+    border: 1px solid var(--color-text-special);
+    border-radius: 4px;
+    outline: none;
+}
+.box-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.bi-link-45deg {
+    font-size: 1.8rem;
+}
+.large-study-container {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.sub-study-container {
+    border-left: 3px solid var(--color-special);
+    padding-left: 1rem;
+    margin: 1rem;
 }

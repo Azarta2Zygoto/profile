@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Fragment, use } from "react";
 
+import ShortProject from "@/components/shortProject";
 import ShortStudy from "@/components/shortStudy";
 
 export default function HomePage({
@@ -55,6 +56,8 @@ export default function HomePage({
                     ></i>
                 </Link>
             </h2>
+            <p>{t("desc-projects")}</p>
+            <ShortProject />
         </Fragment>
     );
 }

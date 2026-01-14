@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { JSX } from "react";
 
+import { Website } from "@/data/svg";
 import type { StudyType } from "@/data/types";
 
 interface ShortStudyProps {
@@ -23,6 +24,16 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                 >
                     <h3 className="h3-primary">
                         {key.name} - {key.title}
+                        {key.link && (
+                            <Link
+                                href={key.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="external-link"
+                            >
+                                <Website />
+                            </Link>
+                        )}
                     </h3>
                     <p>
                         {key.period} →{" "}
@@ -36,7 +47,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                         ))}
                         <Link
                             className="inline-link underline-anim"
-                            href={`/${locale ?? "fr"}/study`}
+                            href={`/${locale ?? "fr"}/study#${key.id}`}
                         >
                             {t("see-more")} →
                         </Link>

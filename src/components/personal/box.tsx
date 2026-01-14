@@ -1,6 +1,7 @@
 import { JSX } from "react";
 
 import color from "@/data/language-color.json";
+import type { ColorScheme } from "@/data/types";
 
 interface BoxProps {
     name: string;
@@ -8,19 +9,22 @@ interface BoxProps {
 }
 
 export default function Box({ name, primary = true }: BoxProps): JSX.Element {
-    const langColor = (color as { [key: string]: string })[name];
+    const langColor = (color as { [key: string]: ColorScheme })[name];
     return (
-        <div
+        <span
             className="box"
             style={{
-                backgroundColor: langColor
-                    ? primary
-                        ? langColor
-                        : langColor + "a0"
-                    : "#ececec",
+                backgroundColor:
+                    langColor && langColor.background
+                        ? primary
+                            ? langColor.background
+                            : langColor.background + "a0"
+                        : "#ececec",
+                color:
+                    langColor && langColor.color ? langColor.color : "#000000",
             }}
         >
             {name}
-        </div>
+        </span>
     );
 }

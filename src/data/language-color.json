@@ -1,11 +1,46 @@
 {
-    "Python": "#1ea8f7",
-    "SQL": "#f52222",
-    "JavaScript": "#F1E05A",
-    "C++": "#F34B7D",
-    "Flutter": "#02569B",
-    "Machine Learning": "#FF6F61",
-    "PHP": "#4F5B93",
-    "React": "#61DAFB",
-    "Angular": "#DD0031"
+    "Python": {
+        "background": "#3572A5",
+        "color": "#fff"
+    },
+    "SQL": {
+        "background": "#e38c00",
+        "color": "#fff"
+    },
+    "JavaScript": {
+        "background": "#efd81d",
+        "color": "#000"
+    },
+    "TypeScript": {
+        "background": "#3178c6",
+        "color": "#fff"
+    },
+    "C++": {
+        "background": "#6395cd",
+        "color": "#fff"
+    },
+    "Flutter/Dart": {
+        "background": "#2775d8",
+        "color": "#fff"
+    },
+    "PHP": {
+        "background": "#4f5b93",
+        "color": "#fff"
+    },
+    "React": {
+        "background": "#5dd4ef",
+        "color": "#000"
+    },
+    "Angular": {
+        "background": "#ed0452",
+        "color": "#000"
+    },
+    "HTML": {
+        "background": "#dd4b25",
+        "color": "#000"
+    },
+    "CSS": {
+        "background": "#948fcf",
+        "color": "#000"
+    }
 }

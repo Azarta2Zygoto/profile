@@ -4,6 +4,9 @@
         "introduction": "I am currently a third-year student at <link>Centrale Lyon</link>. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization...",
         "study": "Studies",
         "tools": "Toolbox: ",
+        "projects": "Projects",
+        "desc-projects": "Here are some projects carried out during my studies and in my free time.",
+        "projects-link": "Related projects: ",
         "other-languages": "Other languages used: ",
         "see-more": "See more information",
         "some-lessons": "Some courses taken:",
@@ -95,6 +98,36 @@
                     }
                 ]
             }
+        ],
+        "projectContent": [
+            {
+                "id": "jeu-inclusif",
+                "name": "L'inclusivité : le jeu",
+                "commanditaire": "Métropole de Lyon",
+                "study": "centrale",
+                "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
+                "period": "Octobre 2024 - Avril 2025",
+                "languages": ["Angular", "TypeScript", "HTML", "CSS"],
+                "tools": ["Scrum", "Figma", "UX/UI Design", "Git"]
+            },
+            {
+                "id": "challenger",
+                "name": "Le Challenger",
+                "commanditaire": "Association étudiante Challenge - Centrale Lyon",
+                "study": "centrale",
+                "description": "Développement de la gestion de permanences pour la gestion de bénévoles lors d'un grand événement sportif étudiant",
+                "period": "Octobre 2023 - Juin 2024",
+                "languages": ["PHP", "SQL", "HTML", "CSS"],
+                "tools": ["MariaDB", "Git", "UX/UI Design", "Docker"]
+            },
+            {
+                "id": "miss-hestia",
+                "name": "Site vitrine - Miss Hestia",
+                "description": "Mise en place d'un site vitrine pour les oeuvres d'art d'une artiste",
+                "period": "Octobre 2025",
+                "languages": ["React", "TypeScript", "HTML", "CSS"],
+                "tools": ["NEXT.JS"]
+            }
         ]
     },
     "Metadata": {
@@ -122,6 +155,13 @@
     "Header": {
         "home": "Home",
         "study": "Studies",
-        "projects": "Projects"
+        "project": "Projects"
+    },
+    "StudyPage": {
+        "title": "My Studies"
+    },
+    "ProjectPage": {
+        "title": "My Projects",
+        "introduction": "You will find below the list of my completed or ongoing projects. Some projects are carried out as part of my studies, others have been done purely by passion. Moreover, the projects are divided between short and complete ones."
     }
 }

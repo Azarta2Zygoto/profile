@@ -2,17 +2,21 @@
     "HomePage": {
         "title": "Bienvenue sur mon profil",
         "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
-        "study": "Formations",
+        "study": "Formation",
         "tools": "Boîte à outils : ",
         "projects": "Projets",
+        "desc-projects": "Voici quelques projets réalisés pendant mes études et dans mon temps libre.",
+        "projects-link": "Projets en lien : ",
         "other-languages": "Autres languages utilisés : ",
         "see-more": "Voir plus d'informations",
         "some-lessons": "Quelques cours suivis :",
         "studyContent": [
             {
+                "id": "centrale",
                 "name": "Centrale Lyon",
                 "city": "Lyon",
                 "title": "École d'ingénieurs généraliste",
+                "link": "https://www.ec-lyon.fr/",
                 "description": "Programme généraliste couvrant des domaines tels que les mathématiques, la physique, l'informatique, la mécanique, l'électronique, la gestion de projet et les sciences humaines.",
                 "period": "2023 - Présent",
                 "lessons": [
@@ -26,7 +30,8 @@
                         "name": "Base de données relationnelles",
                         "description": "Étude des concepts des bases de données relationnelles, leur optimisation (formes normales) et leur manipulation via le langage SQL.",
                         "tools": ["SQLite"],
-                        "languages": ["SQL", "Python"]
+                        "languages": ["SQL", "Python"],
+                        "projects": ["conference"]
                     },
                     {
                         "name": "Analyse de données",
@@ -37,14 +42,17 @@
                             "Scikit-learn",
                             "Networkx"
                         ],
-                        "languages": ["Python"]
+                        "languages": ["Python"],
+                        "projects": ["moteur-recherche"]
                     }
                 ]
             },
             {
+                "id": "univ",
                 "name": "Université Claude Bernard Lyon 1",
                 "city": "Lyon",
                 "title": "Master en Traitement de l'informatique et du web",
+                "link": "https://www.univ-lyon1.fr/",
                 "description": "En double master avec Centrale Lyon, c'est une formation allant vers concepts informatiques avancés et vers les nouvelles technologies dans le domaine des systèmes d’information. Le master couvre plus particulièrement la programmation web côté serveur et client, le cloud computing, le big data, les architectures orientées services, le Web sémantique, la sécurité et la gestion des données au sens large.",
                 "period": "2025 - Présent",
                 "lessons": [
@@ -58,7 +66,8 @@
                             "Plotly",
                             "Networkx"
                         ],
-                        "languages": ["Python"]
+                        "languages": ["Python"],
+                        "projects": ["data-dash"]
                     },
                     {
                         "name": "Gestion de grandes masses de données (Big Data)",
@@ -70,9 +79,11 @@
                 ]
             },
             {
+                "id": "fermat",
                 "name": "Pierre de Fermat",
                 "city": "Toulouse",
                 "title": "Classe préparatoire MPSI",
+                "link": "https://fermat.mon-ent-occitanie.fr/",
                 "description": "Programme intensif axé sur les mathématiques, la physique, la chimie et les sciences de l'ingénieur, visant à préparer aux concours d'entrée des grandes écoles d'ingénieurs.",
                 "period": "2021 - 2023",
                 "lessons": [
@@ -95,6 +106,44 @@
                         "languages": []
                     }
                 ]
+            }
+        ],
+        "projectContent": [
+            {
+                "id": "jeu-inclusif",
+                "name": "L'inclusivité : le jeu",
+                "commanditaire": "Métropole de Lyon",
+                "study": "centrale",
+                "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
+                "period": "Octobre 2024 - Avril 2025",
+                "languages": ["Angular", "TypeScript", "HTML", "CSS"],
+                "tools": ["Scrum", "Figma", "UX/UI Design", "Git"]
+            },
+            {
+                "id": "challenger",
+                "name": "Le Challenger",
+                "commanditaire": "Association étudiante Challenge - Centrale Lyon",
+                "study": "centrale",
+                "description": "Développement de la gestion de permanences pour la gestion de bénévoles lors d'un grand événement sportif étudiant",
+                "period": "Octobre 2023 - Juin 2024",
+                "languages": ["PHP", "SQL", "HTML", "CSS"],
+                "tools": ["MariaDB", "Git", "UX/UI Design", "Docker"]
+            },
+            {
+                "id": "miss-hestia",
+                "name": "Site vitrine - Miss Hestia",
+                "description": "Mise en place d'un site vitrine pour les oeuvres d'art d'une artiste",
+                "period": "Octobre 2025",
+                "languages": ["React", "TypeScript", "HTML", "CSS"],
+                "tools": ["NEXT.JS"]
+            },
+            {
+                "id": "conference",
+                "name": "Système de gestion de conférences",
+                "description": "Application web permettant la gestion d'une base de données factices de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire une interface utilisature simple.",
+                "period": "octobre 2024 - Décembre 2024",
+                "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
+                "tools": ["SQLite", "Flask", "NEXT.JS"]
             }
         ]
     },
@@ -126,6 +175,13 @@
     "Header": {
         "home": "Accueil",
         "study": "Études",
-        "projects": "Projets"
+        "project": "Projets"
+    },
+    "StudyPage": {
+        "title": "Mes Études"
+    },
+    "ProjectPage": {
+        "title": "Mes Projets",
+        "introduction": "Vous trouverez la liste de mes projets réalisés ou encore en cours ci-dessous. Certains projets sont réalisés dans le cadre de mes études, d'autres ont été fait purement par plaisir. De plus, les projets sont divisés entre projets courts et projets complets."
     }
 }
