@@ -118,5 +118,10 @@
     },
     "Footer": {
         "copyright": "© 2026 My Profile. All rights reserved."
+    },
+    "Header": {
+        "home": "Home",
+        "study": "Studies",
+        "projects": "Projects"
     }
 }

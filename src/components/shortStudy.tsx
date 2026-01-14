@@ -4,36 +4,22 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { JSX } from "react";
 
+import type { StudyType } from "@/data/types";
+
 interface ShortStudyProps {
     locale?: string;
 }
 
-interface StudyProps {
-    name: string;
-    title: string;
-    description: string;
-    period: string;
-    city: string;
-    lessons: lessonProps[];
-}
-
-interface lessonProps {
-    name: string;
-    description: string;
-    tools: string[];
-    languages: string[];
-}
-
 export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
     const t = useTranslations("HomePage");
-    const studyContent = t.raw("studyContent") as Array<StudyProps>;
+    const studyContent = t.raw("studyContent") as Array<StudyType>;
 
     return (
         <section>
             {studyContent.map((key, index) => (
                 <div
                     key={index}
-                    style={{ margin: "1rem 1rem" }}
+                    className="container-study-card"
                 >
                     <h3 className="h3-primary">
                         {key.name} - {key.title}
@@ -49,7 +35,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                             <p key={lessonIndex}>{lesson.name}</p>
                         ))}
                         <Link
-                            className="inline-link"
+                            className="inline-link underline-anim"
                             href={`/${locale ?? "fr"}/study`}
                         >
                             {t("see-more")} →

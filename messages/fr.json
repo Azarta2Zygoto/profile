@@ -4,6 +4,7 @@
         "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
         "study": "Formations",
         "tools": "Boîte à outils : ",
+        "projects": "Projets",
         "other-languages": "Autres languages utilisés : ",
         "see-more": "Voir plus d'informations",
         "some-lessons": "Quelques cours suivis :",
@@ -121,5 +122,10 @@
     },
     "Footer": {
         "copyright": "© 2026 Mon Profil. Tous droits réservés."
+    },
+    "Header": {
+        "home": "Accueil",
+        "study": "Études",
+        "projects": "Projets"
     }
 }

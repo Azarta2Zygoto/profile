@@ -20,7 +20,7 @@ export default function HomePage({
                 {t.rich("introduction", {
                     link: (chunks) => (
                         <a
-                            className="inline-link"
+                            className="outside-link"
                             href="https://www.ec-lyon.fr/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -31,12 +31,30 @@ export default function HomePage({
                 })}
             </section>
             <h2 className="h2-primary">
-                {t("study")}{" "}
-                <Link href={`/${locale ?? "fr"}/study`}>
-                    <i className="bi bi-link-45deg"></i>
+                {t("study")}
+                <Link
+                    href={`/${locale ?? "fr"}/study`}
+                    className="clickable-icon"
+                >
+                    <i
+                        className="bi bi-link-45deg"
+                        aria-hidden
+                    ></i>
                 </Link>
             </h2>
             <ShortStudy />
+            <h2 className="h2-primary">
+                {t("projects")}
+                <Link
+                    href={`/${locale ?? "fr"}/projects`}
+                    className="clickable-icon"
+                >
+                    <i
+                        className="bi bi-link-45deg"
+                        aria-hidden
+                    ></i>
+                </Link>
+            </h2>
         </Fragment>
     );
 }

@@ -3,26 +3,13 @@
 import { useTranslations } from "next-intl";
 import { Fragment, JSX } from "react";
 
+import type { StudyType } from "@/data/types";
+
 import Box from "./personal/box";
-
-interface StudyProps {
-    name: string;
-    title: string;
-    description: string;
-    period: string;
-    lessons: lessonProps[];
-}
-
-interface lessonProps {
-    name: string;
-    description: string;
-    tools: string[];
-    languages: string[];
-}
 
 export default function Study(): JSX.Element {
     const t = useTranslations("HomePage");
-    const studyContent = t.raw("studyContent") as Array<StudyProps>;
+    const studyContent = t.raw("studyContent") as Array<StudyType>;
 
     return (
         <section>

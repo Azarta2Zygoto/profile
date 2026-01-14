@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
+import { base_path } from "@/data/env";
 import data from "@/data/personal_data.json";
 import { Github, Gmail, Linkedin } from "@/data/svg";
 
@@ -12,20 +13,23 @@ export default function Bar() {
     return (
         <div className="bar-container">
             <Image
-                src="photo.jpg"
+                src={base_path + "photo.jpg"}
                 alt={t("alt-profile-picture")}
                 className="img-profile"
                 width={416}
                 height={516}
             />
-            <h2 className="h2-primary">
+            <h2
+                className="h2-primary"
+                style={{ textAlign: "center" }}
+            >
                 {data.prenom} {data.nom}
             </h2>
             <ul>
                 <li>{t("student") + data.job}</li>
                 <li>
                     <a
-                        className="inline-icon"
+                        className="inline-icon underline-anim"
                         href={data.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -36,7 +40,7 @@ export default function Bar() {
                 </li>
                 <li style={{ marginTop: "0.5rem" }}>
                     <a
-                        className="inline-icon"
+                        className="inline-icon underline-anim"
                         href={data.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -53,7 +57,7 @@ export default function Bar() {
                     }}
                 >
                     <a
-                        className="inline-icon"
+                        className="inline-icon underline-anim"
                         href={"mailto:" + data.gmail}
                     >
                         <Gmail />

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { JSX, useState } from "react";
 
 import {
@@ -15,11 +16,12 @@ interface FlagSelectMenuProps {
     selectedOption: string;
 }
 
-export function FlagSelectMenu({
+export default function FlagSelectMenu({
     options,
     selectedOption,
 }: FlagSelectMenuProps): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <Popover
@@ -40,7 +42,7 @@ export function FlagSelectMenu({
                     {options.map((option, i) => (
                         <Link
                             key={i}
-                            href={`/${typeof option === "string" ? option : option.value}`}
+                            href={`/${typeof option === "string" ? option : option.value}/${pathname.split("/").slice(2).join("/")}`}
                             className={`btn btn-ghost ${
                                 selectedOption ===
                                 (typeof option === "string"
