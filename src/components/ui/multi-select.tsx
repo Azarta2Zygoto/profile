@@ -886,7 +886,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 getAllOptions().length
                             } options selected. ${t("select")}`}
                             className={cn(
-                                "flex p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto",
+                                "flex p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto multiple-select",
                                 autoSize ? "w-auto" : "w-full",
                                 responsiveSettings.compactMode &&
                                     "min-h-8 text-sm",
@@ -896,6 +896,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                             )}
                             style={{
                                 ...widthConstraints,
+                                minWidth: `clamp(275px, ${widthConstraints.minWidth}, 8rem)`,
                                 maxWidth: `min(${widthConstraints.maxWidth}, 30rem)`,
                             }}
                         >
@@ -1117,7 +1118,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 </div>
                             ) : (
                                 <div className="flex items-center justify-between w-full mx-auto">
-                                    <span className="text-sm text-muted-foreground mx-3">
+                                    <span className="text-sm text-muted-foreground mx-3 truncate-text">
                                         {t("select")}
                                     </span>
                                     <ChevronDown className="h-4 cursor-pointer text-muted-foreground mx-2" />

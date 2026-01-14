@@ -16,15 +16,19 @@ const languagesOptions: { label: string; value: string }[] = Object.keys(
 
 export default function StudyPage(): JSX.Element {
     const t = useTranslations("StudyPage");
-    const [langages, setLangages] =
+    const [languages, setLanguages] =
         useState<{ label: string; value: string }[]>(languagesOptions);
 
-    function handleLangagesChange(selected: string[]) {
-        const selectedLangages = selected.map((lang) => ({
+    function handleLanguagesChange(selected: string[]) {
+        const selectedLanguages = selected.map((lang) => ({
             label: lang,
             value: lang,
         }));
-        setLangages(selectedLangages);
+        if (selectedLanguages.length === 0) {
+            setLanguages(languagesOptions);
+            return;
+        }
+        setLanguages(selectedLanguages);
     }
 
     return (
@@ -32,9 +36,9 @@ export default function StudyPage(): JSX.Element {
             <h1 className="h1-primary">{t("title")}</h1>
             <MultiSelect
                 options={languagesOptions}
-                onValueChange={(values) => handleLangagesChange(values)}
+                onValueChange={(values) => handleLanguagesChange(values)}
             />
-            <Study />
+            <Study languages={languages} />
         </div>
     );
 }

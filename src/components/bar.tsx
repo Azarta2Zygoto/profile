@@ -5,7 +5,8 @@ import Image from "next/image";
 
 import { base_path } from "@/data/env";
 import data from "@/data/personal_data.json";
-import { Github, Gmail, Linkedin } from "@/data/svg";
+
+import Contact from "./personal/contact";
 
 export default function Bar() {
     const t = useTranslations("Bar");
@@ -25,40 +26,9 @@ export default function Bar() {
             >
                 {data.prenom} {data.nom}
             </h2>
-            <ul>
+            <Contact>
                 <li>{t("student") + data.job}</li>
-                <li className="li-bar">
-                    <a
-                        className="inline-icon underline-anim"
-                        href={data.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Linkedin />
-                        LinkedIn
-                    </a>
-                </li>
-                <li className="li-bar">
-                    <a
-                        className="inline-icon underline-anim"
-                        href={data.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Github />
-                        GitHub
-                    </a>
-                </li>
-                <li className="li-bar">
-                    <a
-                        className="inline-icon underline-anim"
-                        href={"mailto:" + data.gmail}
-                    >
-                        <Gmail />
-                        {data.gmail}
-                    </a>
-                </li>
-            </ul>
+            </Contact>
         </div>
     );
 }

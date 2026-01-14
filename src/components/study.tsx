@@ -9,9 +9,30 @@ import type { ProjectType, StudyType } from "@/data/types";
 
 import Box from "./personal/box";
 
-export default function Study(): JSX.Element {
+interface StudyProps {
+    languages?: { label: string; value: string }[];
+}
+
+export default function Study({ languages }: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
-    const studyContent = t.raw("studyContent") as Array<StudyType>;
+    const studyContent = (t.raw("studyContent") as Array<StudyType>)
+        .filter((study) => {
+            if (!languages || languages.length === 0) return true;
+            return study.lessons.some((lesson) =>
+                lesson.languages.some((lang) =>
+                    languages.map((l) => l.value).includes(lang),
+                ),
+            );
+        })
+        .map((study) => ({
+            ...study,
+            lessons: study.lessons.filter((lesson) => {
+                if (!languages || languages.length === 0) return true;
+                return lesson.languages.some((lang) =>
+                    languages.map((l) => l.value).includes(lang),
+                );
+            }),
+        }));
     const projectContent = t.raw("projectContent") as Array<ProjectType>;
 
     return (
@@ -47,10 +68,15 @@ export default function Study(): JSX.Element {
                             <h4 className="h4-primary">
                                 {lesson.name} :
                                 {lesson.languages.length > 0 && (
-                                    <Box name={lesson.languages[0]} />
+                                    <Box
+                                        name={lesson.languages[0]}
+                                        style={{ marginLeft: "0.5rem" }}
+                                    />
                                 )}
                             </h4>
-                            <p>{lesson.description}</p>
+                            <p style={{ marginBottom: "0.5rem" }}>
+                                {lesson.description}
+                            </p>
 
                             {lesson.tools.length > 0 && (
                                 <p>
@@ -59,13 +85,14 @@ export default function Study(): JSX.Element {
                                 </p>
                             )}
                             {lesson.languages.length > 1 && (
-                                <div className="rows">
+                                <div style={{ display: "inline-block" }}>
                                     <strong>{t("other-languages")}</strong>
                                     {lesson.languages.slice(1).map((lang) => (
                                         <Box
                                             name={lang}
                                             key={lang}
                                             primary={false}
+                                            style={{ margin: "0 0.25rem" }}
                                         />
                                     ))}
                                 </div>

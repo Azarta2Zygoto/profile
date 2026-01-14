@@ -8,8 +8,11 @@
         "desc-projects": "Here are some projects carried out during my studies and in my free time.",
         "projects-link": "Related projects: ",
         "other-languages": "Other languages used: ",
+        "commanditaire": "Client: ",
+        "languages": "Languages: ",
         "see-more": "See more information",
         "some-lessons": "Some courses taken:",
+        "visit-website": "Visiter le site web: ",
         "studyContent": [
             {
                 "name": "Centrale Lyon",
@@ -131,7 +134,7 @@
         ]
     },
     "Metadata": {
-        "title": "My Profile",
+        "title": "Quentin Potiron - My Profile",
         "description": "Website serving as a portfolio"
     },
     "Bar": {
@@ -158,7 +161,8 @@
         "close": "Close"
     },
     "Footer": {
-        "copyright": "© 2026 My Profile. All rights reserved."
+        "copyright": "© 2026 My Profile. All rights reserved.",
+        "contact-me": "Contact : "
     },
     "Header": {
         "home": "Home",

@@ -18,18 +18,20 @@ export default function HomePage({
         <Fragment>
             <h1 className="h1-primary">{t("title")}</h1>
             <section>
-                {t.rich("introduction", {
-                    link: (chunks) => (
-                        <a
-                            className="outside-link"
-                            href="https://www.ec-lyon.fr/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {chunks}
-                        </a>
-                    ),
-                })}
+                <p>
+                    {t.rich("introduction", {
+                        link: (chunks) => (
+                            <a
+                                className="outside-link"
+                                href="https://www.ec-lyon.fr/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {chunks}
+                            </a>
+                        ),
+                    })}
+                </p>
             </section>
             <h2 className="h2-primary">
                 {t("study")}

@@ -8,8 +8,11 @@
         "desc-projects": "Voici quelques projets réalisés pendant mes études et dans mon temps libre.",
         "projects-link": "Projets en lien : ",
         "other-languages": "Autres languages utilisés : ",
+        "commanditaire": "Commanditaire : ",
+        "languages": "Langages : ",
         "see-more": "Voir plus d'informations",
         "some-lessons": "Quelques cours suivis :",
+        "visit-website": "Visiter le site web : ",
         "studyContent": [
             {
                 "id": "centrale",
@@ -114,6 +117,7 @@
                 "name": "L'inclusivité : le jeu",
                 "commanditaire": "Métropole de Lyon",
                 "study": "centrale",
+                "large": true,
                 "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
                 "period": "Octobre 2024 - Avril 2025",
                 "languages": ["Angular", "TypeScript", "HTML", "CSS"],
@@ -124,6 +128,7 @@
                 "name": "Le Challenger",
                 "commanditaire": "Association étudiante Challenge - Centrale Lyon",
                 "study": "centrale",
+                "large": true,
                 "description": "Développement de la gestion de permanences pour la gestion de bénévoles lors d'un grand événement sportif étudiant",
                 "period": "Octobre 2023 - Juin 2024",
                 "languages": ["PHP", "SQL", "HTML", "CSS"],
@@ -145,11 +150,27 @@
                 "period": "octobre 2024 - Décembre 2024",
                 "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
                 "tools": ["SQLite", "Flask", "NEXT.JS"]
+            },
+            {
+                "id": "data-dash",
+                "name": "Application de visualisation de données",
+                "study": "univ",
+                "description": "interface utilisateur interactive pour visualiser et analyser un grand ensemble de données (ici Covid).",
+                "period": "octobre 2024 - Novembre 2024",
+                "languages": ["Python"],
+                "tools": ["Clustering", "Dash", "Plotly", "Pandas"],
+                "websites": [
+                    {
+                        "name": "Covid Dashboard",
+                        "url": "https://azarta2zygoto.github.io/dashboard-covid/"
+                    }
+                ],
+                "repo": "https://github.com/Azarta2Zygoto/dashboard-covid"
             }
         ]
     },
     "Metadata": {
-        "title": "Mon Profil",
+        "title": "Quentin Potiron - Mon Profil",
         "description": "Site web faisant office de portfolio"
     },
     "Bar": {
@@ -176,7 +197,8 @@
         "close": "Fermer"
     },
     "Footer": {
-        "copyright": "© 2026 Mon Profil. Tous droits réservés."
+        "copyright": "© 2026 Mon Profil. Tous droits réservés.",
+        "contact-me": "Contact : "
     },
     "Header": {
         "home": "Accueil",
@@ -188,6 +210,6 @@
     },
     "ProjectPage": {
         "title": "Mes Projets",
-        "introduction": "Vous trouverez la liste de mes projets réalisés ou encore en cours ci-dessous. Certains projets sont réalisés dans le cadre de mes études, d'autres ont été fait purement par plaisir. De plus, les projets sont divisés entre projets courts et projets complets."
+        "introduction": "Vous trouverez la liste de mes projets réalisés ou encore en cours ci-dessous. Certains projets sont réalisés dans le cadre de mes études, d'autres ont été fait purement pour le plaisir."
     }
 }

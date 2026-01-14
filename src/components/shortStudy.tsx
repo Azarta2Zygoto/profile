@@ -39,8 +39,8 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                         {key.period} →{" "}
                         {key.city + (locale !== "fr" ? ", France" : "")}
                     </p>
-                    <p>{key.description}</p>
-                    <p style={{ marginTop: "1rem" }}>{t("some-lessons")}</p>
+                    <p style={{ margin: "1rem 0" }}>{key.description}</p>
+                    <p>{t("some-lessons")}</p>
                     <ul style={{ margin: "0 1rem" }}>
                         {key.lessons.slice(0, 3).map((lesson, lessonIndex) => (
                             <li key={lessonIndex}>{lesson.name}</li>

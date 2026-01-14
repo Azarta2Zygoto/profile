@@ -28,7 +28,8 @@ export interface ProjectType {
     description: string;
     commanditaire?: string;
     period: string;
-    link?: string;
+    study?: string;
+    websites?: { name: string; url: string }[];
     repo?: string;
     languages: string[];
     tools: string[];
