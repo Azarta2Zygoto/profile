@@ -140,6 +140,7 @@
             {
                 "id": "conference",
                 "name": "Système de gestion de conférences",
+                "study": "centrale",
                 "description": "Application web permettant la gestion d'une base de données factices de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire une interface utilisature simple.",
                 "period": "octobre 2024 - Décembre 2024",
                 "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
@@ -167,7 +168,12 @@
         "back-to-home": "Retourner à l'accueil"
     },
     "DefaultTexts": {
-        "selectAnOption": "Sélectionnez une option"
+        "selectAnOption": "Sélectionnez une option",
+        "select": "Sélectionner un ou des langages de programmation",
+        "search": "Rechercher...",
+        "all": "Tous",
+        "clear": "Effacer",
+        "close": "Fermer"
     },
     "Footer": {
         "copyright": "© 2026 Mon Profil. Tous droits réservés."

@@ -1,15 +1,39 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { JSX } from "react";
+import { JSX, useState } from "react";
 
 import Study from "@/components/study";
+import { MultiSelect } from "@/components/ui/multi-select";
+import language_json from "@/data/language-color.json";
+
+const languagesOptions: { label: string; value: string }[] = Object.keys(
+    language_json,
+).map((lang) => ({
+    label: lang,
+    value: lang,
+}));
 
 export default function StudyPage(): JSX.Element {
     const t = useTranslations("StudyPage");
+    const [langages, setLangages] =
+        useState<{ label: string; value: string }[]>(languagesOptions);
+
+    function handleLangagesChange(selected: string[]) {
+        const selectedLangages = selected.map((lang) => ({
+            label: lang,
+            value: lang,
+        }));
+        setLangages(selectedLangages);
+    }
+
     return (
         <div>
             <h1 className="h1-primary">{t("title")}</h1>
+            <MultiSelect
+                options={languagesOptions}
+                onValueChange={(values) => handleLangagesChange(values)}
+            />
             <Study />
         </div>
     );

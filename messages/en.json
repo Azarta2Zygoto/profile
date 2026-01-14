@@ -149,6 +149,14 @@
         "retry": "Retry",
         "back-to-home": "Back to Home"
     },
+    "DefaultTexts": {
+        "selectAnOption": "Select an option",
+        "select": "Select one or more programming languages",
+        "search": "Search...",
+        "all": "All",
+        "clear": "Clear",
+        "close": "Close"
+    },
     "Footer": {
         "copyright": "© 2026 My Profile. All rights reserved."
     },

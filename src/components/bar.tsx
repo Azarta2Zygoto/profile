@@ -27,7 +27,7 @@ export default function Bar() {
             </h2>
             <ul>
                 <li>{t("student") + data.job}</li>
-                <li>
+                <li className="li-bar">
                     <a
                         className="inline-icon underline-anim"
                         href={data.linkedin}
@@ -38,7 +38,7 @@ export default function Bar() {
                         LinkedIn
                     </a>
                 </li>
-                <li style={{ marginTop: "0.5rem" }}>
+                <li className="li-bar">
                     <a
                         className="inline-icon underline-anim"
                         href={data.github}
@@ -49,13 +49,7 @@ export default function Bar() {
                         GitHub
                     </a>
                 </li>
-                <li
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                    }}
-                >
+                <li className="li-bar">
                     <a
                         className="inline-icon underline-anim"
                         href={"mailto:" + data.gmail}

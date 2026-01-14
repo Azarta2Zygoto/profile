@@ -47,7 +47,7 @@ export default function HomePage({
             <h2 className="h2-primary">
                 {t("projects")}
                 <Link
-                    href={`/${locale ?? "fr"}/projects`}
+                    href={`/${locale ?? "fr"}/project`}
                     className="clickable-icon"
                 >
                     <i

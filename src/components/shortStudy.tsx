@@ -41,9 +41,9 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                     </p>
                     <p>{key.description}</p>
                     <p style={{ marginTop: "1rem" }}>{t("some-lessons")}</p>
-                    <div style={{ margin: "0 1rem" }}>
+                    <ul style={{ margin: "0 1rem" }}>
                         {key.lessons.slice(0, 3).map((lesson, lessonIndex) => (
-                            <p key={lessonIndex}>{lesson.name}</p>
+                            <li key={lessonIndex}>{lesson.name}</li>
                         ))}
                         <Link
                             className="inline-link underline-anim"
@@ -51,7 +51,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                         >
                             {t("see-more")} →
                         </Link>
-                    </div>
+                    </ul>
                 </div>
             ))}
         </section>

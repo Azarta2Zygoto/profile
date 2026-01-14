@@ -13,7 +13,7 @@ export default function ShortProject(): JSX.Element {
 
     return (
         <section>
-            {projectContent.map((key, index) => (
+            {projectContent.slice(0, 4).map((key, index) => (
                 <div
                     key={index}
                     className="container-study-card"

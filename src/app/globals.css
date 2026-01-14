@@ -167,11 +167,11 @@ ul {
     padding: 0;
 }
 li {
-    display: flex;
-    align-items: center;
-    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+.li-bar {
     margin: 0.5rem 0;
-    padding: 0.5rem;
 }
 .h1-primary {
     font-size: 2rem;

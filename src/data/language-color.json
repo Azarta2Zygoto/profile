@@ -42,5 +42,9 @@
     "CSS": {
         "background": "#948fcf",
         "color": "#000"
+    },
+    "Java": {
+        "background": "#b07219",
+        "color": "#fff"
     }
 }
