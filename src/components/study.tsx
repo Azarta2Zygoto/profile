@@ -125,7 +125,7 @@ export default function Study({ locale, languages }: StudyProps): JSX.Element {
                                         (project, projIndex) => (
                                             <Fragment key={project}>
                                                 <Link
-                                                    href={`/projects#${project}`}
+                                                    href={`/${locale}/project#${project}`}
                                                     className="inline-link underline-anim"
                                                 >
                                                     {projectContent.find(
