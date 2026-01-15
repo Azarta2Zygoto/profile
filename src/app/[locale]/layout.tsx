@@ -31,9 +31,9 @@ export async function generateMetadata(props: {
         description: t("Metadata.description"),
         keywords: t("Metadata.keywords"),
         icons: {
-            icon: "/profile/logo-128.png",
-            shortcut: "/profile/logo-128.png",
-            apple: "/profile/logo-128.png",
+            icon: "/profile/logo-200.png",
+            shortcut: "/profile/logo-200.png",
+            apple: "/profile/logo-200.png",
         },
         authors: [
             {
@@ -44,7 +44,7 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             url: "/",
-            images: "/logo-128.png",
+            images: "/logo-200.png",
             type: "website",
             siteName: t("Metadata.siteName"),
             locale: "fr_FR",
@@ -55,7 +55,7 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             creator: "@QuentinPotiron",
             description: t("Metadata.description"),
-            images: "/logo-128.png",
+            images: "/logo-200.png",
         },
     };
 }
