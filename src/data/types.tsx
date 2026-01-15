@@ -33,6 +33,7 @@ export interface ProjectType {
     repo?: string;
     languages: string[];
     tools: string[];
+    large: boolean;
 }
 
 export interface ColorScheme {

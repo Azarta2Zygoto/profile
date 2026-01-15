@@ -9,19 +9,11 @@ import type { ProjectType, StudyType } from "@/data/types";
 import Box from "./personal/box";
 
 interface ProjectProps {
-    languages?: { label: string; value: string }[];
+    projectContent: Array<ProjectType>;
 }
 
-export default function Project({ languages }: ProjectProps): JSX.Element {
+export default function Project({ projectContent }: ProjectProps): JSX.Element {
     const t = useTranslations("HomePage");
-    const projectContent = (
-        t.raw("projectContent") as Array<ProjectType>
-    ).filter((project) => {
-        if (!languages || languages.length === 0) return true;
-        return project.languages.some((lang) =>
-            languages.map((l) => l.value).includes(lang),
-        );
-    });
     const studyContent = t.raw("studyContent") as Array<StudyType>;
 
     if (projectContent.length === 0) {

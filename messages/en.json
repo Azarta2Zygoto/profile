@@ -218,7 +218,9 @@
     },
     "ProjectPage": {
         "title": "My Projects",
-        "introduction": "You will find below the list of my completed or ongoing projects. Some projects are carried out as part of my studies, others have been done purely by passion. Moreover, the projects are divided between short and complete ones."
+        "introduction": "You will find below the list of my completed or ongoing projects. Some projects are carried out as part of my studies, others have been done purely by passion. Moreover, the projects are divided between short and complete ones.",
+        "large-projects": "Major Projects",
+        "little-projects": "Other Projects"
     },
     "ThemeSwitch": {
         "switch": "Switch theme"
