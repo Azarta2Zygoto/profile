@@ -443,6 +443,21 @@ nav {
     flex-wrap: wrap;
     min-width: 250px;
 }
+.multiple-select:hover {
+    border-color: var(--color-special-shadow) !important;
+    transition: border-color 0.3s !important;
+}
+.multiple-select:focus-visible {
+    border-color: var(--color-special-shadow);
+    box-shadow: 0 0 0 3px var(--color-special-shadow);
+    outline: none;
+}
+.multiple-select[aria-expanded="true"] {
+    border-color: var(--color-special-shadow) !important;
+}
+.multiple-select-li:hover {
+    background-color: var(--hover-bg);
+}
 .truncate-text {
     overflow: hidden;
     text-overflow: ellipsis;

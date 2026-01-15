@@ -15,8 +15,6 @@
         "visit-website": "Visiter le site web : ",
         "no-study-found": "Aucune formation trouvée.",
         "no-study-found-desc": "Aucune formation ne m'a enseigné ce langage, regardez dans les <link>projets</link> pour voir ceux en lien avec ce langage.",
-        "no-project-found": "Aucun projet trouvé.",
-        "no-project-found-desc": "Aucun projet n'a été réalisé avec ce langage ou cet outil.",
         "studyContent": [
             {
                 "id": "centrale",
@@ -220,7 +218,9 @@
         "title": "Mes Projets",
         "introduction": "Vous trouverez la liste de mes projets réalisés ou encore en cours ci-dessous. Certains projets sont réalisés dans le cadre de mes études, d'autres ont été fait purement pour le plaisir.",
         "large-projects": "Projets majeurs",
-        "little-projects": "Autres projets"
+        "little-projects": "Autres projets",
+        "no-project-found": "Aucun projet trouvé.",
+        "no-project-found-desc": "Aucun projet n'a été réalisé avec ce langage ou cet outil."
     },
     "ThemeSwitch": {
         "switch": "Changer le thème"

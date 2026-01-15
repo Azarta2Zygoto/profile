@@ -15,8 +15,6 @@
         "visit-website": "Visiter le site web: ",
         "no-study-found": "No study found.",
         "no-study-found-desc": "No study has taught me this language, please check <link>projects</link> to see those related to this language.",
-        "no-project-found": "No project found.",
-        "no-project-found-desc": "This language or tool has not been used in any of these projects.",
         "studyContent": [
             {
                 "id": "centrale",
@@ -220,7 +218,9 @@
         "title": "My Projects",
         "introduction": "You will find below the list of my completed or ongoing projects. Some projects are carried out as part of my studies, others have been done purely by passion. Moreover, the projects are divided between short and complete ones.",
         "large-projects": "Major Projects",
-        "little-projects": "Other Projects"
+        "little-projects": "Other Projects",
+        "no-project-found": "No project found.",
+        "no-project-found-desc": "This language or tool has not been used in any of these projects."
     },
     "ThemeSwitch": {
         "switch": "Switch theme"

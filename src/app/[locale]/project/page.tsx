@@ -26,8 +26,6 @@ export default function ProjectPage(): JSX.Element {
         tHome.raw("projectContent") as Array<ProjectType>
     ).filter((project) => !project.large);
 
-    const [languages, setLanguages] =
-        useState<{ label: string; value: string }[]>(languagesOptions);
     const [largeProjectContent, setLargeProjectContent] = useState<
         Array<ProjectType>
     >(constLargeProjectContent);
@@ -41,7 +39,6 @@ export default function ProjectPage(): JSX.Element {
             value: lang,
         }));
         if (selectedLanguages.length === 0) {
-            setLanguages(languagesOptions);
             setLargeProjectContent(constLargeProjectContent);
             setLittleProjectContent(constLittleProjectContent);
             return;
@@ -59,7 +56,6 @@ export default function ProjectPage(): JSX.Element {
         );
         setLargeProjectContent(filteredLarge);
         setLittleProjectContent(filteredLittle);
-        setLanguages(selectedLanguages);
     }
     return (
         <div>

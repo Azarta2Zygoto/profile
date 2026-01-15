@@ -1200,7 +1200,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                             aria-label={`${t("all")} ${
                                                 getAllOptions().length
                                             } options`}
-                                            className="cursor-pointer"
+                                            className="cursor-pointer multiple-select-li"
                                         >
                                             <div
                                                 className={cn(
@@ -1258,6 +1258,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                                 : ", not selected"
                                                         }${option.disabled ? ", disabled" : ""}`}
                                                         className={cn(
+                                                            "multiple-select-li",
                                                             "cursor-pointer",
                                                             option.disabled &&
                                                                 "opacity-50 cursor-not-allowed",
@@ -1317,6 +1318,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                             : ", not selected"
                                                     }${option.disabled ? ", disabled" : ""}`}
                                                     className={cn(
+                                                        "multiple-select-li",
                                                         "cursor-pointer",
                                                         "padding-0",
                                                         option.disabled &&
