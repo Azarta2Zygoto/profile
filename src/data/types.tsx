@@ -31,6 +31,7 @@ export interface ProjectType {
     study?: string;
     websites?: { name: string; url: string }[];
     repo?: string;
+    paragraph?: { text?: string; li?: string[] };
     languages: string[];
     tools: string[];
     large: boolean;

@@ -12,7 +12,7 @@
         "languages": "Langages : ",
         "see-more": "Voir plus d'informations",
         "some-lessons": "Quelques cours suivis :",
-        "visit-website": "Visiter le site web : ",
+        "visit-website": "Visiter {count, plural, =1 {le site} other {les sites}} web : ",
         "no-study-found": "Aucune formation trouvée.",
         "no-study-found-desc": "Aucune formation ne m'a enseigné ce langage, regardez dans les <link>projets</link> pour voir ceux en lien avec ce langage.",
         "studyContent": [
@@ -116,13 +116,35 @@
         "projectContent": [
             {
                 "id": "jeu-inclusif",
-                "name": "L'inclusivité : le jeu",
+                "name": "Inclusif : le jeu",
                 "commanditaire": "Métropole de Lyon",
                 "study": "centrale",
                 "large": true,
                 "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
+                "paragraph": {
+                    "text": "Le projet a été fait dans une équipe de 7 personnes, ensuivant la méthodologies Scrum. Lors de ce projet, nous avons pu décuvrir le framework Angular et nous avons utilisé Figma afin de créer des maquettes pour l'interface utilisateur. Le projet a été découpé en trois parties :",
+                    "li": [
+                        "la mise en jeu en ligne d'un jeu de société sérieux ;",
+                        "un quiz d'inclusivité pour tester ses connaissances dans le domaine ;",
+                        "un formulaire d'auto-évaluation d'inclusivité pour vérifier qu'un projet inclue bien dans toutes ses étapes les concepts d'inclusivité."
+                    ]
+                },
                 "period": "Octobre 2024 - Avril 2025",
                 "languages": ["Angular", "TypeScript", "HTML", "CSS"],
+                "websites": [
+                    {
+                        "name": "Inclusif : le jeu",
+                        "url": "https://inclusivite-resin.grandlyon.com/jeu-en-ligne/accueil"
+                    },
+                    {
+                        "name": "Quiz Inclusif : le jeu",
+                        "url": "https://inclusivite-resin.grandlyon.com/quiz/accueil"
+                    },
+                    {
+                        "name": "Auto-évaluation d'inclusivité",
+                        "url": "https://inclusivite-resin.grandlyon.com/autoevaluation/accueil"
+                    }
+                ],
                 "tools": ["Scrum", "Figma", "UX/UI Design", "Git"]
             },
             {
@@ -142,7 +164,13 @@
                 "description": "Mise en place d'un site vitrine pour les oeuvres d'art d'une artiste",
                 "period": "Octobre 2025",
                 "languages": ["React", "TypeScript", "HTML", "CSS"],
-                "tools": ["NEXT.JS"]
+                "tools": ["NEXT.JS"],
+                "websites": [
+                    {
+                        "name": "Miss Hestia - Artiste peintre",
+                        "url": "https://azarta2zygoto.github.io/miss-hestia/"
+                    }
+                ]
             },
             {
                 "id": "conference",

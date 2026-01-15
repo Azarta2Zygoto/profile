@@ -6,6 +6,7 @@ import { JSX } from "react";
 import { Github } from "@/data/svg";
 import type { ProjectType, StudyType } from "@/data/types";
 
+import Accordeon from "./personal/accordeon";
 import Box from "./personal/box";
 
 interface ProjectProps {
@@ -56,9 +57,37 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                         </p>
                     )}
                     <p style={{ margin: "1rem 0" }}>{key.description}</p>
+                    {key.paragraph && (
+                        <Accordeon
+                            items={{
+                                title: t("see-more"),
+                                content: (
+                                    <div>
+                                        {key.paragraph &&
+                                            key.paragraph.text && (
+                                                <p>{key.paragraph.text}</p>
+                                            )}
+                                        {key.paragraph &&
+                                            key.paragraph.li &&
+                                            key.paragraph.li.length > 0 && (
+                                                <ul className="list-items">
+                                                    {key.paragraph.li.map(
+                                                        (item, idx) => (
+                                                            <li key={idx}>
+                                                                {item}
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            )}
+                                    </div>
+                                ),
+                            }}
+                        />
+                    )}
                     <div
                         className="rows"
-                        style={{ marginBottom: "1rem" }}
+                        style={{ margin: "1rem 0" }}
                     >
                         <strong>{t("languages")}</strong>
                         {key.languages.map((lang) => (
@@ -71,21 +100,27 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                     <p>
                         <strong>{t("tools")}</strong> {key.tools.join(", ")}
                     </p>
-                    {key.websites &&
-                        key.websites.length > 0 &&
-                        key.websites.map((website) => (
-                            <p key={website.name}>
-                                <strong>{t("visit-website")}</strong>
+                    {key.websites && key.websites.length > 0 && (
+                        <p>
+                            <strong>
+                                {t("visit-website", {
+                                    count: key.websites.length,
+                                })}
+                            </strong>
+                            {key.websites.map((website) => (
                                 <a
+                                    key={website.name}
                                     href={website.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-link underline-anim"
+                                    style={{ marginLeft: "0.5rem" }}
                                 >
                                     {website.name}
                                 </a>
-                            </p>
-                        ))}
+                            ))}
+                        </p>
+                    )}
                     {key.repo && (
                         <p
                             style={{

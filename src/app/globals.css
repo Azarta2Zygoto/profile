@@ -1,6 +1,29 @@
 @import "tailwindcss";
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+@theme {
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+    from {
+        height: 0;
+    }
+    to {
+        height: var(--radix-accordion-content-height);
+    }
+}
+
+@keyframes accordion-up {
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+    to {
+        height: 0;
+    }
+}
+
 :root {
     --bg: #ffffff;
     --fg: #171717;
@@ -470,6 +493,29 @@ nav {
     gap: 1rem;
     margin-bottom: 0.5rem;
 }
+.list-items {
+    margin: 0.5rem 0 0 1.5rem;
+    padding: 0;
+    list-style-type: disc;
+}
+.open-accordeon {
+    padding: 0 clamp(0.5rem, 1vw, 1rem);
+    cursor: pointer;
+    max-width: fit-content;
+}
+.open-accordeon-text {
+    color: var(--color-text-special);
+    font-style: italic;
+    text-decoration: underline dotted;
+}
+.open-accordeon-text:hover {
+    text-decoration: underline dotted !important;
+}
+.in-accordeon {
+    padding: 0.5rem;
+    border-left: 3px solid var(--color-special);
+}
+
 @media (max-width: 768px) {
     .bar-container {
         display: none;
