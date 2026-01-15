@@ -1,13 +1,14 @@
-import { JSX } from "react";
+import { CSSProperties, JSX } from "react";
 
 import color from "@/data/language-color.json";
 import type { ColorScheme } from "@/data/types";
+import { cn } from "@/lib/utils";
 
 interface BoxProps {
     name: string;
     primary?: boolean;
     className?: string;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
 }
 
 export default function Box({
@@ -19,7 +20,7 @@ export default function Box({
     const langColor = (color as { [key: string]: ColorScheme })[name];
     return (
         <span
-            className={`box ${className ? className : ""}`}
+            className={cn("box", className)}
             style={{
                 ...style,
                 backgroundColor:

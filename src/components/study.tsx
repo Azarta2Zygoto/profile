@@ -5,15 +5,16 @@ import Link from "next/link";
 import { Fragment, JSX } from "react";
 
 import { Website } from "@/data/svg";
-import type { ProjectType, StudyType } from "@/data/types";
+import type { Locale, ProjectType, StudyType } from "@/data/types";
 
 import Box from "./personal/box";
 
 interface StudyProps {
+    locale: Locale;
     languages?: { label: string; value: string }[];
 }
 
-export default function Study({ languages }: StudyProps): JSX.Element {
+export default function Study({ locale, languages }: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
     const studyContent = (t.raw("studyContent") as Array<StudyType>)
         .filter((study) => {
@@ -34,6 +35,26 @@ export default function Study({ languages }: StudyProps): JSX.Element {
             }),
         }));
     const projectContent = t.raw("projectContent") as Array<ProjectType>;
+
+    if (studyContent.length === 0) {
+        return (
+            <section>
+                <h2 className="h2-primary">{t("no-study-found")}</h2>
+                <p>
+                    {t.rich("no-study-found-desc", {
+                        link: (chunks) => (
+                            <Link
+                                href={`/${locale}/project`}
+                                className="outside-link"
+                            >
+                                {chunks}
+                            </Link>
+                        ),
+                    })}
+                </p>
+            </section>
+        );
+    }
 
     return (
         <section>

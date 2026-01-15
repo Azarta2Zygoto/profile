@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { JSX } from "react";
 
 import { Switch } from "@/components/ui/switch";
@@ -7,24 +8,16 @@ import { Switch } from "@/components/ui/switch";
 import { useGlobal } from "../globalProvider";
 
 export default function ThemeSwitch(): JSX.Element {
+    const t = useTranslations("ThemeSwitch");
     const { theme, setTheme } = useGlobal();
 
-    function onToggle(isDark: boolean) {
-        console.log("Toggling theme", isDark);
-        const newTheme = isDark ? "dark" : "light";
-        setTheme(newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-    }
-
     return (
-        <div className="theme-switch-container">
-            <Switch
-                checked={theme === "dark"}
-                onCheckedChange={onToggle}
-                className="theme-switch"
-                symbol={theme === "dark" ? "🌙" : "☀️"}
-            />
-        </div>
+        <Switch
+            checked={theme === "dark"}
+            onCheckedChange={(isDark) => setTheme(isDark ? "dark" : "light")}
+            className="theme-switch"
+            aria-label={t("switch")}
+            symbol={theme === "dark" ? "🌙" : "☀️"}
+        />
     );
 }

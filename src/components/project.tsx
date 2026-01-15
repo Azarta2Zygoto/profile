@@ -24,6 +24,15 @@ export default function Project({ languages }: ProjectProps): JSX.Element {
     });
     const studyContent = t.raw("studyContent") as Array<StudyType>;
 
+    if (projectContent.length === 0) {
+        return (
+            <section>
+                <h2 className="h2-primary">{t("no-project-found")}</h2>
+                <p>{t.rich("no-project-found-desc")}</p>
+            </section>
+        );
+    }
+
     return (
         <section>
             {projectContent.map((key, index) => (
@@ -79,7 +88,7 @@ export default function Project({ languages }: ProjectProps): JSX.Element {
                                     href={website.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="outside-link"
+                                    className="inline-link underline-anim"
                                 >
                                     {website.name}
                                 </a>

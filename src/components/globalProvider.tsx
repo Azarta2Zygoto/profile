@@ -33,6 +33,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
     }, [theme]);
 
     return (

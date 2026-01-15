@@ -1,12 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX } from "react";
 
 import FlagSelectMenu from "@/components/personal/flagSelectMenu";
 import ThemeSwitch from "@/components/personal/themeSwitch";
+import { base_path } from "@/data/env";
 import locales_json from "@/data/locales.json";
 import path from "@/data/path.json";
 
@@ -24,9 +26,16 @@ interface HeaderProps {
 export default function Header({ locale }: HeaderProps): JSX.Element {
     const t = useTranslations("Header");
     const pathname = usePathname();
+
     return (
-        <header>
-            <span></span>
+        <header role="banner">
+            <Image
+                src={base_path + "logo.svg"}
+                alt={t("alt-logo")}
+                className="img-logo"
+                width={40}
+                height={40}
+            />
             <nav>
                 {Object.entries(path).map(([key, route], index) => (
                     <Link

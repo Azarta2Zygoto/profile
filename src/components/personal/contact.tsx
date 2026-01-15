@@ -1,12 +1,12 @@
 "use client";
 
-import { JSX } from "react";
+import { JSX, type ReactNode } from "react";
 
 import data from "@/data/personal_data.json";
 import { Github, Gmail, Linkedin } from "@/data/svg";
 
 interface ContactProps {
-    children?: React.ReactNode;
+    children?: ReactNode;
 }
 
 export default function Contact({ children }: ContactProps): JSX.Element {

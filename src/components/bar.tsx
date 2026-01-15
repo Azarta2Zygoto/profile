@@ -17,14 +17,11 @@ export default function Bar() {
                 src={base_path + "photo.jpg"}
                 alt={t("alt-profile-picture")}
                 className="img-profile"
-                width={416}
+                width={516}
                 height={516}
             />
-            <h2
-                className="h2-primary"
-                style={{ textAlign: "center" }}
-            >
-                {data.prenom} {data.nom}
+            <h2 className="h2-primary text-center">
+                {data.prenom + " " + data.nom}
             </h2>
             <Contact>
                 <li>{t("student") + data.job}</li>

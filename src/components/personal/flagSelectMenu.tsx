@@ -37,30 +37,28 @@ export default function FlagSelectMenu({
                 {chooseFlag(selectedOption)}
                 <i className={`bi bi-caret-${isOpen ? "down" : "up"}-fill`} />
             </PopoverTrigger>
-            <PopoverContent>
-                <div className="select-menu-options">
-                    {options.map((option, i) => (
-                        <Link
-                            key={i}
-                            href={`/${typeof option === "string" ? option : option.value}/${pathname.split("/").slice(2).join("/")}`}
-                            className={`btn btn-ghost ${
-                                selectedOption ===
-                                (typeof option === "string"
-                                    ? option
-                                    : option.value.toString())
-                                    ? "btn-selected"
-                                    : ""
-                            }`}
-                        >
-                            {chooseFlag(
-                                typeof option === "string"
-                                    ? option
-                                    : option.value.toString(),
-                            )}
-                            {typeof option === "string" ? option : option.label}
-                        </Link>
-                    ))}
-                </div>
+            <PopoverContent className="select-menu-options">
+                {options.map((option, i) => (
+                    <Link
+                        key={i}
+                        href={`/${typeof option === "string" ? option : option.value}/${pathname.split("/").slice(2).join("/")}`}
+                        className={`btn btn-ghost ${
+                            selectedOption ===
+                            (typeof option === "string"
+                                ? option
+                                : option.value.toString())
+                                ? "btn-selected"
+                                : ""
+                        }`}
+                    >
+                        {chooseFlag(
+                            typeof option === "string"
+                                ? option
+                                : option.value.toString(),
+                        )}
+                        {typeof option === "string" ? option : option.label}
+                    </Link>
+                ))}
             </PopoverContent>
         </Popover>
     );

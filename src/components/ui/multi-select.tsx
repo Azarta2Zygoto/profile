@@ -1007,6 +1007,9 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                         <div
                                                             role="button"
                                                             tabIndex={0}
+                                                            style={{
+                                                                cursor: "pointer",
+                                                            }}
                                                             onClick={(
                                                                 event,
                                                             ) => {

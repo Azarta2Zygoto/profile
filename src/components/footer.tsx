@@ -8,7 +8,10 @@ import Contact from "./personal/contact";
 export default function Footer(): JSX.Element {
     const t = useTranslations("Footer");
     return (
-        <footer className="footer-container">
+        <footer
+            className="footer-container"
+            role="contentinfo"
+        >
             <div className="contact">
                 <p>{t("contact-me")}</p>
                 <Contact />
