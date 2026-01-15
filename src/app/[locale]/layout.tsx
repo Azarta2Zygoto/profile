@@ -44,7 +44,7 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             url: "/",
-            images: "/logo-128.svg",
+            images: "/logo-128.png",
             type: "website",
             siteName: t("Metadata.siteName"),
             locale: "fr_FR",
@@ -55,7 +55,7 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             creator: "@QuentinPotiron",
             description: t("Metadata.description"),
-            images: "/logo-128.svg",
+            images: "/logo-128.png",
         },
     };
 }
