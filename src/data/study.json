@@ -23,8 +23,14 @@
                 "projects": ["conference"]
             },
             {
-                "id": "DataAnalysis",
-                "tools": ["Pandas", "NumPy", "Scikit-learn", "Networkx"],
+                "id": "DataScience",
+                "tools": [
+                    "Pandas",
+                    "NumPy",
+                    "Scikit-learn",
+                    "Networkx",
+                    "Seaborn"
+                ],
                 "languages": ["Python"],
                 "projects": ["moteur-recherche"]
             },
@@ -39,6 +45,26 @@
                 "tools": ["Qt"],
                 "languages": ["C++"],
                 "projects": ["2048-qt"]
+            },
+            {
+                "id": "IA-introduction",
+                "tools": ["TensorFlow", "PyTorch"],
+                "languages": ["Python"]
+            },
+            {
+                "id": "reseaux",
+                "tools": [],
+                "languages": []
+            },
+            {
+                "id": "cybersecu",
+                "tools": [],
+                "languages": []
+            },
+            {
+                "id": "BigData",
+                "tools": ["MongoDB", "Hadoop", "Spark"],
+                "languages": []
             }
         ]
     },
@@ -55,7 +81,7 @@
         "locales": ["en"],
         "lessons": [
             {
-                "id": "DataViz",
+                "id": "DataAnalysis",
                 "tools": ["OLAP", "Dash", "Numpy", "Plotly", "Networkx"],
                 "languages": ["Python"],
                 "projects": ["data-dash"]

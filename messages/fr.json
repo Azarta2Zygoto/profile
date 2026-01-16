@@ -27,7 +27,7 @@
                     "name": "Base de données relationnelles",
                     "description": "Étude des concepts de bases de données relationnelles, leur optimisation (formes normales) et leur manipulation via le langage SQL."
                 },
-                "DataAnalysis": {
+                "DataScience": {
                     "name": "Analyse de données",
                     "description": "Introduction aux concepts de l'analyse de données : nettoyage, exploration (clustering), visualisation et modélisation prédictive incluant du machine learning."
                 },
@@ -38,16 +38,32 @@
                 "CppGui": {
                     "name": "Programmation des interfaces graphiques en C++",
                     "description": "Apprentissage du langage C++ et de la bibliothèque Qt pour le développement d'interfaces graphiques."
+                },
+                "IA-introduction": {
+                    "name": "Apprentissage profond & Intelligence Artificielle : une introduction",
+                    "description": "Introduction aux concepts de base de l'intelligence artificielle, incluant les réseaux de neurones et l'apprentissage profond avec TensorFlow et PyTorch."
+                },
+                "reseaux": {
+                    "name": "Réseaux informatiques",
+                    "description": "Étude des principes des 7 couches de la norme OSI, des protocoles réseaux et de la communication entre machines."
+                },
+                "cybersecu": {
+                    "name": "Cybersécurité",
+                    "description": "Introduction aux concepts de la cybersécurité, des menaces courantes aux techniques de prévention, défense en passant par les bonnes pratiques de sécurisation des systèmes informatiques."
+                },
+                "BigData": {
+                    "name": "Technologies informatiques du Big Data",
+                    "description": "Étude des technologies et outils liés au Big Data, incluant Hadoop et Spark, pour le traitement de grandes quantités de données."
                 }
             }
         },
         "univ": {
-            "title": "Master en Traitement de l'informatique et du web",
+            "title": "Master en Traitement de l'Informatique et du Web",
             "description": "Formation axée sur la science des données, couvrant la visualisation de données, le Big Data, et les techniques d'analyse de données.",
             "lessons": {
-                "DataViz": {
-                    "name": "Visualisation de données",
-                    "description": "Création d'une interface utilisateur interactive pour visualiser et analyser un grand ensemble de données."
+                "DataAnalysis": {
+                    "name": "Analyse de Données",
+                    "description": "Traitements de données complexes ayant pour but d'être analyser puis visualiser. Création d'une interface utilisateur interactive pour visualiser et analyser un grand ensemble de données."
                 },
                 "BigData": {
                     "name": "Big Data",

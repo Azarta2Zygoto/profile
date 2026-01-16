@@ -47,6 +47,7 @@ export default function StudyPage({
             <Study
                 languages={languages}
                 locale={locale}
+                total={languagesOptions.length}
             />
         </div>
     );

@@ -5,26 +5,29 @@ import Image from "next/image";
 import { Fragment, JSX } from "react";
 
 import { base_path } from "@/data/env";
+import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
 import { Website } from "@/data/svg";
-import type { Locale, ProjectType, StudyType } from "@/data/types";
+import type { Locale, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
 
 import Box from "./personal/box";
 
 interface StudyProps {
     locale: string;
-    languages?: { label: string; value: string }[];
+    total: number;
+    languages: { label: string; value: string }[];
 }
 
 export default function Study({
     locale = "fr",
+    total,
     languages,
 }: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
-    const studyContent = studyData
+    const studyContent = (studyData as StudyType[])
         .filter((study) => {
-            if (!languages || languages.length === 0) return true;
+            if (languages.length === 0) return true;
             return study.lessons.some((lesson) =>
                 lesson.languages.some((lang) =>
                     languages.map((l) => l.value).includes(lang),
@@ -34,13 +37,17 @@ export default function Study({
         .map((study) => ({
             ...study,
             lessons: study.lessons.filter((lesson) => {
-                if (!languages || languages.length === 0) return true;
+                if (languages.length === 0) return true;
+                if (
+                    (languages.length === 0 || languages.length === total) &&
+                    lesson.languages.length === 0
+                )
+                    return true;
                 return lesson.languages.some((lang) =>
                     languages.map((l) => l.value).includes(lang),
                 );
             }),
         })) as StudyType[];
-    const projectContent = t.raw("projectContent") as Array<ProjectType>;
 
     if (studyContent.length === 0) {
         return (
@@ -157,7 +164,7 @@ export default function Study({
                                                     href={`/project#${project}`}
                                                     className="inline-link underline-anim"
                                                 >
-                                                    {projectContent.find(
+                                                    {projectData.find(
                                                         (p) => p.id === project,
                                                     )?.name || project}
                                                 </Link>
