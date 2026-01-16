@@ -342,6 +342,9 @@ p {
     background-color: var(--color-special);
     width: 1.5rem;
     height: 1.5rem;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
 }
 .box {
     width: max-content;
@@ -369,7 +372,7 @@ p {
 .container-study-card:hover {
     box-shadow: 0 4px 8px var(--selected-bg);
     border-color: var(--color-special-shadow);
-    transform: rotate(-0.5deg);
+    transform: scale(1.01);
 }
 nav {
     display: flex;
@@ -504,6 +507,7 @@ nav {
     max-width: fit-content;
 }
 .open-accordeon-text {
+    margin: 0.2rem;
     color: var(--color-text-special);
     font-style: italic;
     text-decoration: underline dotted;
@@ -512,6 +516,7 @@ nav {
     text-decoration: underline dotted !important;
 }
 .in-accordeon {
+    margin-top: 0.5rem;
     padding: 0.5rem;
     border-left: 3px solid var(--color-special);
 }
