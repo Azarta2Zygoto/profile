@@ -1114,7 +1114,11 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                             className="flex min-h-6 h-full"
                                         />
                                         <ChevronDown
-                                            className="h-4 mx-2 cursor-pointer text-muted-foreground"
+                                            className={`h-4 mx-2 cursor-pointer text-muted-foreground transition-transform duration-200 ${
+                                                isPopoverOpen
+                                                    ? "rotate-180"
+                                                    : ""
+                                            }`}
                                             aria-hidden="true"
                                         />
                                     </div>
@@ -1124,7 +1128,12 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                     <span className="text-sm text-muted-foreground mx-3 truncate-text">
                                         {t("select")}
                                     </span>
-                                    <ChevronDown className="h-4 cursor-pointer text-muted-foreground mx-2" />
+                                    <ChevronDown
+                                        className={`h-4 mx-2 cursor-pointer text-muted-foreground transition-transform duration-200 ${
+                                            isPopoverOpen ? "rotate-180" : ""
+                                        }`}
+                                        aria-hidden="true"
+                                    />
                                 </div>
                             )}
                         </Button>

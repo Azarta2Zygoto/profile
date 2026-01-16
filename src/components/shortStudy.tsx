@@ -20,7 +20,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
             {studyContent.map((key, index) => (
                 <div
                     key={index}
-                    className="container-study-card"
+                    className="container-card"
                 >
                     <h3 className="h3-primary">
                         {key.name} - {key.title}

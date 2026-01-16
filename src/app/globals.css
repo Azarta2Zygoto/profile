@@ -24,6 +24,37 @@
     }
 }
 
+/* Popover animations */
+@keyframes popover-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popover-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+[data-state="open"][data-slot="popover-content"] {
+    animation: popover-in 0.2s ease-out;
+}
+
+[data-state="closed"][data-slot="popover-content"] {
+    animation: popover-out 0.15s ease-in;
+}
+
 :root {
     --bg: #ffffff;
     --fg: #171717;
@@ -271,13 +302,6 @@ p {
 .btn.btn-ghost:hover {
     background: var(--hover-bg);
 }
-.btn.btn-select {
-    padding-right: 25px;
-}
-.btn.btn-select i {
-    position: absolute;
-    right: 5px;
-}
 .btn.btn-ghost i {
     position: absolute;
     right: 5px;
@@ -289,6 +313,10 @@ p {
 .inline-link {
     color: var(--color-text-special);
     font-style: italic;
+}
+.inline-link:focus-visible {
+    border: none;
+    outline: none;
 }
 .outside-link {
     color: var(--color-text-special);
@@ -357,22 +385,6 @@ p {
     user-select: none;
     -webkit-user-drag: none;
     -moz-user-select: none;
-}
-.container-study-card {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem 0;
-    box-shadow: 0 2px 4px var(--selected-bg);
-    transition:
-        box-shadow 0.3s,
-        border-color 0.3s,
-        transform 0.5s;
-}
-.container-study-card:hover {
-    box-shadow: 0 4px 8px var(--selected-bg);
-    border-color: var(--color-special-shadow);
-    transform: scale(1.01);
 }
 nav {
     display: flex;
@@ -450,18 +462,20 @@ nav {
     padding-left: 1rem;
     margin: 1rem;
 }
-.project-container {
+.container-card {
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     margin: 1rem 0;
     transition:
         border-color 0.3s,
-        box-shadow 0.3s;
+        box-shadow 0.3s,
+        transform 0.5s;
 }
-.project-container:hover {
+.container-card:hover {
     border-color: var(--color-special-shadow);
     box-shadow: 0 4px 8px var(--selected-bg);
+    transform: scale(1.01);
 }
 
 .multiple-select {

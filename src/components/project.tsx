@@ -14,14 +14,15 @@ interface ProjectProps {
 }
 
 export default function Project({ projectContent }: ProjectProps): JSX.Element {
+    const tProject = useTranslations("ProjectPage");
     const t = useTranslations("HomePage");
     const studyContent = t.raw("studyContent") as Array<StudyType>;
 
     if (projectContent.length === 0) {
         return (
             <section>
-                <h2 className="h2-primary">{t("no-project-found")}</h2>
-                <p>{t.rich("no-project-found-desc")}</p>
+                <h2 className="h2-primary">{tProject("no-project-found")}</h2>
+                <p>{tProject("no-project-found-desc")}</p>
             </section>
         );
     }
@@ -31,7 +32,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
             {projectContent.map((key, index) => (
                 <div
                     key={index}
-                    className="project-container"
+                    className="container-card"
                 >
                     {key.study ? (
                         <h3

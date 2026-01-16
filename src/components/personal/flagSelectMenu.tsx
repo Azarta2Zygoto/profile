@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useState } from "react";
 
+import { ChevronDownIcon } from "lucide-react";
+
 import {
     Popover,
     PopoverContent,
@@ -29,13 +31,16 @@ export default function FlagSelectMenu({
             onOpenChange={setIsOpen}
         >
             <PopoverTrigger
-                className="btn btn-select"
+                className="btn"
                 id="locale-select-menu"
                 onClick={() => setIsOpen(!isOpen)}
                 style={{ height: "40px" }}
             >
                 {chooseFlag(selectedOption)}
-                <i className={`bi bi-caret-${isOpen ? "down" : "up"}-fill`} />
+                <ChevronDownIcon
+                    className={`pointer-events-none size-4 translate-y-0.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    style={{ marginBottom: "4px" }}
+                />
             </PopoverTrigger>
             <PopoverContent className="select-menu-options">
                 {options.map((option, i) => (
