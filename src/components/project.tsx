@@ -1,10 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { JSX } from "react";
 
+import studyData from "@/data/study.json";
 import { Github } from "@/data/svg";
-import type { ProjectType, StudyType } from "@/data/types";
+import type { ProjectType } from "@/data/types";
 
 import Accordeon from "./personal/accordeon";
 import Box from "./personal/box";
@@ -14,18 +15,8 @@ interface ProjectProps {
 }
 
 export default function Project({ projectContent }: ProjectProps): JSX.Element {
-    const tProject = useTranslations("ProjectPage");
+    const format = useFormatter();
     const t = useTranslations("HomePage");
-    const studyContent = t.raw("studyContent") as Array<StudyType>;
-
-    if (projectContent.length === 0) {
-        return (
-            <section>
-                <h2 className="h2-primary">{tProject("no-project-found")}</h2>
-                <p>{tProject("no-project-found-desc")}</p>
-            </section>
-        );
-    }
 
     return (
         <section>
@@ -40,7 +31,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             id={key.id}
                         >
                             {key.name} -{" "}
-                            {studyContent.find((s) => s.id === key.study)?.name}
+                            {studyData.find((s) => s.id === key.study)?.name}
                         </h3>
                     ) : (
                         <h3
@@ -50,37 +41,66 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             {key.name}
                         </h3>
                     )}
-                    <p>{key.period}</p>
+                    <p style={{ textTransform: "capitalize" }}>
+                        {key.period.in &&
+                            format.dateTime(new Date(key.period.in), {
+                                year: "numeric",
+                                month: "long",
+                            })}
+                        {key.period.start &&
+                            key.period.end &&
+                            `${format.dateTime(new Date(key.period.start), {
+                                year: "numeric",
+                                month: "long",
+                            })} - ${format.dateTime(new Date(key.period.end), {
+                                year: "numeric",
+                                month: "long",
+                            })}`}
+                    </p>
                     {key.commanditaire && (
                         <p>
                             <strong>{t("commanditaire")}</strong>
                             {key.commanditaire}
                         </p>
                     )}
-                    <p style={{ margin: "1rem 0" }}>{key.description}</p>
-                    {key.paragraph && (
+                    <p style={{ margin: "1rem 0" }}>
+                        {t(`projectsContent.${key.id}.description`)}
+                    </p>
+                    {t.has(`projectsContent.${key.id}.paragraph`) && (
                         <Accordeon
                             items={{
                                 title: t("see-more"),
                                 content: (
                                     <div>
-                                        {key.paragraph &&
-                                            key.paragraph.text && (
-                                                <p>{key.paragraph.text}</p>
-                                            )}
-                                        {key.paragraph &&
-                                            key.paragraph.li &&
-                                            key.paragraph.li.length > 0 && (
-                                                <ul className="list-items">
-                                                    {key.paragraph.li.map(
-                                                        (item, idx) => (
+                                        {t.has(
+                                            `projectsContent.${key.id}.paragraph.text`,
+                                        ) && (
+                                            <p>
+                                                {t(
+                                                    `projectsContent.${key.id}.paragraph.text`,
+                                                )}
+                                            </p>
+                                        )}
+                                        {t.has(
+                                            `projectsContent.${key.id}.paragraph.li`,
+                                        ) && (
+                                            <ul className="list-items">
+                                                {t
+                                                    .raw(
+                                                        `projectsContent.${key.id}.paragraph.li`,
+                                                    )
+                                                    .map(
+                                                        (
+                                                            item: string,
+                                                            idx: number,
+                                                        ) => (
                                                             <li key={idx}>
                                                                 {item}
                                                             </li>
                                                         ),
                                                     )}
-                                                </ul>
-                                            )}
+                                            </ul>
+                                        )}
                                     </div>
                                 ),
                             }}
@@ -90,7 +110,9 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                         className="rows"
                         style={{ margin: "1rem 0" }}
                     >
-                        <strong>{t("languages")}</strong>
+                        <strong>
+                            {t("languages", { count: key.languages.length })}
+                        </strong>
                         {key.languages.map((lang) => (
                             <Box
                                 name={lang}

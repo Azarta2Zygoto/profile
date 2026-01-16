@@ -6,6 +6,7 @@ import { Fragment, JSX, useState } from "react";
 import Project from "@/components/project";
 import { MultiSelect } from "@/components/ui/multi-select";
 import language_json from "@/data/language-color.json";
+import projectDate from "@/data/project.json";
 import type { ProjectType } from "@/data/types";
 
 const languagesOptions: { label: string; value: string }[] = Object.keys(
@@ -17,13 +18,12 @@ const languagesOptions: { label: string; value: string }[] = Object.keys(
 
 export default function ProjectPage(): JSX.Element {
     const t = useTranslations("ProjectPage");
-    const tHome = useTranslations("HomePage");
 
-    const constLargeProjectContent = (
-        tHome.raw("projectContent") as Array<ProjectType>
-    ).filter((project) => project.large);
+    const constLargeProjectContent = (projectDate as Array<ProjectType>).filter(
+        (project) => project.large,
+    );
     const constLittleProjectContent = (
-        tHome.raw("projectContent") as Array<ProjectType>
+        projectDate as Array<ProjectType>
     ).filter((project) => !project.large);
 
     const [largeProjectContent, setLargeProjectContent] = useState<

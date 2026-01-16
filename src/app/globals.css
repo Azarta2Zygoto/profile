@@ -201,7 +201,7 @@ img {
 }
 
 .page-container {
-    max-width: 70vw;
+    max-width: 65vw;
     padding: 1rem 2.5rem;
 }
 .inline-icon {
@@ -251,6 +251,15 @@ li {
 .h4-primary {
     display: inline-block;
     font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-top: 0.5rem;
+    text-align: left;
+}
+.h4-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
     margin-top: 0.5rem;
     text-align: left;
 }
@@ -466,6 +475,7 @@ nav {
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
+    max-width: 900px;
     margin: 1rem 0;
     transition:
         border-color 0.3s,
@@ -534,7 +544,24 @@ nav {
     padding: 0.5rem;
     border-left: 3px solid var(--color-special);
 }
-
+.other-logo {
+    min-height: 45px;
+    min-width: 45px;
+    height: 45px;
+    object-fit: contain;
+    width: auto;
+    padding: 5px;
+    margin: 0.5rem;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 8px;
+}
+.icon-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
 @media (max-width: 768px) {
     .bar-container {
         display: none;
@@ -552,5 +579,16 @@ nav {
     }
     .img-logo {
         display: none;
+    }
+}
+@media (max-width: 480px) {
+    .icon-title {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .other-logo {
+        min-height: 60px;
+        min-width: 60px;
+        height: 60px;
     }
 }

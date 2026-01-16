@@ -2,19 +2,19 @@
     "HomePage": {
         "title": "Welcome to my profile",
         "introduction": "I am currently a third-year student at <link>Centrale Lyon</link>. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization...",
-        "study": "Studies",
+        "study": "My Studies",
         "tools": "Toolbox: ",
         "projects": "Projects",
         "desc-projects": "Here are some projects carried out during my studies and in my free time.",
-        "projects-link": "Related projects: ",
+        "projects-link": "Related {count, plural, =1 {Project} other {Projects}}: ",
         "other-languages": "Other languages used: ",
         "commanditaire": "Client: ",
-        "languages": "Languages: ",
+        "languages": "{count, plural, =1 {Language} other {Languages}} used: ",
         "see-more": "See more information",
         "some-lessons": "Some courses taken:",
         "visit-website": "Visit {count, plural, =1 {the website} other {the websites}} : ",
         "no-study-found": "No study found.",
-        "no-study-found-desc": "No study has taught me this language, please check <link>projects</link> to see those related to this language.",
+        "no-study-found-desc": "No study has taught me this language. Please check <link>projects</link> to see those related to this language.",
         "studyContent": [
             {
                 "id": "centrale",

@@ -6,35 +6,59 @@ export type Themes = "light" | "dark";
 export interface StudyType {
     id: string;
     name: string;
-    title: string;
-    description: string;
-    period: string;
     city: string;
-    link?: string;
+    link: string;
+    logo?: string;
+    locales: Locale[];
+    period: {
+        start: string;
+        end: string;
+    };
     lessons: LessonType[];
 }
 
 export interface LessonType {
-    name: string;
-    description: string;
+    id: string;
+    link?: string;
     tools: string[];
     languages: string[];
     projects?: string[];
 }
 
+export interface StudyDetailType {
+    title: string;
+    description: string;
+    lessons: {
+        [id: string]: {
+            name: string;
+            description: string;
+        };
+    };
+}
+
 export interface ProjectType {
     id: string;
+    large?: boolean;
     name: string;
-    description: string;
     commanditaire?: string;
-    period: string;
+    period: {
+        start?: string;
+        end?: string;
+        in?: string;
+    };
     study?: string;
-    websites?: { name: string; url: string }[];
-    repo?: string;
-    paragraph?: { text?: string; li?: string[] };
     languages: string[];
     tools: string[];
-    large: boolean;
+    websites?: { name: string; url: string }[];
+    repo?: string;
+}
+
+export interface ProjectDetailType {
+    description: string;
+    paragraph?: {
+        text: string;
+        li: string[];
+    };
 }
 
 export interface ColorScheme {

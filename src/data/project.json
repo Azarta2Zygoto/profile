@@ -1,0 +1,86 @@
+[
+    {
+        "id": "jeu-inclusif",
+        "name": "Inclusif : le jeu",
+        "commanditaire": "Métropole de Lyon",
+        "study": "centrale",
+        "large": true,
+        "period": {
+            "start": "2024-10-01",
+            "end": "2025-04-30"
+        },
+        "languages": ["Angular", "TypeScript", "HTML", "CSS"],
+        "websites": [
+            {
+                "name": "Inclusif : le jeu",
+                "url": "https://inclusivite-resin.grandlyon.com/jeu-en-ligne/accueil"
+            },
+            {
+                "name": "Quiz Inclusif : le jeu",
+                "url": "https://inclusivite-resin.grandlyon.com/quiz/accueil"
+            },
+            {
+                "name": "Auto-évaluation d'inclusivité",
+                "url": "https://inclusivite-resin.grandlyon.com/autoevaluation/accueil"
+            }
+        ],
+        "tools": ["Scrum", "Figma", "UX/UI Design", "Git"]
+    },
+    {
+        "id": "challenger",
+        "name": "Le Challenger",
+        "commanditaire": "Association étudiante Challenge - Centrale Lyon",
+        "study": "centrale",
+        "large": true,
+        "period": {
+            "start": "2023-10-01",
+            "end": "2024-06-30"
+        },
+        "languages": ["PHP", "SQL", "HTML", "CSS"],
+        "tools": ["MariaDB", "Git", "UX/UI Design", "Docker"]
+    },
+    {
+        "id": "miss-hestia",
+        "name": "Site vitrine - Miss Hestia",
+        "period": {
+            "in": "2025-10-01"
+        },
+        "languages": ["React", "TypeScript", "HTML", "CSS"],
+        "tools": ["NEXT.JS"],
+        "websites": [
+            {
+                "name": "Miss Hestia - Artiste peintre",
+                "url": "https://azarta2zygoto.github.io/miss-hestia/"
+            }
+        ]
+    },
+    {
+        "id": "conference",
+        "name": "Système de gestion de conférences",
+        "study": "centrale",
+        "period": {
+            "start": "2024-10-01",
+            "end": "2024-12-31"
+        },
+        "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
+        "tools": ["SQLite", "Flask", "NEXT.JS"]
+    },
+    {
+        "id": "data-dash",
+        "name": "Application de visualisation de données",
+        "study": "univ",
+        "period": {
+            "start": "2024-10-01",
+            "end": "2024-11-30"
+        },
+        "languages": ["Python"],
+        "tools": ["Clustering", "Dash", "Plotly", "Pandas"],
+        "websites": [
+            {
+                "name": "Covid Dashboard",
+                "url": "https://azarta2zygoto.github.io/dashboard-covid/"
+            }
+        ],
+        "repo": "https://github.com/Azarta2Zygoto/dashboard-covid"
+    }
+]

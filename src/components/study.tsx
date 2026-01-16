@@ -1,21 +1,28 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Fragment, JSX } from "react";
 
+import { base_path } from "@/data/env";
+import studyData from "@/data/study.json";
 import { Website } from "@/data/svg";
-import type { ProjectType, StudyType } from "@/data/types";
+import type { Locale, ProjectType, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
 
 import Box from "./personal/box";
 
 interface StudyProps {
+    locale: string;
     languages?: { label: string; value: string }[];
 }
 
-export default function Study({ languages }: StudyProps): JSX.Element {
+export default function Study({
+    locale = "fr",
+    languages,
+}: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
-    const studyContent = (t.raw("studyContent") as Array<StudyType>)
+    const studyContent = studyData
         .filter((study) => {
             if (!languages || languages.length === 0) return true;
             return study.lessons.some((lesson) =>
@@ -32,7 +39,7 @@ export default function Study({ languages }: StudyProps): JSX.Element {
                     languages.map((l) => l.value).includes(lang),
                 );
             }),
-        }));
+        })) as StudyType[];
     const projectContent = t.raw("projectContent") as Array<ProjectType>;
 
     if (studyContent.length === 0) {
@@ -62,31 +69,48 @@ export default function Study({ languages }: StudyProps): JSX.Element {
                     key={index}
                     className="large-study-container"
                 >
-                    <h3
-                        className="h3-primary"
-                        id={key.id}
-                    >
-                        {key.name} - {key.title}
+                    <div className="icon-title">
+                        <h3 className="h4-secondary">
+                            {key.name} - {t(`${key.id}.title`)}
+                        </h3>
                         {key.link && (
                             <Link
-                                href={key.link}
+                                href={
+                                    key.link +
+                                    (key.locales?.includes(locale as Locale)
+                                        ? `/${locale}`
+                                        : "")
+                                }
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="external-link"
                             >
-                                <Website />
+                                {key.logo ? (
+                                    <Image
+                                        src={`${base_path}logo/${key.logo}`}
+                                        alt={`${key.name} logo`}
+                                        width={30}
+                                        height={30}
+                                        className="other-logo"
+                                    />
+                                ) : (
+                                    <Website />
+                                )}
                             </Link>
                         )}
-                    </h3>
-                    <p>{key.period}</p>
-                    <p>{key.description}</p>
+                    </div>
+                    <p>
+                        {key.period.start + " - " + key.period.end} →{" "}
+                        {key.city + ", France"}
+                    </p>
+                    <p>{t(`${key.id}.description`)}</p>
                     {key.lessons.map((lesson, lessonIndex) => (
                         <div
                             key={lessonIndex}
                             className="sub-study-container"
                         >
                             <h4 className="h4-primary">
-                                {lesson.name} :
+                                {t(`${key.id}.lessons.${lesson.id}.name`)} :
                                 {lesson.languages.length > 0 && (
                                     <Box
                                         name={lesson.languages[0]}
@@ -95,7 +119,9 @@ export default function Study({ languages }: StudyProps): JSX.Element {
                                 )}
                             </h4>
                             <p style={{ marginBottom: "0.5rem" }}>
-                                {lesson.description}
+                                {t(
+                                    `${key.id}.lessons.${lesson.id}.description`,
+                                )}
                             </p>
 
                             {lesson.tools.length > 0 && (
@@ -119,7 +145,11 @@ export default function Study({ languages }: StudyProps): JSX.Element {
                             )}
                             {lesson.projects && lesson.projects.length > 0 && (
                                 <p>
-                                    <strong>{t("projects-link")}</strong>
+                                    <strong>
+                                        {t("projects-link", {
+                                            count: lesson.projects.length,
+                                        })}
+                                    </strong>
                                     {lesson.projects.map(
                                         (project, projIndex) => (
                                             <Fragment key={project}>

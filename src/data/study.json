@@ -1,0 +1,99 @@
+[
+    {
+        "id": "centrale",
+        "name": "Centrale Lyon",
+        "city": "Lyon",
+        "link": "https://www.ec-lyon.fr",
+        "logo": "2024_LOGO-CENTRALE-H_ROUGE_RVB.png",
+        "locales": ["en"],
+        "period": {
+            "start": "2023",
+            "end": "Présent"
+        },
+        "lessons": [
+            {
+                "id": "Visualisation",
+                "tools": ["D3.js", "Tableau", "Observablehq"],
+                "languages": ["JavaScript"]
+            },
+            {
+                "id": "Database",
+                "tools": ["SQLite"],
+                "languages": ["SQL", "Python"],
+                "projects": ["conference"]
+            },
+            {
+                "id": "DataAnalysis",
+                "tools": ["Pandas", "NumPy", "Scikit-learn", "Networkx"],
+                "languages": ["Python"],
+                "projects": ["moteur-recherche"]
+            },
+            {
+                "id": "WebApps",
+                "tools": ["Socket.io", "express.js"],
+                "languages": ["JavaScript", "HTML", "CSS"],
+                "projects": ["jeu-dame"]
+            },
+            {
+                "id": "CppGui",
+                "tools": ["Qt"],
+                "languages": ["C++"],
+                "projects": ["2048-qt"]
+            }
+        ]
+    },
+    {
+        "id": "univ",
+        "name": "Université Claude Bernard Lyon 1",
+        "city": "Lyon",
+        "link": "https://www.univ-lyon1.fr",
+        "logo": "LogoLyon1Sig_CoulCmjn300dpi.png",
+        "period": {
+            "start": "2025",
+            "end": "Present"
+        },
+        "locales": ["en"],
+        "lessons": [
+            {
+                "id": "DataViz",
+                "tools": ["OLAP", "Dash", "Numpy", "Plotly", "Networkx"],
+                "languages": ["Python"],
+                "projects": ["data-dash"]
+            },
+            {
+                "id": "BigData",
+                "link": "https://offre-de-formations.univ-lyon1.fr/front_fiche_ue.php?UE_ID=26003",
+                "tools": ["Hadoop", "Spark", "Spark Streaming"],
+                "languages": ["Python", "Java"]
+            }
+        ]
+    },
+    {
+        "id": "fermat",
+        "name": "Pierre de Fermat",
+        "city": "Toulouse",
+        "link": "https://fermat.mon-ent-occitanie.fr/",
+        "logo": "logo_pierre_de_fermat.svg",
+        "period": {
+            "start": "2021",
+            "end": "2023"
+        },
+        "lessons": [
+            {
+                "id": "info",
+                "tools": [],
+                "languages": ["Python"]
+            },
+            {
+                "id": "math",
+                "tools": [],
+                "languages": []
+            },
+            {
+                "id": "phy",
+                "tools": [],
+                "languages": []
+            }
+        ]
+    }
+]

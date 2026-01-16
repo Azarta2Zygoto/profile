@@ -1,26 +1,39 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { JSX } from "react";
 
-import type { ProjectType } from "@/data/types";
+import projectData from "@/data/project.json";
 
 import Box from "./personal/box";
 
 export default function ShortProject(): JSX.Element {
+    const format = useFormatter();
     const t = useTranslations("HomePage");
-    const projectContent = t.raw("projectContent") as Array<ProjectType>;
 
     return (
         <section>
-            {projectContent.slice(0, 4).map((key, index) => (
+            {projectData.slice(0, 4).map((key, index) => (
                 <div
                     key={index}
                     className="container-card"
                 >
                     <h3 className="h3-primary">{key.name}</h3>
-                    <p>
-                        {key.period}
+                    <p style={{ textTransform: "capitalize" }}>
+                        {key.period.in &&
+                            format.dateTime(new Date(key.period.in), {
+                                year: "numeric",
+                                month: "long",
+                            })}
+                        {key.period.start &&
+                            key.period.end &&
+                            `${format.dateTime(new Date(key.period.start), {
+                                year: "numeric",
+                                month: "long",
+                            })} - ${format.dateTime(new Date(key.period.end), {
+                                year: "numeric",
+                                month: "long",
+                            })}`}
                         {key.commanditaire && " → " + key.commanditaire}
                     </p>
                     <div className="box-container">
@@ -32,7 +45,7 @@ export default function ShortProject(): JSX.Element {
                                 />
                             ))}
                     </div>
-                    <p>{key.description}</p>
+                    <p>{t(`projectsContent.${key.id}.description`)}</p>
                 </div>
             ))}
         </section>

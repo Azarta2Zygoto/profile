@@ -1,15 +1,19 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, JSX } from "react";
+import { Fragment, use } from "react";
 
 import ShortProject from "@/components/shortProject";
 import ShortStudy from "@/components/shortStudy";
 import { Link } from "@/i18n/navigation";
 
-export default function HomePage(): JSX.Element {
+export default function HomePage({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = use(params);
     const t = useTranslations("HomePage");
-
     return (
         <Fragment>
             <h1 className="h1-primary">{t("title")}</h1>
@@ -41,7 +45,7 @@ export default function HomePage(): JSX.Element {
                     ></i>
                 </Link>
             </h2>
-            <ShortStudy />
+            <ShortStudy locale={locale} />
             <h2 className="h2-primary">
                 {t("projects")}
                 <Link
