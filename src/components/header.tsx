@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX } from "react";
 
@@ -11,6 +10,7 @@ import ThemeSwitch from "@/components/personal/themeSwitch";
 import { base_path } from "@/data/env";
 import locales_json from "@/data/locales.json";
 import path from "@/data/path.json";
+import { Link } from "@/i18n/navigation";
 
 const correctedLocale: { label: string; value: string }[] = Object.entries(
     locales_json,
@@ -40,7 +40,7 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
                 {Object.entries(path).map(([key, route], index) => (
                     <Link
                         key={index}
-                        href={`/${locale}/${route.replace(/^\//, "")}`}
+                        href={`/${route.replace(/^\//, "")}`}
                         className={`nav-link ${
                             pathname.split("/").length === 3 &&
                             pathname ===

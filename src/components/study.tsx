@@ -1,20 +1,19 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { Fragment, JSX } from "react";
 
 import { Website } from "@/data/svg";
-import type { Locale, ProjectType, StudyType } from "@/data/types";
+import type { ProjectType, StudyType } from "@/data/types";
+import { Link } from "@/i18n/navigation";
 
 import Box from "./personal/box";
 
 interface StudyProps {
-    locale: Locale;
     languages?: { label: string; value: string }[];
 }
 
-export default function Study({ locale, languages }: StudyProps): JSX.Element {
+export default function Study({ languages }: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
     const studyContent = (t.raw("studyContent") as Array<StudyType>)
         .filter((study) => {
@@ -44,7 +43,7 @@ export default function Study({ locale, languages }: StudyProps): JSX.Element {
                     {t.rich("no-study-found-desc", {
                         link: (chunks) => (
                             <Link
-                                href={`/${locale}/project`}
+                                href="/project"
                                 className="outside-link"
                             >
                                 {chunks}
@@ -125,7 +124,7 @@ export default function Study({ locale, languages }: StudyProps): JSX.Element {
                                         (project, projIndex) => (
                                             <Fragment key={project}>
                                                 <Link
-                                                    href={`/${locale}/project#${project}`}
+                                                    href={`/project#${project}`}
                                                     className="inline-link underline-anim"
                                                 >
                                                     {projectContent.find(

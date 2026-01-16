@@ -1,17 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { JSX } from "react";
 
 import { Website } from "@/data/svg";
 import type { StudyType } from "@/data/types";
+import { Link } from "@/i18n/navigation";
 
-interface ShortStudyProps {
-    locale?: string;
-}
-
-export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
+export default function ShortStudy(): JSX.Element {
     const t = useTranslations("HomePage");
     const studyContent = t.raw("studyContent") as Array<StudyType>;
 
@@ -36,8 +32,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                         )}
                     </h3>
                     <p>
-                        {key.period} →{" "}
-                        {key.city + (locale !== "fr" ? ", France" : "")}
+                        {key.period} → {key.city + ", France"}
                     </p>
                     <p style={{ margin: "1rem 0" }}>{key.description}</p>
                     <p>{t("some-lessons")}</p>
@@ -47,7 +42,7 @@ export default function ShortStudy({ locale }: ShortStudyProps): JSX.Element {
                         ))}
                         <Link
                             className="inline-link underline-anim"
-                            href={`/${locale ?? "fr"}/study#${key.id}`}
+                            href={`/study#${key.id}`}
                         >
                             {t("see-more")} →
                         </Link>

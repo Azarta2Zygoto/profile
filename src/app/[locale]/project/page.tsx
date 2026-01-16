@@ -74,7 +74,7 @@ export default function ProjectPage(): JSX.Element {
                         >
                             {t("no-project-found")}
                         </h2>
-                        <p>{t.rich("no-project-found-desc")}</p>
+                        <p>{t("no-project-found-desc")}</p>
                     </section>
                 )}
             {largeProjectContent.length > 0 && (

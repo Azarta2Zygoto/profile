@@ -846,8 +846,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                         id={triggerDescriptionId}
                         className="sr-only"
                     >
-                        Multi-select dropdown. Use arrow keys to navigate, Enter
-                        to select, and Escape to close.
+                        {t("dropdown-explain")}
                     </div>
                     <div
                         id={selectedCountId}
@@ -1071,7 +1070,11 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                 {`+ ${
                                                     selectedValues.length -
                                                     responsiveSettings.maxCount
-                                                } more`}
+                                                } ${t("more", {
+                                                    count:
+                                                        selectedValues.length -
+                                                        responsiveSettings.maxCount,
+                                                })}`}
                                                 <XCircle
                                                     className={cn(
                                                         "ml-2 h-4 w-4 cursor-pointer",
@@ -1104,7 +1107,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                     handleClear();
                                                 }
                                             }}
-                                            aria-label={`Clear all ${selectedValues.length} selected options`}
+                                            aria-label={t("clear-all")}
                                             className="flex items-center justify-center h-4 w-4 mx-2 cursor-pointer text-muted-foreground hover:text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 rounded-sm"
                                         >
                                             <XIcon className="h-4 w-4" />
@@ -1171,7 +1174,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                     onKeyDown={handleInputKeyDown}
                                     value={searchValue}
                                     onValueChange={setSearchValue}
-                                    aria-label="Search through available options"
+                                    aria-label={t("aria-search")}
                                     aria-describedby={`${multiSelectId}-search-help`}
                                 />
                             )}
@@ -1180,8 +1183,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                     id={`${multiSelectId}-search-help`}
                                     className="sr-only"
                                 >
-                                    Type to filter options. Use arrow keys to
-                                    navigate results.
+                                    {t("filter-explain")}
                                 </div>
                             )}
                             <CommandList

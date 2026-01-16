@@ -227,7 +227,12 @@
         "search": "Search...",
         "all": "All",
         "clear": "Clear",
-        "close": "Close"
+        "close": "Close",
+        "more": "more",
+        "clear-all": "Clear all selections",
+        "aria-search": "Search through available options",
+        "dropdown-explain": "Multi-select dropdown. Use arrow keys to navigate, spacebar to select or deselect an option, and escape key to close the dropdown.",
+        "filter-explain": "Type to filter options. Use arrow keys to navigate through filtered options."
     },
     "Footer": {
         "copyright": "© 2026 My Profile. All rights reserved.",
