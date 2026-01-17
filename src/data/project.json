@@ -1,7 +1,6 @@
 [
     {
         "id": "stage-application",
-        "name": "Application web pour la collecte de données sportives",
         "commanditaire": {
             "name": "LIRIS",
             "url": "https://liris.cnrs.fr/",
@@ -17,7 +16,6 @@
     },
     {
         "id": "jeu-inclusif",
-        "name": "Inclusif : le jeu",
         "commanditaire": {
             "name": "Métropole de Lyon",
             "url": "https://resin.grandlyon.com/actualites",
@@ -48,7 +46,6 @@
     },
     {
         "id": "challenger",
-        "name": "Le Challenger",
         "commanditaire": {
             "name": "Association étudiante Challenge",
             "url": "https://challenge-centrale-lyon.fr/",
@@ -65,7 +62,6 @@
     },
     {
         "id": "miss-hestia",
-        "name": "Site vitrine - Miss Hestia",
         "period": {
             "in": "2025-10-01"
         },
@@ -80,7 +76,6 @@
     },
     {
         "id": "conference",
-        "name": "Système de gestion de conférences",
         "study": "centrale",
         "period": {
             "start": "2025-10-01",
@@ -91,7 +86,6 @@
     },
     {
         "id": "data-dash",
-        "name": "Application de visualisation de données",
         "study": "univ",
         "period": {
             "start": "2025-10-01",
@@ -109,7 +103,6 @@
     },
     {
         "id": "moteur-recherche",
-        "name": "Moteur de recherche de documents",
         "study": "centrale",
         "period": {
             "in": "2025-12-01"
@@ -120,7 +113,6 @@
     },
     {
         "id": "jeu-dame",
-        "name": "Jeu de Dames",
         "study": "centrale",
         "period": {
             "in": "2025-03-01"
@@ -130,7 +122,6 @@
     },
     {
         "id": "2048-qt",
-        "name": "2048",
         "study": "centrale",
         "period": {
             "in": "2025-03-01"
@@ -140,7 +131,6 @@
     },
     {
         "id": "useful-components",
-        "name": "Useful Components",
         "period": {
             "start": "2025-09-01",
             "end": "2025-11-01"
@@ -156,7 +146,6 @@
     },
     {
         "id": "profile",
-        "name": "Portfolio Personnel",
         "period": {
             "in": "2026-01-01"
         },

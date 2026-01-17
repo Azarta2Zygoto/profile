@@ -39,7 +39,6 @@ export interface StudyDetailType {
 export interface ProjectType {
     id: string;
     large?: boolean;
-    name: string;
     commanditaire?: {
         name: string;
         url: string;
@@ -59,6 +58,7 @@ export interface ProjectType {
 
 export interface ProjectDetailType {
     description: string;
+    name: string;
     paragraph?: {
         text: string;
         li: string[];

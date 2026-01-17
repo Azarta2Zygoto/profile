@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Fragment, JSX } from "react";
 
 import { base_path } from "@/data/env";
-import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
 import { Website } from "@/data/svg";
 import type { Locale, StudyType } from "@/data/types";
@@ -164,9 +163,13 @@ export default function Study({
                                                     href={`/project#${project}`}
                                                     className="inline-link underline-anim"
                                                 >
-                                                    {projectData.find(
-                                                        (p) => p.id === project,
-                                                    )?.name || project}
+                                                    {t.has(
+                                                        `ProjectsContent.${project}.name`,
+                                                    )
+                                                        ? t(
+                                                              `ProjectsContent.${project}.name`,
+                                                          )
+                                                        : project}
                                                 </Link>
                                                 {projIndex <
                                                     lesson.projects!.length -

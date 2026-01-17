@@ -91,45 +91,56 @@
         },
         "projectsContent": {
             "stage-application": {
-                "description": "Développement d'une application web pour la collecte de données sportives via le traitement d'images et vidéo à des fins de recherche."
+                "name": "Web Application for Sports Data Collection",
+                "description": "Web application development for collecting sports data with image and video processing for research purposes"
             },
             "jeu-inclusif": {
-                "description": "Développement d'un jeu sérieux visant à sensibiliser les équipes de développement d'interfaces utilisateur autour de l'inclusivité numérique lors de la création, du développement et de la gestion de leurs projets informatiques",
+                "name": "Inclusif : le jeu",
+                "description": "Development of a serious game into a web application to raise awareness about digital inclusion among web project during the creation, development and management process.",
                 "paragraph": {
-                    "text": "Le projet a été fait dans une équipe de 7 personnes avec une gestion de projet utilisant la méthodologies Scrum. Lors de celui-ci, nous avons appris à utiliser Angular et Figma pour créer des maquettes de l'interface utilisateur. Le projet a été découpé en trois parties :",
+                    "text": "This project was made in a group of seven people during a study project of a year. We learned to use Agile methodologies to manage the project and we used Figma to visualize the UI and Angular with HTML and CSS to actually make it. The project includes three main parts:",
                     "li": [
-                        "la mise en ligne d'un jeu de société sérieux ;",
-                        "un quiz d'inclusivité pour tester ses connaissances dans le domaine ;",
-                        "un formulaire d'auto-évaluation d'inclusivité pour vérifier qu'un projet inclut bien dans toutes ses étapes les concepts d'inclusivité numérique."
+                        "the serious game itself where the player has to make choices to create an inclusive web project ;",
+                        "a questionnaire to evaluates the player's knowledge about digital inclusion ;",
+                        "a self-assessment form to help the player evaluate their own web projects regarding digital inclusion."
                     ]
                 }
             },
             "challenger": {
-                "description": "Développement de la gestion de permanences pour gérer les bénévoles afinde mettre en place l'un des plus grands événements sportifs étudiants de France."
+                "name": "Challenger",
+                "description": "Design and development of a part of a web application to manage a student association's activities for the preparation and organization of the annual event."
             },
             "miss-hestia": {
-                "description": "Mise en place d'un site vitrine pour mettre en avant les oeuvres d'art d'une artiste"
+                "name": "Showcase Website - Miss Hestia",
+                "description": "Development of a showcase website to highlight an artist's artworks."
             },
             "conference": {
-                "description": "Application web permettant la gestion d'une base (factices) de données de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire des requêtes SQL optimisées pour enfin avoir une interface utilisature simple pour visualiser les données."
+                "name": "Conference Database Management",
+                "description": "Development of a web application to manage a false conference database. The purpose of the project is to optimize the database design, then to optimize SQL queries to finally create a simple user-friendly interface."
             },
             "data-dash": {
-                "description": "interface utilisateur interactive pour visualiser et analyser un grand ensemble de données (ici Covid)."
+                "name": "Covid Data Visualization",
+                "description": "Interactive user interface to visualize and analyze a large dataset."
             },
             "moteur-recherche": {
-                "description": "Développement d'un moteur de recherche simple en Python en utilisant des techniques de traitement du langage naturel pour rechercher des documents textuels dans une base de données d'études qui nous a été donnée. Ajout d'une solution à partir de graphe de relation entre les documents par les citations effectuées."
+                "name": "Search Engine",
+                "description": "Development of a simple search engine using natural language processing techniques. Furthermore, there is the implementation of a graph-based solution by taking into account the citations between documents."
             },
             "jeu-dame": {
-                "description": "Mise en place d'un jeu de dames en interface web pour apprendre les bases du développement web en JavaScript et la gestion des sockets."
+                "name": "Web Draughts Game",
+                "description": "Implementation of a web-based draughts game to learn the basics of web development, JavaScript, and the concept of sockets."
             },
             "2048-qt": {
-                "description": "Développement d'un 2048 en C++ avec une interface graphique en utilisant la bibliothèque Qt. Il y a de nombreuses fonctionnalités supplémentaires donc une tentative de création d'un suika."
+                "name": "2048",
+                "description": "Realization of a 2048 in C++ using Qt GUI. Many additional features were added including an attempt to create a suika."
             },
             "useful-components": {
-                "description": "Bibliothèques de composants React simple et réutilisables pour apprendre à la fois le framework React et la création de composants élémentaires."
+                "name": "Useful Components",
+                "description": "Simple and reusable React component libraries to learn both the React framework and the creation of basic components."
             },
             "profile": {
-                "description": "Création d'un site web pour faire part de mon profil et de mes projets réalisés. C'est le site web sur lequel vous êtes actuellement."
+                "name": "Portfolio Personnel",
+                "description": "Realization of a portfolio website to share my profile and many of my projects done. This is the website you are currently on."
             }
         }
     },

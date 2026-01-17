@@ -19,7 +19,9 @@ export default function ShortProject(): JSX.Element {
                     key={index}
                     className="container-card"
                 >
-                    <h3 className="h3-primary">{key.name}</h3>
+                    <h3 className="h3-primary">
+                        {t(`projectsContent.${key.id}.name`)}
+                    </h3>
                     <p className="p-date">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {

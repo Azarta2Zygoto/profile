@@ -34,7 +34,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             className="h3-secondary"
                             id={key.id}
                         >
-                            {key.name}
+                            {t(`projectsContent.${key.id}.name`)}
                             {key.commanditaire &&
                                 " - " + key.commanditaire.name}
                         </h3>
