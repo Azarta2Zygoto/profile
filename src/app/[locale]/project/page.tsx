@@ -58,7 +58,7 @@ export default function ProjectPage(): JSX.Element {
         setLittleProjectContent(filteredLittle);
     }
     return (
-        <div>
+        <Fragment>
             <h1 className="h1-primary">{t("title")}</h1>
             <p style={{ marginBottom: "1rem" }}>{t("introduction")}</p>
             <MultiSelect
@@ -99,6 +99,6 @@ export default function ProjectPage(): JSX.Element {
                     <Project projectContent={littleProjectContent} />
                 </Fragment>
             )}
-        </div>
+        </Fragment>
     );
 }

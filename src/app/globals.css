@@ -23,6 +23,14 @@
         height: 0;
     }
 }
+@keyframes scaleProgress {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}
 
 /* Popover animations */
 @keyframes popover-in {
@@ -575,6 +583,18 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+}
+
+.bar-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 3px;
+    height: 100%;
+    background-color: var(--color-special);
+    animation: scaleProgress auto linear;
+    animation-timeline: scroll();
 }
 @media (max-width: 768px) {
     .bar-container {
