@@ -2,7 +2,11 @@
     {
         "id": "jeu-inclusif",
         "name": "Inclusif : le jeu",
-        "commanditaire": "Métropole de Lyon",
+        "commanditaire": {
+            "name": "Métropole de Lyon",
+            "url": "https://resin.grandlyon.com/actualites",
+            "logo": "metropole-de-lyon.svg"
+        },
         "study": "centrale",
         "large": true,
         "period": {
@@ -29,7 +33,11 @@
     {
         "id": "challenger",
         "name": "Le Challenger",
-        "commanditaire": "Association étudiante Challenge - Centrale Lyon",
+        "commanditaire": {
+            "name": "Association étudiante Challenge",
+            "url": "https://challenge-centrale-lyon.fr/",
+            "logo": "logo_challenge.png"
+        },
         "study": "centrale",
         "large": true,
         "period": {

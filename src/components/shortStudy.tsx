@@ -26,7 +26,7 @@ export default function ShortStudy({
                     className="container-card"
                 >
                     <div className="icon-title">
-                        <h3 className="h4-secondary">
+                        <h3 className="h3-secondary">
                             {key.name} - {t(`${key.id}.title`)}
                         </h3>
                         {key.link && (
@@ -55,7 +55,7 @@ export default function ShortStudy({
                             </Link>
                         )}
                     </div>
-                    <p>
+                    <p className="p-date">
                         {key.period.start + " - " + key.period.end} →{" "}
                         {key.city + ", France"}
                     </p>

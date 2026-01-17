@@ -74,10 +74,10 @@ export default function Study({
             {studyContent.map((key, index) => (
                 <div
                     key={index}
-                    className="large-study-container"
+                    id={key.id}
                 >
                     <div className="icon-title">
-                        <h3 className="h4-secondary">
+                        <h3 className="h3-secondary">
                             {key.name} - {t(`${key.id}.title`)}
                         </h3>
                         {key.link && (
@@ -114,7 +114,7 @@ export default function Study({
                     {key.lessons.map((lesson, lessonIndex) => (
                         <div
                             key={lessonIndex}
-                            className="sub-study-container"
+                            className="container-card"
                         >
                             <h4 className="h4-primary">
                                 {t(`${key.id}.lessons.${lesson.id}.name`)} :

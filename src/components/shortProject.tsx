@@ -4,6 +4,7 @@ import { useFormatter, useTranslations } from "next-intl";
 import { JSX } from "react";
 
 import projectData from "@/data/project.json";
+import studyData from "@/data/study.json";
 
 import Box from "./personal/box";
 
@@ -19,7 +20,7 @@ export default function ShortProject(): JSX.Element {
                     className="container-card"
                 >
                     <h3 className="h3-primary">{key.name}</h3>
-                    <p style={{ textTransform: "capitalize" }}>
+                    <p className="p-date">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {
                                 year: "numeric",
@@ -34,7 +35,9 @@ export default function ShortProject(): JSX.Element {
                                 year: "numeric",
                                 month: "long",
                             })}`}
-                        {key.commanditaire && " → " + key.commanditaire}
+                        {key.study &&
+                            " → " +
+                                studyData.find((s) => s.id === key.study)?.name}
                     </p>
                     <div className="box-container">
                         {key.languages.length > 0 &&

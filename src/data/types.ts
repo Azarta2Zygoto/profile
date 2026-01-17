@@ -40,7 +40,11 @@ export interface ProjectType {
     id: string;
     large?: boolean;
     name: string;
-    commanditaire?: string;
+    commanditaire?: {
+        name: string;
+        url: string;
+        logo?: string;
+    };
     period: {
         start?: string;
         end?: string;

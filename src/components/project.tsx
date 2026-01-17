@@ -1,9 +1,13 @@
 "use client";
 
 import { useFormatter, useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 import { JSX } from "react";
 
+import { base_path } from "@/data/env";
 import studyData from "@/data/study.json";
+import { Website } from "@/data/svg";
 import { Github } from "@/data/svg";
 import type { ProjectType } from "@/data/types";
 
@@ -25,23 +29,37 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                     key={index}
                     className="container-card"
                 >
-                    {key.study ? (
+                    <div className="icon-title">
                         <h3
-                            className="h3-primary"
-                            id={key.id}
-                        >
-                            {key.name} -{" "}
-                            {studyData.find((s) => s.id === key.study)?.name}
-                        </h3>
-                    ) : (
-                        <h3
-                            className="h3-primary"
+                            className="h3-secondary"
                             id={key.id}
                         >
                             {key.name}
+                            {key.commanditaire &&
+                                " - " + key.commanditaire.name}
                         </h3>
-                    )}
-                    <p style={{ textTransform: "capitalize" }}>
+                        {key.commanditaire && (
+                            <Link
+                                href={key.commanditaire.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="external-link"
+                            >
+                                {key.commanditaire.logo ? (
+                                    <Image
+                                        src={`${base_path}logo/${key.commanditaire.logo}`}
+                                        alt={`${key.commanditaire.name} logo`}
+                                        width={30}
+                                        height={30}
+                                        className="other-logo"
+                                    />
+                                ) : (
+                                    <Website />
+                                )}
+                            </Link>
+                        )}
+                    </div>
+                    <p className="p-date">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {
                                 year: "numeric",
@@ -56,13 +74,10 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                 year: "numeric",
                                 month: "long",
                             })}`}
+                        {key.study &&
+                            " → " +
+                                studyData.find((s) => s.id === key.study)?.name}
                     </p>
-                    {key.commanditaire && (
-                        <p>
-                            <strong>{t("commanditaire")}</strong>
-                            {key.commanditaire}
-                        </p>
-                    )}
                     <p style={{ margin: "1rem 0" }}>
                         {t(`projectsContent.${key.id}.description`)}
                     </p>
