@@ -33,7 +33,7 @@
                 },
                 "WebApps": {
                     "name": "Applications Web",
-                    "description": "Apprentissage des concepts fondamentaux du développement web, incluant le HTML, CSS, JavaScript, de la relation client-serveur."
+                    "description": "Apprentissage des concepts fondamentaux du développement web et de la relation entre le client et le serveur."
                 },
                 "CppGui": {
                     "name": "Programmation des interfaces graphiques en C++",
@@ -41,7 +41,7 @@
                 },
                 "IA-introduction": {
                     "name": "Apprentissage profond & Intelligence Artificielle : une introduction",
-                    "description": "Introduction aux concepts de base de l'intelligence artificielle, incluant les réseaux de neurones et l'apprentissage profond avec TensorFlow et PyTorch."
+                    "description": "Introduction aux concepts de base de l'intelligence artificielle dont les réseaux de neurones et l'apprentissage profond avec TensorFlow et PyTorch."
                 },
                 "reseaux": {
                     "name": "Réseaux informatiques",
@@ -53,21 +53,21 @@
                 },
                 "BigData": {
                     "name": "Technologies informatiques du Big Data",
-                    "description": "Étude des technologies et outils liés au Big Data, incluant Hadoop et Spark, pour le traitement de grandes quantités de données."
+                    "description": "Étude des technologies et outils liés au Big Data pour le traitement de grandes quantités de données."
                 }
             }
         },
         "univ": {
-            "title": "Master en Traitement de l'Informatique et du Web",
+            "title": "Master en Technologies de l'Information et du Web",
             "description": "Formation axée sur la science des données, couvrant la visualisation de données, le Big Data, et les techniques d'analyse de données.",
             "lessons": {
                 "DataAnalysis": {
                     "name": "Analyse de Données",
-                    "description": "Traitements de données complexes ayant pour but d'être analyser puis visualiser. Création d'une interface utilisateur interactive pour visualiser et analyser un grand ensemble de données."
+                    "description": "Traitements de données complexes à analyser et visualiser en évitant le plus de biais de biais et de pertes possibles. Création d'une interface utilisateur interactive pour visualiser et analyser un grand ensemble de données."
                 },
                 "BigData": {
                     "name": "Big Data",
-                    "description": "Étude des technologies et outils liés au Big Data, incluant Hadoop et Spark, pour le traitement de grandes quantités de données."
+                    "description": "Apprentissage de technologies du Big Data, du stockage distribué des données aux frameworks de traitement comme Hadoop et Spark en passant par la lecture et l'écriture de données en continue."
                 }
             }
         },
@@ -77,41 +77,59 @@
             "lessons": {
                 "info": {
                     "name": "Informatique",
-                    "description": "Introduction aux concepts fondamentaux de l'informatique, incluant la programmation en Python."
+                    "description": "Introduction aux concepts fondamentaux de l'informatique avec l'apprentissage des principes de l'algorithmique et de la résolution de problèmes."
                 },
                 "math": {
                     "name": "Mathématiques",
-                    "description": "Étude avancée des mathématiques appliquées à la physique et à l'ingénierie."
+                    "description": "Étude avancée des mathématiques dans de vastes domaines : algèbre linéaire, analyse, topologie..."
                 },
                 "phy": {
                     "name": "Physique",
-                    "description": "Approfondissement des concepts de la physique, incluant la mécanique, l'électricité et l'optique."
+                    "description": "Approfondissement des concepts de la physique : mécanique, électricité, optique, mécanique quantique, électromagnétisme."
                 }
             }
         },
         "projectsContent": {
+            "stage-application": {
+                "description": "Développement d'une application web pour la collecte de données sportives via le traitement d'images et vidéo à des fins de recherche."
+            },
             "jeu-inclusif": {
-                "description": "Développement d'un jeu sérieux visant à sensibiliser lors des la création, du développement et de la gestion de projets informatiques",
+                "description": "Développement d'un jeu sérieux visant à sensibiliser les équipes de développement d'interfaces utilisateur autour de l'inclusivité numérique lors de la création, du développement et de la gestion de leurs projets informatiques",
                 "paragraph": {
-                    "text": "Le projet a été fait dans une équipe de 7 personnes, ensuivant la méthodologies Scrum. Lors de ce projet, nous avons pu décuvrir le framework Angular et nous avons utilisé Figma afin de créer des maquettes pour l'interface utilisateur. Le projet a été découpé en trois parties :",
+                    "text": "Le projet a été fait dans une équipe de 7 personnes avec une gestion de projet utilisant la méthodologies Scrum. Lors de celui-ci, nous avons appris à utiliser Angular et Figma pour créer des maquettes de l'interface utilisateur. Le projet a été découpé en trois parties :",
                     "li": [
-                        "la mise en jeu en ligne d'un jeu de société sérieux ;",
+                        "la mise en ligne d'un jeu de société sérieux ;",
                         "un quiz d'inclusivité pour tester ses connaissances dans le domaine ;",
-                        "un formulaire d'auto-évaluation d'inclusivité pour vérifier qu'un projet inclue bien dans toutes ses étapes les concepts d'inclusivité."
+                        "un formulaire d'auto-évaluation d'inclusivité pour vérifier qu'un projet inclut bien dans toutes ses étapes les concepts d'inclusivité numérique."
                     ]
                 }
             },
             "challenger": {
-                "description": "Développement de la gestion de permanences pour la gestion de bénévoles lors d'un grand événement sportif étudiant"
+                "description": "Développement de la gestion de permanences pour gérer les bénévoles afinde mettre en place l'un des plus grands événements sportifs étudiants de France."
             },
             "miss-hestia": {
-                "description": "Mise en place d'un site vitrine pour les oeuvres d'art d'une artiste"
+                "description": "Mise en place d'un site vitrine pour mettre en avant les oeuvres d'art d'une artiste"
             },
             "conference": {
-                "description": "Application web permettant la gestion d'une base de données factices de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire une interface utilisature simple."
+                "description": "Application web permettant la gestion d'une base (factices) de données de conférences. Le but du projet étant de mettre en place une base de données optimisée, puis de faire des requêtes SQL optimisées pour enfin avoir une interface utilisature simple pour visualiser les données."
             },
             "data-dash": {
                 "description": "interface utilisateur interactive pour visualiser et analyser un grand ensemble de données (ici Covid)."
+            },
+            "moteur-recherche": {
+                "description": "Développement d'un moteur de recherche simple en Python en utilisant des techniques de traitement du langage naturel pour rechercher des documents textuels dans une base de données d'études qui nous a été donnée. Ajout d'une solution à partir de graphe de relation entre les documents par les citations effectuées."
+            },
+            "jeu-dame": {
+                "description": "Mise en place d'un jeu de dames en interface web pour apprendre les bases du développement web en JavaScript et la gestion des sockets."
+            },
+            "2048-qt": {
+                "description": "Développement d'un 2048 en C++ avec une interface graphique en utilisant la bibliothèque Qt. Il y a de nombreuses fonctionnalités supplémentaires donc une tentative de création d'un suika."
+            },
+            "useful-components": {
+                "description": "Bibliothèques de composants React simple et réutilisables pour apprendre à la fois le framework React et la création de composants élémentaires."
+            },
+            "profile": {
+                "description": "Création d'un site web pour faire part de mon profil et de mes projets réalisés. C'est le site web sur lequel vous êtes actuellement."
             }
         }
     },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { JSX, use, useState } from "react";
+import { Fragment, JSX, use, useState } from "react";
 
 import Study from "@/components/study";
 import { MultiSelect } from "@/components/ui/multi-select";
@@ -38,7 +38,7 @@ export default function StudyPage({
     }
 
     return (
-        <div>
+        <Fragment>
             <h1 className="h1-primary">{t("title")}</h1>
             <MultiSelect
                 options={languagesOptions}
@@ -49,6 +49,6 @@ export default function StudyPage({
                 locale={locale}
                 total={languagesOptions.length}
             />
-        </div>
+        </Fragment>
     );
 }

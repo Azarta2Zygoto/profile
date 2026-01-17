@@ -1,5 +1,21 @@
 [
     {
+        "id": "stage-application",
+        "name": "Application web pour la collecte de données sportives",
+        "commanditaire": {
+            "name": "LIRIS",
+            "url": "https://liris.cnrs.fr/",
+            "logo": "logo_liris.png"
+        },
+        "period": {
+            "start": "2025-05-01",
+            "end": "2025-07-30"
+        },
+        "large": true,
+        "languages": ["React", "TypeScript", "HTML", "CSS"],
+        "tools": ["NEXT.JS", "Flask", "GitHub", "image processing"]
+    },
+    {
         "id": "jeu-inclusif",
         "name": "Inclusif : le jeu",
         "commanditaire": {
@@ -67,8 +83,8 @@
         "name": "Système de gestion de conférences",
         "study": "centrale",
         "period": {
-            "start": "2024-10-01",
-            "end": "2024-12-31"
+            "start": "2025-10-01",
+            "end": "2025-12-31"
         },
         "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
         "tools": ["SQLite", "Flask", "NEXT.JS"]
@@ -78,8 +94,8 @@
         "name": "Application de visualisation de données",
         "study": "univ",
         "period": {
-            "start": "2024-10-01",
-            "end": "2024-11-30"
+            "start": "2025-10-01",
+            "end": "2025-11-30"
         },
         "languages": ["Python"],
         "tools": ["Clustering", "Dash", "Plotly", "Pandas"],
@@ -90,5 +106,68 @@
             }
         ],
         "repo": "https://github.com/Azarta2Zygoto/dashboard-covid"
+    },
+    {
+        "id": "moteur-recherche",
+        "name": "Moteur de recherche de documents",
+        "study": "centrale",
+        "period": {
+            "in": "2025-12-01"
+        },
+        "languages": ["Python"],
+        "tools": ["Pandas", "NumPy", "Scikit-learn", "Networkx"],
+        "repo": "https://github.com/Azarta2Zygoto/moteur-recherche"
+    },
+    {
+        "id": "jeu-dame",
+        "name": "Jeu de Dames",
+        "study": "centrale",
+        "period": {
+            "in": "2025-03-01"
+        },
+        "languages": ["JavaScript", "HTML", "CSS"],
+        "tools": ["Socket.IO", "HTML5 Canvas", "express.js"]
+    },
+    {
+        "id": "2048-qt",
+        "name": "2048",
+        "study": "centrale",
+        "period": {
+            "in": "2025-03-01"
+        },
+        "languages": ["C++"],
+        "tools": ["Qt"]
+    },
+    {
+        "id": "useful-components",
+        "name": "Useful Components",
+        "period": {
+            "start": "2025-09-01",
+            "end": "2025-11-01"
+        },
+        "languages": ["React", "TypeScript", "HTML", "CSS"],
+        "tools": ["NEXT.JS"],
+        "websites": [
+            {
+                "name": "Useful Components",
+                "url": "https://azarta2zygoto.github.io/useful-components"
+            }
+        ]
+    },
+    {
+        "id": "profile",
+        "name": "Portfolio Personnel",
+        "period": {
+            "in": "2026-01-01"
+        },
+        "languages": ["React", "TypeScript", "HTML", "CSS"],
+        "tools": ["NEXT.JS", "Shadcn UI"],
+        "repo": "https://github.com/Azarta2Zygoto/profile",
+        "websites": [
+            {
+                "name": "Profile",
+                "url": "https://azarta2zygoto.github.io/profile/"
+            }
+        ]
     }
 ]
