@@ -4,7 +4,7 @@
         "introduction": "I am currently a third-year student at <link>Centrale Lyon</link>. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization...",
         "study": "My Studies",
         "tools": "Toolbox: ",
-        "projects": "Projects",
+        "project": "Projects",
         "desc-projects": "Here are some projects carried out during my studies and in my free time.",
         "projects-link": "Related {count, plural, =1 {Project} other {Projects}}: ",
         "other-languages": "Other languages used: ",

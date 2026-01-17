@@ -4,7 +4,7 @@
         "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
         "study": "Mes formations",
         "tools": "Boîte à outils : ",
-        "projects": "Projets",
+        "project": "Projets",
         "desc-projects": "Voici quelques projets réalisés pendant mes études et pendant mon temps libre.",
         "projects-link": "{count, plural, =1 {Projet} other {Projets}} en lien : ",
         "other-languages": "Autres languages utilisés : ",
