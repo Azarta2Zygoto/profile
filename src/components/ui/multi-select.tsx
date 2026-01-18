@@ -1,3 +1,6 @@
+/**
+ * This component was made by sersavan : https://github.com/sersavan/shadcn-multi-select-component
+ */
 import { useTranslations } from "next-intl";
 import * as React from "react";
 

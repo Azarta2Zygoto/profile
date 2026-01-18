@@ -227,6 +227,12 @@ img {
     border: none;
     outline: none;
 }
+.inline-text {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    height: max-content;
+}
 ul {
     list-style-type: none;
     padding: 0;
@@ -278,6 +284,7 @@ p {
     text-align: left;
 }
 .p-date {
+    display: inline-flex;
     font-size: clamp(0.8rem, 1.2vw, 0.85rem);
     text-transform: capitalize;
 }
@@ -473,7 +480,7 @@ nav {
 .external-link {
     display: inline-block;
     margin-left: 0.5rem;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: color 0.3s;
 }
 .external-link:focus-visible {

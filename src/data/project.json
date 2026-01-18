@@ -12,7 +12,12 @@
         },
         "large": true,
         "languages": ["React", "TypeScript", "HTML", "CSS"],
-        "tools": ["NEXT.JS", "Flask", "GitHub", "image processing"]
+        "tools": ["NEXT.JS", "Flask", "GitHub", "Image processing"],
+        "creators": [
+            {
+                "name": "Aymeric Erades"
+            }
+        ]
     },
     {
         "id": "jeu-inclusif",
@@ -42,7 +47,15 @@
                 "url": "https://inclusivite-resin.grandlyon.com/autoevaluation/accueil"
             }
         ],
-        "tools": ["Scrum", "Figma", "UX/UI Design", "Git"]
+        "tools": ["Scrum", "Figma", "UX/UI Design", "Git"],
+        "creators": [
+            {
+                "name": "Enzo Cartal"
+            },
+            {
+                "name": "Aïki Humeau"
+            }
+        ]
     },
     {
         "id": "challenger",
@@ -58,7 +71,15 @@
             "end": "2024-06-30"
         },
         "languages": ["PHP", "SQL", "HTML", "CSS"],
-        "tools": ["MariaDB", "Git", "UX/UI Design", "Docker"]
+        "tools": ["MariaDB", "Git", "UX/UI Design", "Docker"],
+        "creators": [
+            {
+                "name": "Enzo Cartal"
+            },
+            {
+                "name": "Aïki Humeau"
+            }
+        ]
     },
     {
         "id": "miss-hestia",
@@ -75,14 +96,29 @@
         ]
     },
     {
-        "id": "conference",
+        "id": "moteur-recherche",
         "study": "centrale",
         "period": {
-            "start": "2025-10-01",
-            "end": "2025-12-31"
+            "in": "2025-12-01"
         },
-        "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
-        "tools": ["SQLite", "Flask", "NEXT.JS"]
+        "languages": ["Python"],
+        "tools": ["Pandas", "NumPy", "Scikit-learn", "Networkx"],
+        "repo": "https://github.com/Azarta2Zygoto/moteur-recherche"
+    },
+    {
+        "id": "2048-qt",
+        "study": "centrale",
+        "period": {
+            "in": "2025-03-01"
+        },
+        "languages": ["C++"],
+        "tools": ["Qt"],
+        "creators": [
+            {
+                "name": "Thibaud",
+                "linkedin": "https://www.linkedin.com/in/thibaud-perez"
+            }
+        ]
     },
     {
         "id": "data-dash",
@@ -99,35 +135,28 @@
                 "url": "https://azarta2zygoto.github.io/dashboard-covid/"
             }
         ],
-        "repo": "https://github.com/Azarta2Zygoto/dashboard-covid"
+        "repo": "https://github.com/Azarta2Zygoto/dashboard-covid",
+        "creators": [
+            {
+                "name": "Coumba Bocar Kane",
+                "github": "https://github.com/CoumbaBKANE"
+            }
+        ]
     },
     {
-        "id": "moteur-recherche",
+        "id": "conference",
         "study": "centrale",
         "period": {
-            "in": "2025-12-01"
+            "start": "2025-10-01",
+            "end": "2025-12-31"
         },
-        "languages": ["Python"],
-        "tools": ["Pandas", "NumPy", "Scikit-learn", "Networkx"],
-        "repo": "https://github.com/Azarta2Zygoto/moteur-recherche"
-    },
-    {
-        "id": "jeu-dame",
-        "study": "centrale",
-        "period": {
-            "in": "2025-03-01"
-        },
-        "languages": ["JavaScript", "HTML", "CSS"],
-        "tools": ["Socket.IO", "HTML5 Canvas", "express.js"]
-    },
-    {
-        "id": "2048-qt",
-        "study": "centrale",
-        "period": {
-            "in": "2025-03-01"
-        },
-        "languages": ["C++"],
-        "tools": ["Qt"]
+        "languages": ["SQL", "Python", "TypeScript", "HTML", "CSS"],
+        "tools": ["SQLite", "Flask", "NEXT.JS"],
+        "creators": [
+            {
+                "name": "Lisa Ribeaucourt"
+            }
+        ]
     },
     {
         "id": "useful-components",
@@ -158,5 +187,14 @@
                 "url": "https://azarta2zygoto.github.io/profile/"
             }
         ]
+    },
+    {
+        "id": "jeu-dame",
+        "study": "centrale",
+        "period": {
+            "in": "2025-03-01"
+        },
+        "languages": ["JavaScript", "HTML", "CSS"],
+        "tools": ["Socket.IO", "HTML5 Canvas", "express.js"]
     }
 ]

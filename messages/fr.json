@@ -15,6 +15,7 @@
         "visit-website": "Visiter {count, plural, =1 {le site} other {les sites}} web : ",
         "no-study-found": "Aucune formation trouvée.",
         "no-study-found-desc": "Aucune formation ne m'a enseigné ce langage. Regardez dans les <link>projets</link> pour voir ceux l'utilisant.",
+        "creators": "{count, plural, =1 {Co-auteur} other {Co-auteurs}} : ",
         "centrale": {
             "title": "École d'ingénieurs généraliste",
             "description": "Programme généraliste sur les domaines des mathématiques, de la physique, de l'informatique, de la mécanique, de l'électronique, de la gestion de projet et des sciences humaines.",

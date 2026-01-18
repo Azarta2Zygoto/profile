@@ -36,6 +36,13 @@ export interface StudyDetailType {
     };
 }
 
+export interface SocialType {
+    name: string;
+    linkedin?: string;
+    github?: string;
+    website?: string;
+}
+
 export interface ProjectType {
     id: string;
     large?: boolean;
@@ -54,6 +61,7 @@ export interface ProjectType {
     tools: string[];
     websites?: { name: string; url: string }[];
     repo?: string;
+    creators?: SocialType[];
 }
 
 export interface ProjectDetailType {

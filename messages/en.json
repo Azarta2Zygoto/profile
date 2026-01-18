@@ -15,6 +15,7 @@
         "visit-website": "Visit {count, plural, =1 {the website} other {the websites}} : ",
         "no-study-found": "No study found.",
         "no-study-found-desc": "No study has taught me this language. Please check <link>projects</link> to see those related to this language.",
+        "creators": "{count, plural, =1 {Co-author} other {Co-authors}}: ",
         "centrale": {
             "title": "General Engineering Program",
             "description": "Comprehensive engineering education covering various fields such as computer science, mathematics, physics, and project management.",

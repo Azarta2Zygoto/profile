@@ -53,7 +53,6 @@ export async function generateMetadata(props: {
         twitter: {
             card: "summary_large_image",
             title: t("Metadata.title"),
-            creator: "@QuentinPotiron",
             description: t("Metadata.description"),
             images: "/logo-200.png",
         },

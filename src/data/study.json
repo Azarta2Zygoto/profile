@@ -82,6 +82,7 @@
         "lessons": [
             {
                 "id": "DataAnalysis",
+                "link": "https://offre-de-formations.univ-lyon1.fr/front_fiche_ue.php?UE_ID=26005",
                 "tools": ["OLAP", "Dash", "Numpy", "Plotly", "Networkx"],
                 "languages": ["Python"],
                 "projects": ["data-dash"]
