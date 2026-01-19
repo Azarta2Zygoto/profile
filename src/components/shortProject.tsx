@@ -22,7 +22,7 @@ export default function ShortProject(): JSX.Element {
                     <h3 className="h3-primary">
                         {t(`projectsContent.${key.id}.name`)}
                     </h3>
-                    <p className="p-date">
+                    <p className="p-minor">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {
                                 year: "numeric",

@@ -59,7 +59,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             </Link>
                         )}
                     </div>
-                    <p className="p-date">
+                    <p className="p-minor">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {
                                 year: "numeric",
@@ -80,7 +80,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                     </p>
                     <br />
                     {key.creators && key.creators.length > 0 && (
-                        <p className="p-date">
+                        <p className="p-minor">
                             <strong style={{ marginRight: "0.5rem" }}>
                                 {t("creators", { count: key.creators.length })}
                             </strong>
@@ -216,7 +216,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                     href={website.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-link underline-anim"
+                                    className="link-secondary underline-anim"
                                     style={{ marginLeft: "0.5rem" }}
                                 >
                                     {website.name}
@@ -231,7 +231,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                 href={key.repo}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="outside-link"
+                                className="link-primary"
                                 style={{ marginLeft: "0.5rem" }}
                             >
                                 {key.repo}

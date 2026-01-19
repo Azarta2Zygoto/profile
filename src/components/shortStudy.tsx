@@ -55,7 +55,7 @@ export default function ShortStudy({
                             </Link>
                         )}
                     </div>
-                    <p className="p-date">
+                    <p className="p-minor">
                         {key.period.start + " - " + key.period.end} →{" "}
                         {key.city + ", France"}
                     </p>
@@ -70,7 +70,7 @@ export default function ShortStudy({
                             </li>
                         ))}
                         <Link
-                            className="inline-link underline-anim"
+                            className="link-secondary underline-anim"
                             href={`/study#${key.id}`}
                         >
                             {t("see-more")} →

@@ -57,7 +57,7 @@ export default function Study({
                         link: (chunks) => (
                             <Link
                                 href="/project"
-                                className="outside-link"
+                                className="link-primary"
                             >
                                 {chunks}
                             </Link>
@@ -187,7 +187,7 @@ export default function Study({
                                             <Fragment key={project}>
                                                 <Link
                                                     href={`/project#${project}`}
-                                                    className="inline-link underline-anim"
+                                                    className="link-secondary underline-anim"
                                                 >
                                                     {t.has(
                                                         `projectsContent.${project}.name`,

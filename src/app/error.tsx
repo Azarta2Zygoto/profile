@@ -28,7 +28,7 @@ export default function Error({
                 />
             </head>
             <body>
-                <main className="notfound-main">
+                <main className="error-main">
                     <h1 className="h1-primary">
                         Oups ! Une erreur est survenue
                     </h1>

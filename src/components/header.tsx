@@ -45,7 +45,7 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
                         <Link
                             key={index}
                             href={`/${route.replace(/^\//, "")}`}
-                            className={`nav-link ${isActive ? "active" : ""}`}
+                            className={`btn ${isActive ? "active" : ""}`}
                             onClick={(e) => {
                                 if (isActive) {
                                     e.preventDefault();

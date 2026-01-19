@@ -24,7 +24,7 @@ export default function HomePage({
                     {t.rich("introduction", {
                         link: (chunks) => (
                             <a
-                                className="outside-link"
+                                className="link-primary"
                                 href="https://www.ec-lyon.fr/"
                                 target="_blank"
                                 rel="noopener noreferrer"

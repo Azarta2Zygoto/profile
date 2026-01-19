@@ -888,7 +888,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 getAllOptions().length
                             } options selected. ${t("select")}`}
                             className={cn(
-                                "flex p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto multiple-select",
+                                "flex p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto btn btn-select",
                                 autoSize ? "w-auto" : "w-full",
                                 responsiveSettings.compactMode &&
                                     "min-h-8 text-sm",
@@ -1131,7 +1131,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 </div>
                             ) : (
                                 <div className="flex items-center justify-between w-full mx-auto">
-                                    <span className="text-sm text-muted-foreground mx-3 truncate-text">
+                                    <span className="text-sm text-muted-foreground mx-3 overflow-hidden text-ellipsis whitespace-nowrap">
                                         {t("select")}
                                     </span>
                                     <ChevronDown
@@ -1214,7 +1214,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                             aria-label={`${t("all")} ${
                                                 getAllOptions().length
                                             } options`}
-                                            className="cursor-pointer multiple-select-li"
+                                            className="cursor-pointer btn btn-option"
                                         >
                                             <div
                                                 className={cn(
@@ -1272,7 +1272,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                                 : ", not selected"
                                                         }${option.disabled ? ", disabled" : ""}`}
                                                         className={cn(
-                                                            "multiple-select-li",
+                                                            "btn btn-option",
                                                             "cursor-pointer",
                                                             option.disabled &&
                                                                 "opacity-50 cursor-not-allowed",
@@ -1332,7 +1332,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                                             : ", not selected"
                                                     }${option.disabled ? ", disabled" : ""}`}
                                                     className={cn(
-                                                        "multiple-select-li",
+                                                        "btn btn-option",
                                                         "cursor-pointer",
                                                         "padding-0",
                                                         option.disabled &&

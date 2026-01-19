@@ -195,6 +195,10 @@
     },
     "ProjectPage": {
         "title": "My Projects",
+        "order-by": "Order by: ",
+        "default": "Default",
+        "date": "Date",
+        "lexicographical": "Lexicographical",
         "introduction": "You will find below the list of my completed or ongoing projects. Some projects are carried out as part of my studies, others have been done purely by passion. Moreover, the projects are divided between short and complete ones.",
         "large-projects": "Major Projects",
         "little-projects": "Other Projects",

@@ -68,12 +68,13 @@ export interface ProjectDetailType {
     description: string;
     name: string;
     paragraph?: {
-        text: string;
-        li: string[];
+        text?: string;
+        li?: string[];
     };
 }
-
 export interface ColorScheme {
     background: string;
     color: string;
 }
+
+export type OrderType = "default" | "date" | "lexicographical";

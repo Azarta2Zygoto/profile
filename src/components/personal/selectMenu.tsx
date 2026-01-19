@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { JSX, useState } from "react";
+import { type CSSProperties, type JSX, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
 
@@ -11,19 +9,30 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { FranceFlag, UKFlag } from "@/data/svg";
 
-interface FlagSelectMenuProps {
+interface SelectMenuProps {
+    id: string;
     options: (string | { label: string; value: string | number })[];
     selectedOption: string;
+    style?: CSSProperties;
+    onOptionSelect: (option: string) => void;
 }
 
-export default function FlagSelectMenu({
+export default function SelectMenu({
+    id,
     options,
     selectedOption,
-}: FlagSelectMenuProps): JSX.Element {
+    style,
+    onOptionSelect,
+}: SelectMenuProps): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname();
+
+    function handleOptionSelect(option: string) {
+        if (option !== selectedOption) {
+            onOptionSelect(option);
+        }
+        setIsOpen(false);
+    }
 
     return (
         <Popover
@@ -32,11 +41,11 @@ export default function FlagSelectMenu({
         >
             <PopoverTrigger
                 className="btn btn-select"
-                id="locale-select-menu"
+                id={id}
                 onClick={() => setIsOpen(!isOpen)}
-                style={{ height: "40px" }}
+                style={{ ...style, height: "40px" }}
             >
-                {chooseFlag(selectedOption)}
+                {selectedOption}
                 <ChevronDownIcon
                     className={`pointer-events-none size-4 translate-y-0.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     style={{ marginBottom: "4px" }}
@@ -44,43 +53,32 @@ export default function FlagSelectMenu({
             </PopoverTrigger>
             <PopoverContent className="select-menu-options">
                 {options.map((option, i) => (
-                    <Link
+                    <button
                         key={i}
-                        href={`/${typeof option === "string" ? option : option.value}/${pathname.split("/").slice(2).join("/")}`}
+                        type="button"
+                        aria-label={
+                            typeof option === "string" ? option : option.label
+                        }
                         className={`btn btn-option ${
                             selectedOption ===
                             (typeof option === "string"
                                 ? option
-                                : option.value.toString())
+                                : option.label.toString())
                                 ? "btn-option-selected"
                                 : ""
                         }`}
+                        onClick={() =>
+                            handleOptionSelect(
+                                typeof option === "string"
+                                    ? option
+                                    : option.value.toString(),
+                            )
+                        }
                     >
-                        {chooseFlag(
-                            typeof option === "string"
-                                ? option
-                                : option.value.toString(),
-                        )}
                         {typeof option === "string" ? option : option.label}
-                    </Link>
+                    </button>
                 ))}
             </PopoverContent>
         </Popover>
     );
-}
-
-function chooseFlag(countryCode: string): JSX.Element {
-    switch (countryCode) {
-        case "fr":
-            return (
-                <FranceFlag
-                    width={30}
-                    height={20}
-                />
-            );
-        case "en":
-            return <UKFlag />;
-        default:
-            return <></>;
-    }
 }

@@ -16,7 +16,7 @@ export default function NotFound() {
                 />
             </head>
             <body>
-                <main className="notfound-main">
+                <main className="error-main">
                     <h1 className="h1-primary">Page non trouvée</h1>
                     <section>
                         <p>

@@ -195,6 +195,10 @@
     },
     "ProjectPage": {
         "title": "Mes Projets",
+        "order-by": "Trier par : ",
+        "default": "Par défaut",
+        "date": "Date",
+        "lexicographical": "Alphabétique",
         "introduction": "Vous trouverez la liste de mes projets réalisés ou encore en cours ci-dessous. Certains projets sont réalisés dans le cadre de mes études, d'autres ont été fait purement pour le plaisir.",
         "large-projects": "Projets majeurs",
         "little-projects": "Autres projets",
