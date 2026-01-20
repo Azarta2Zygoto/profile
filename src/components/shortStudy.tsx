@@ -23,7 +23,7 @@ export default function ShortStudy({
             {studyData.map((key, index) => (
                 <div
                     key={index}
-                    className="container-card"
+                    className="card-container"
                 >
                     <div className="icon-title">
                         <h3 className="h3-secondary">

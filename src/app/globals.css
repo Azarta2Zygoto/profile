@@ -484,7 +484,7 @@ p {
     gap: 0.5rem;
     margin: 0.5rem 0;
 }
-.container-card {
+.card-container {
     padding: 1rem;
     margin: 1rem 0;
     border: 1px solid var(--border-color);
@@ -494,10 +494,13 @@ p {
         box-shadow 0.3s,
         transform 0.5s;
 }
-.container-card:hover {
+.card-container:hover {
     border-color: var(--color-special-shadow);
     box-shadow: 0 4px 8px var(--selected-bg);
     transform: scale(1.01);
+}
+.study-container {
+    margin: 2rem 0;
 }
 .contact {
     display: none;

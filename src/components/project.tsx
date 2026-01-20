@@ -27,7 +27,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
             {projectContent.map((key, index) => (
                 <div
                     key={index}
-                    className="container-card"
+                    className="card-container"
                 >
                     <div className="icon-title">
                         <h3

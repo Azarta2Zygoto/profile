@@ -17,11 +17,12 @@ export default function ShortProject(): JSX.Element {
             {projectData.slice(0, 4).map((key, index) => (
                 <div
                     key={index}
-                    className="container-card"
+                    className="card-container"
                 >
                     <h3 className="h3-primary">
                         {t(`projectsContent.${key.id}.name`)}
                     </h3>
+                    <br />
                     <p className="p-minor">
                         {key.period.in &&
                             format.dateTime(new Date(key.period.in), {
