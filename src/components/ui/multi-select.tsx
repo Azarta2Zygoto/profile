@@ -890,8 +890,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                             className={cn(
                                 "flex p-1 rounded-md border min-h-10 h-auto items-center justify-between bg-inherit hover:bg-inherit [&_svg]:pointer-events-auto btn btn-select",
                                 autoSize ? "w-auto" : "w-full",
-                                responsiveSettings.compactMode &&
-                                    "min-h-8 text-sm",
+                                responsiveSettings.compactMode && "min-h-8",
                                 screenSize === "mobile" && "min-h-12 text-base",
                                 disabled && "opacity-50 cursor-not-allowed",
                                 className,
@@ -1131,7 +1130,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                 </div>
                             ) : (
                                 <div className="flex items-center justify-between w-full mx-auto">
-                                    <span className="text-sm text-muted-foreground mx-3 overflow-hidden text-ellipsis whitespace-nowrap">
+                                    <span className="text-muted-foreground mx-3 overflow-hidden text-ellipsis whitespace-nowrap">
                                         {t("select")}
                                     </span>
                                     <ChevronDown

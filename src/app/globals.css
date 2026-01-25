@@ -203,7 +203,7 @@ nav {
 }
 .page-container {
     max-width: clamp(900px, 70vw, 1100px);
-    padding: 1rem 2.5rem;
+    padding: 1rem;
 }
 img {
     max-width: 100%;
