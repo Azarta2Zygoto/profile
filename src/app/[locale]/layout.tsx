@@ -27,7 +27,10 @@ export async function generateMetadata(props: {
 
     return {
         metadataBase: new URL(base_url),
-        title: t("Metadata.title"),
+        title: {
+            default: t("Metadata.title"),
+            template: "%s - " + t("Metadata.siteName"),
+        },
         description: t("Metadata.description"),
         keywords: t("Metadata.keywords"),
         icons: {
@@ -55,6 +58,16 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             images: "/logo-200.png",
+        },
+        alternates: {
+            canonical: `${base_url}${routing.defaultLocale}`,
+            languages: routing.locales.reduce(
+                (acc, locale) => {
+                    acc[locale] = `${base_url}${locale}`;
+                    return acc;
+                },
+                {} as Record<string, string>,
+            ),
         },
     };
 }

@@ -153,7 +153,11 @@
         "siteName": "My Profile",
         "description": "Website serving as a portfolio",
         "keywords": "Portfolio, Profile, Web Development, Data Analysis, Computer Science",
-        "locale": "en_US"
+        "locale": "en_US",
+        "projects-page-title": "Projects",
+        "study-page-title": "Studies",
+        "projects-page-desc": "Discover my projects carried out during my studies or for leisure",
+        "study-page-desc": "Discover my studies and the courses I have taken"
     },
     "Bar": {
         "alt-profile-picture": "Profile picture",
