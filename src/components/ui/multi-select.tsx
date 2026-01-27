@@ -1363,13 +1363,22 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                     </CommandGroup>
                                 )}
                                 <CommandSeparator />
-                                <CommandGroup>
-                                    <div className="flex items-center justify-between">
+                                <CommandGroup style={{ padding: 0 }}>
+                                    <div className="flex items-center justify-between padding-0">
                                         {selectedValues.length > 0 && (
                                             <>
                                                 <CommandItem
                                                     onSelect={handleClear}
-                                                    className="flex-1 justify-center cursor-pointer"
+                                                    className="flex-1 justify-center cursor-pointer btn"
+                                                    style={{
+                                                        borderBottom: "none",
+                                                        borderRight:
+                                                            searchValue !== ""
+                                                                ? "none"
+                                                                : undefined,
+                                                        borderLeft: "none",
+                                                        borderRadius: 0,
+                                                    }}
                                                 >
                                                     {t("clear")}
                                                 </CommandItem>
@@ -1383,7 +1392,16 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
                                             onSelect={() =>
                                                 setIsPopoverOpen(false)
                                             }
-                                            className="flex-1 justify-center cursor-pointer max-w-full"
+                                            className="flex-1 justify-center cursor-pointer max-w-full btn"
+                                            style={{
+                                                borderBottom: "none",
+                                                borderRight: "none",
+                                                borderLeft:
+                                                    selectedValues.length > 0
+                                                        ? undefined
+                                                        : "none",
+                                                borderRadius: 0,
+                                            }}
                                         >
                                             {t("close")}
                                         </CommandItem>

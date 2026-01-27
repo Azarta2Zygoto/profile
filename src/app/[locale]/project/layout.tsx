@@ -28,7 +28,7 @@ export async function generateMetadata(props: {
     };
 }
 
-export default function DessinsLayout({
+export default function ProjectLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
