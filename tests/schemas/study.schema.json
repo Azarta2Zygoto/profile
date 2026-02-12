@@ -1,0 +1,113 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "title": "Study Schema",
+    "description": "Schema for validating study data",
+    "items": {
+        "$ref": "#/$defs/study"
+    },
+    "$defs": {
+        "study": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "city",
+                "link",
+                "logo",
+                "period",
+                "lessons"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+$",
+                    "minLength": 3
+                },
+                "large": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string",
+                    "minLength": 3
+                },
+                "city": {
+                    "type": "string",
+                    "minLength": 3
+                },
+                "link": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "locales": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-z]{2}$"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "period": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["start", "end"],
+                    "properties": {
+                        "start": {
+                            "type": "string"
+                        },
+                        "end": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "lessons": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/lesson"
+                    }
+                }
+            }
+        },
+        "lesson": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "tools", "languages"],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+$",
+                    "minLength": 3
+                },
+                "tools": {
+                    "type": "array",
+                    "items": { "type": "string", "minLength": 1 },
+                    "uniqueItems": true
+                },
+                "languages": {
+                    "type": "array",
+                    "items": { "type": "string", "minLength": 1 },
+                    "uniqueItems": true
+                },
+                "projects": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9-]+$",
+                        "minLength": 1
+                    },
+                    "uniqueItems": true,
+                    "minItems": 1
+                },
+                "link": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            }
+        }
+    }
+}

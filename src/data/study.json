@@ -12,18 +12,18 @@
         },
         "lessons": [
             {
-                "id": "Visualisation",
+                "id": "visualisation",
                 "tools": ["D3.js", "Tableau", "Observablehq"],
                 "languages": ["JavaScript"]
             },
             {
-                "id": "Database",
+                "id": "database",
                 "tools": ["SQLite"],
                 "languages": ["SQL", "Python"],
                 "projects": ["conference"]
             },
             {
-                "id": "DataScience",
+                "id": "data-science",
                 "tools": [
                     "Pandas",
                     "NumPy",
@@ -35,19 +35,19 @@
                 "projects": ["moteur-recherche"]
             },
             {
-                "id": "WebApps",
+                "id": "web-apps",
                 "tools": ["Socket.io", "express.js"],
                 "languages": ["JavaScript", "HTML", "CSS"],
                 "projects": ["jeu-dame"]
             },
             {
-                "id": "CppGui",
+                "id": "cpp-gui",
                 "tools": ["Qt"],
                 "languages": ["C++"],
                 "projects": ["2048-qt"]
             },
             {
-                "id": "IA-introduction",
+                "id": "ia-introduction",
                 "tools": ["TensorFlow", "PyTorch"],
                 "languages": ["Python"]
             },
@@ -62,7 +62,7 @@
                 "languages": []
             },
             {
-                "id": "BigData",
+                "id": "big-data",
                 "tools": ["MongoDB", "Hadoop", "Spark"],
                 "languages": []
             }
@@ -81,14 +81,14 @@
         "locales": ["en"],
         "lessons": [
             {
-                "id": "DataAnalysis",
+                "id": "data-analysis",
                 "link": "https://offre-de-formations.univ-lyon1.fr/front_fiche_ue.php?UE_ID=26005",
                 "tools": ["OLAP", "Dash", "Numpy", "Plotly", "Networkx"],
                 "languages": ["Python"],
                 "projects": ["data-dash"]
             },
             {
-                "id": "BigData",
+                "id": "big-data",
                 "link": "https://offre-de-formations.univ-lyon1.fr/front_fiche_ue.php?UE_ID=26003",
                 "tools": ["Hadoop", "Spark", "Spark Streaming"],
                 "languages": ["Python", "Java"]

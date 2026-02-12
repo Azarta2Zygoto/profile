@@ -23,27 +23,27 @@
             "title": "École d'ingénieurs généraliste",
             "description": "Programme généraliste sur les domaines des mathématiques, de la physique, de l'informatique, de la mécanique, de l'électronique, de la gestion de projet et des sciences humaines.",
             "lessons": {
-                "Visualisation": {
+                "visualisation": {
                     "name": "Visualisation interactive de données",
                     "description": "Apprentissage de techniques de visualisation pour représenter des données (simples, complexes, en grande quantité) de manière interactive et compréhensible."
                 },
-                "Database": {
+                "database": {
                     "name": "Base de données relationnelles",
                     "description": "Étude des concepts de bases de données relationnelles, leur optimisation (formes normales) et leur manipulation via le langage SQL."
                 },
-                "DataScience": {
+                "data-science": {
                     "name": "Analyse de données",
                     "description": "Introduction aux concepts de l'analyse de données : nettoyage, exploration (clustering), visualisation et modélisation prédictive incluant du machine learning."
                 },
-                "WebApps": {
+                "web-apps": {
                     "name": "Applications Web",
                     "description": "Apprentissage des concepts fondamentaux du développement web et de la relation entre le client et le serveur."
                 },
-                "CppGui": {
+                "cpp-gui": {
                     "name": "Programmation des interfaces graphiques en C++",
                     "description": "Apprentissage du langage C++ et de la bibliothèque Qt pour le développement d'interfaces graphiques."
                 },
-                "IA-introduction": {
+                "ia-introduction": {
                     "name": "Apprentissage profond & Intelligence Artificielle : une introduction",
                     "description": "Introduction aux concepts de base de l'intelligence artificielle dont les réseaux de neurones et l'apprentissage profond avec TensorFlow et PyTorch."
                 },
@@ -55,7 +55,7 @@
                     "name": "Cybersécurité",
                     "description": "Introduction aux concepts de la cybersécurité, des menaces courantes aux techniques de prévention, défense en passant par les bonnes pratiques de sécurisation des systèmes informatiques."
                 },
-                "BigData": {
+                "big-data": {
                     "name": "Technologies informatiques du Big Data",
                     "description": "Étude des technologies et outils liés au Big Data pour le traitement de grandes quantités de données."
                 }
@@ -65,11 +65,11 @@
             "title": "Master en Technologies de l'Information et du Web",
             "description": "Formation axée sur la science des données, couvrant la visualisation de données, le Big Data, et les techniques d'analyse de données.",
             "lessons": {
-                "DataAnalysis": {
+                "data-analysis": {
                     "name": "Analyse de Données",
                     "description": "Traitements de données complexes à analyser et visualiser en évitant le plus de biais de biais et de pertes possibles. Création d'une interface utilisateur interactive pour visualiser et analyser un grand ensemble de données."
                 },
-                "BigData": {
+                "big-data": {
                     "name": "Big Data",
                     "description": "Apprentissage de technologies du Big Data, du stockage distribué des données aux frameworks de traitement comme Hadoop et Spark en passant par la lecture et l'écriture de données en continue."
                 }

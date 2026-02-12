@@ -1,0 +1,165 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "title": "Project Schema",
+    "description": "Schema for validating project data",
+    "items": {
+        "$ref": "#/$defs/project"
+    },
+    "$defs": {
+        "project": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "period", "languages", "tools"],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+$",
+                    "minLength": 1
+                },
+                "large": {
+                    "type": "boolean"
+                },
+                "commanditaire": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["name", "url"],
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "logo": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "period": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "start": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "end": {
+                            "type": "string",
+                            "format": "date"
+                        },
+                        "in": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "in": {}
+                            },
+                            "required": ["in"],
+                            "not": {
+                                "anyOf": [
+                                    {
+                                        "properties": {
+                                            "start": {}
+                                        },
+                                        "required": ["start"]
+                                    },
+                                    {
+                                        "properties": {
+                                            "end": {}
+                                        },
+                                        "required": ["end"]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "properties": {
+                                "start": {},
+                                "end": {}
+                            },
+                            "required": ["start"],
+                            "not": { "required": ["in"] }
+                        }
+                    ]
+                },
+                "study": {
+                    "type": "string",
+                    "minLength": 3
+                },
+                "languages": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "tools": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "websites": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name", "url"],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "minLength": 3
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                },
+                "repo": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "creators": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": ["name"],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "minLength": 3
+                            },
+                            "linkedin": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "github": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "website": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

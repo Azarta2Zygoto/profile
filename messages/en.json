@@ -23,27 +23,27 @@
             "title": "General Engineering Program",
             "description": "Comprehensive engineering education covering various fields such as computer science, mathematics, physics, and project management.",
             "lessons": {
-                "Visualisation": {
+                "visualisation": {
                     "name": "Data Visualization",
                     "description": "Study of data visualization techniques, tools and best practices to effectively communicate information through graphical and interactive representations."
                 },
-                "Database": {
+                "database": {
                     "name": "Relational Databases",
                     "description": "Introduction to relational database concepts, SQL language, database design and optimization techniques."
                 },
-                "DataScience": {
+                "data-science": {
                     "name": "Data Science",
                     "description": "Introduction to data science concepts : data analysis, machine learning, and statistical modeling using Python."
                 },
-                "WebApps": {
+                "web-apps": {
                     "name": "Web Development",
                     "description": "Learning the fundamental concepts of web development, including HTML, CSS, JavaScript, and client-server relationships."
                 },
-                "CppGui": {
+                "cpp-gui": {
                     "name": "C++ & Qt for GUI Development",
                     "description": "Introduction to C++ programming and the Qt framework for developing graphical user interfaces."
                 },
-                "IA-introduction": {
+                "ia-introduction": {
                     "name": "Introduction to Artificial Intelligence",
                     "description": "Overview of artificial intelligence concepts, including machine learning, neural networks, and natural language processing."
                 },
@@ -55,7 +55,7 @@
                     "name": "Cybersecurity",
                     "description": "Introduction to cybersecurity principles, including threat analysis, risk management, and security protocols with a general overview of the different types of attacks and defenses tools."
                 },
-                "BigData": {
+                "big-data": {
                     "name": "Big Data",
                     "description": "Study of Big Data technologies and tools for processing large volumes of data."
                 }
@@ -65,11 +65,11 @@
             "title": "Master's Degree in Information and Web Technologies",
             "description": "Data science-focused program covering data visualization, Big Data, and data analysis techniques.",
             "lessons": {
-                "DataAnalysis": {
+                "data-analysis": {
                     "name": "Data Analysis",
                     "description": "Processing complex datasets to analyze and visualize while minimizing biases and data loss. Creation of an interactive user interface to visualize and analyze a large dataset."
                 },
-                "BigData": {
+                "big-data": {
                     "name": "Big Data",
                     "description": "Study of Big Data technologies, from distributed data storage to processing frameworks like Hadoop and Spark with some works on stream processing of live data streams."
                 }
