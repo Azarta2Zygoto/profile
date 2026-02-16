@@ -16,8 +16,17 @@ export default function NotFound() {
                 />
             </head>
             <body>
-                <main className="error-main">
-                    <h1 className="h1-primary">Page non trouvée</h1>
+                <main
+                    className="error-main"
+                    role="main"
+                    aria-labelledby="error-title"
+                >
+                    <h1
+                        className="h1-primary"
+                        id="error-title"
+                    >
+                        Page non trouvée
+                    </h1>
                     <section>
                         <p>
                             Désolé, la page que vous recherchez n&apos;existe

@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { type Locale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -11,14 +11,6 @@ import personalData from "@/data/personal_data.json";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
-
-export const viewport: Viewport = {
-    width: "device-width",
-    initialScale: 1,
-    viewportFit: "cover",
-    themeColor: "#6496fa",
-    colorScheme: "light dark",
-};
 
 export async function generateMetadata(props: {
     params: Promise<{ locale: string }>;
@@ -126,7 +118,7 @@ export default async function RootLayout({
                 <NextIntlClientProvider locale={locale}>
                     <GlobalProvider>
                         <Header locale={locale} />
-                        <main>
+                        <main role="main">
                             <Bar />
                             <div className="page-container">{children}</div>
                         </main>

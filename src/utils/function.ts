@@ -3,10 +3,12 @@ export function activeNavLink(
     locale: string,
     route: string,
 ): boolean {
-    if (pathname.split("/").length === 3) {
-        return pathname === `/${locale}/${route.replace(/^\//, "")}`;
-    } else if (pathname.split("/").length <= 2) {
-        return pathname === `/${locale}${route.replace(/^\//, "")}`;
-    }
-    return false;
+    // Normalize route to remove leading/trailing slashes for comparison
+    const normalizedRoute = route.replace(/^\/|\/$/g, "");
+    const expectedPath = normalizedRoute
+        ? `/${locale}/${normalizedRoute}`
+        : `/${locale}`;
+
+    // Check if pathname matches the expected path
+    return pathname === expectedPath;
 }

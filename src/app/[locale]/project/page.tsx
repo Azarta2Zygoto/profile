@@ -78,7 +78,7 @@ export default function ProjectPage(): JSX.Element {
     ): Array<ProjectType> {
         switch (order) {
             case "date":
-                return projects.sort((a, b) => {
+                return [...projects].sort((a, b) => {
                     const dateA = a.period.start
                         ? new Date(a.period.start)
                         : a.period.in
@@ -99,7 +99,7 @@ export default function ProjectPage(): JSX.Element {
                     return 0;
                 });
             case "lexicographical":
-                return projects.sort((a, b) =>
+                return [...projects].sort((a, b) =>
                     tHome(`projectsContent.${a.id}.name`).localeCompare(
                         tHome(`projectsContent.${b.id}.name`),
                     ),

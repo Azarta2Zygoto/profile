@@ -169,10 +169,14 @@
         "back-home": "Back to Home"
     },
     "ErrorPage": {
+        "metatitle": "Error - My Profile",
+        "metadesc": "Error page of the portfolio",
         "title": "Oops! An error occurred",
         "description": "There seems to be a problem with your request.",
         "retry": "Retry",
-        "back-to-home": "Back to Home"
+        "retry-aria": "Reload the page to retry",
+        "back-to-home": "Back to Home",
+        "advise": "If the problem persists, please contact support or try clearing your browser cache."
     },
     "DefaultTexts": {
         "selectAnOption": "Select an option",
