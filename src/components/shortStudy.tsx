@@ -69,13 +69,14 @@ export default function ShortStudy({
                                 {t(`${key.id}.lessons.${lesson.id}.name`)}
                             </li>
                         ))}
-                        <Link
-                            className="link-secondary underline-anim"
-                            href={`/study#${key.id}`}
-                        >
-                            {t("see-more")} →
-                        </Link>
                     </ul>
+                    <Link
+                        className="link-secondary underline-anim"
+                        style={{ marginLeft: "1.5rem" }}
+                        href={`/study#${key.id}`}
+                    >
+                        {t("see-more")} →
+                    </Link>
                 </div>
             ))}
         </section>

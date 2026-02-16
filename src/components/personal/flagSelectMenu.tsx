@@ -55,6 +55,9 @@ export default function FlagSelectMenu({
                                 ? "btn-option-selected"
                                 : ""
                         }`}
+                        aria-label={
+                            typeof option === "string" ? option : option.label
+                        }
                     >
                         {chooseFlag(
                             typeof option === "string"

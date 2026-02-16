@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @theme {
     --animate-accordion-down: accordion-down 0.2s ease-out;
