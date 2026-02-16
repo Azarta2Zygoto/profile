@@ -109,7 +109,9 @@ export default function ProjectPage(): JSX.Element {
                     projects.some((p) => p.id === project.id),
                 );
             default:
-                return projects;
+                return projectData.filter((project) =>
+                    projects.some((p) => p.id === project.id),
+                );
         }
     }
 

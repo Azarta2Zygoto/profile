@@ -195,6 +195,11 @@
             "in": "2025-03-01"
         },
         "languages": ["JavaScript", "HTML", "CSS"],
-        "tools": ["Socket.IO", "HTML5 Canvas", "express.js"]
+        "tools": ["Socket.IO", "HTML5 Canvas", "express.js"],
+        "creators": [
+            {
+                "name": "Adrien Leblond"
+            }
+        ]
     }
 ]

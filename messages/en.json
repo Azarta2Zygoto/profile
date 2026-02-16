@@ -143,7 +143,7 @@
                 "description": "Simple and reusable React component libraries to learn both the React framework and the creation of basic components."
             },
             "profile": {
-                "name": "Portfolio Personnel",
+                "name": "Portfolio Website",
                 "description": "Realization of a portfolio website to share my profile and many of my projects done. This is the website you are currently on."
             }
         }
@@ -214,5 +214,10 @@
     },
     "ThemeSwitch": {
         "switch": "Switch theme"
+    },
+    "Languages": {
+        "en": "English",
+        "fr": "French",
+        "es": "Spanish"
     }
 }

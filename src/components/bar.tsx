@@ -21,7 +21,7 @@ export default function Bar() {
                 height={516}
             />
             <h2 className="h2-primary text-center">
-                {data.prenom + " " + data.nom}
+                {data.firstname + " " + data.lastname}
             </h2>
             <Contact>
                 <li>{t("student") + data.job}</li>

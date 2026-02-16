@@ -1,0 +1,28 @@
+{
+    "name": "My Profile",
+    "short_name": "Profile",
+    "start_url": "/profile/",
+    "scope": "/profile/",
+    "display": "standalone",
+    "background_color": "#f3ede6",
+    "theme_color": "#6496fa",
+    "lang": "en",
+    "description": "My personal profile website showcasing my projects and skills.",
+    "categories": ["developer", "networking", "personalization"],
+    "icons": [
+        {
+            "src": "/profile/logo-200.png",
+            "sizes": "200x200",
+            "type": "image/png"
+        },
+        {
+            "src": "/profile/logo.svg",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/profile/logo.ico",
+            "type": "image/x-icon"
+        }
+    ]
+}

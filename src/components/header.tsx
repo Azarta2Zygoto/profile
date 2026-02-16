@@ -46,6 +46,7 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
                             key={index}
                             href={`/${route.replace(/^\//, "")}`}
                             className={`btn ${isActive ? "active" : ""}`}
+                            aria-current={isActive ? "page" : undefined}
                             onClick={(e) => {
                                 if (isActive) {
                                     e.preventDefault();

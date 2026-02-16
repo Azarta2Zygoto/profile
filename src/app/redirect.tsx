@@ -6,13 +6,13 @@ import { Suspense, useEffect } from "react";
 
 export default function RedirectPage() {
     return (
-        <Suspense>
-            <html>
-                <body>
+        <html lang="fr">
+            <body>
+                <Suspense>
                     <RedirectPageInternal />
-                </body>
-            </html>
-        </Suspense>
+                </Suspense>
+            </body>
+        </html>
     );
 }
 
