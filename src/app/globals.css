@@ -268,18 +268,18 @@ li {
     margin: 0.5rem 0 1rem 0;
     text-align: left;
 }
-.h3-primary {
-    display: inline-block;
-    font-size: clamp(1.2rem, 2.3vw, 1.5rem);
-    margin-top: 0.5rem;
-    text-align: left;
-}
-.h3-secondary {
+.h2-secondary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 600;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+.h3-primary {
+    display: inline-block;
+    font-size: clamp(1.2rem, 2.3vw, 1.5rem);
     margin-top: 0.5rem;
     text-align: left;
 }

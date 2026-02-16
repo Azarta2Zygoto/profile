@@ -6,17 +6,11 @@ import { cn } from "@/lib/utils";
 
 interface BoxProps {
     name: string;
-    primary?: boolean;
     className?: string;
     style?: CSSProperties;
 }
 
-export default function Box({
-    name,
-    primary = true,
-    className,
-    style,
-}: BoxProps): JSX.Element {
+export default function Box({ name, className, style }: BoxProps): JSX.Element {
     const langColor = (color as { [key: string]: ColorScheme })[name];
     return (
         <span
@@ -25,9 +19,7 @@ export default function Box({
                 ...style,
                 backgroundColor:
                     langColor && langColor.background
-                        ? primary
-                            ? langColor.background
-                            : langColor.background + "a0"
+                        ? langColor.background
                         : "#ececec",
                 color:
                     langColor && langColor.color ? langColor.color : "#000000",

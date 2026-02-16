@@ -77,9 +77,9 @@ export default function Study({
                     id={key.id}
                 >
                     <div className="icon-title">
-                        <h3 className="h3-secondary">
+                        <h2 className="h2-secondary">
                             {key.name} - {t(`${key.id}.title`)}
-                        </h3>
+                        </h2>
                         {key.link && (
                             <Link
                                 href={
@@ -116,7 +116,7 @@ export default function Study({
                             key={lessonIndex}
                             className="card-container"
                         >
-                            <h4 className="h4-primary">
+                            <h3 className="h4-primary">
                                 {t(`${key.id}.lessons.${lesson.id}.name`)}
                                 {lesson.link && (
                                     <Link
@@ -137,7 +137,7 @@ export default function Study({
                                         style={{ marginLeft: "0.5rem" }}
                                     />
                                 )}
-                            </h4>
+                            </h3>
                             <p style={{ marginBottom: "0.5rem" }}>
                                 {t(
                                     `${key.id}.lessons.${lesson.id}.description`,
@@ -157,7 +157,6 @@ export default function Study({
                                         <Box
                                             name={lang}
                                             key={lang}
-                                            primary={false}
                                             style={{ margin: "0 0.25rem" }}
                                         />
                                     ))}
