@@ -181,6 +181,7 @@
     "DefaultTexts": {
         "selectAnOption": "Sélectionnez une option",
         "select": "Sélectionner un ou des langages de programmation",
+        "selectLanguage": "Sélectionner la langue",
         "search": "Rechercher...",
         "all": "Tous",
         "clear": "Effacer",

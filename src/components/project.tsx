@@ -87,7 +87,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             {key.creators.map((creator, idx) => (
                                 <span
                                     key={idx}
-                                    className="inline-text mr-1"
+                                    className="inline-text"
                                 >
                                     {creator.linkedin ? (
                                         <a
@@ -204,7 +204,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                         <strong>{t("tools")}</strong> {key.tools.join(", ")}
                     </p>
                     {key.websites && key.websites.length > 0 && (
-                        <p>
+                        <p style={{ margin: "0.25rem 0" }}>
                             <strong>
                                 {t("visit-website", {
                                     count: key.websites.length,
@@ -232,7 +232,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="link-primary"
-                                style={{ marginLeft: "0.5rem" }}
+                                style={{ margin: "0.25rem 0.5rem" }}
                             >
                                 {key.repo}
                             </a>

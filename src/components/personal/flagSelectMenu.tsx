@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { JSX, useState } from "react";
@@ -22,6 +23,8 @@ export default function FlagSelectMenu({
     options,
     selectedOption,
 }: FlagSelectMenuProps): JSX.Element {
+    const t = useTranslations("DefaultTexts");
+
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
@@ -35,6 +38,7 @@ export default function FlagSelectMenu({
                 id="locale-select-menu"
                 onClick={() => setIsOpen(!isOpen)}
                 style={{ height: "40px" }}
+                aria-label={t("selectLanguage")}
             >
                 {chooseFlag(selectedOption)}
                 <ChevronDownIcon
