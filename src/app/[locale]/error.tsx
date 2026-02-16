@@ -27,8 +27,8 @@ export default function Error({
             stack: error.stack,
             isDev: isDevelopment,
         };
-
-        console.error("Error Boundary Caught:", errorContext);
+        if (isDevelopment)
+            console.error("Error Boundary Caught:", errorContext);
     }, [error, isDevelopment]);
 
     return (

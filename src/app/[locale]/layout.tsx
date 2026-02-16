@@ -7,10 +7,10 @@ import Footer from "@/components/footer";
 import { GlobalProvider } from "@/components/globalProvider";
 import Header from "@/components/header";
 import { base_url } from "@/data/env";
-import personalData from "@/data/personal_data.json";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
+import JSONLD from "./head";
 
 export async function generateMetadata(props: {
     params: Promise<{ locale: string }>;
@@ -53,7 +53,9 @@ export async function generateMetadata(props: {
             images: "/logo-200.png",
         },
         alternates: {
-            canonical: `${base_url}${routing.defaultLocale}`,
+            ...(routing.defaultLocale === locale
+                ? {}
+                : { canonical: `${base_url}${locale}` }),
             languages: routing.locales.reduce(
                 (acc, locale) => {
                     acc[locale] = `${base_url}${locale}`;
@@ -77,42 +79,14 @@ export default async function RootLayout({
     params: Promise<{ locale: string }>;
 }>) {
     const { locale } = (await params) as { locale: Locale };
-    const t = await getTranslations({ locale });
     setRequestLocale(locale);
-
-    const personJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        name: `${personalData.lastname} ${personalData.firstname}`,
-        url: `${base_url}${locale}`,
-        jobTitle: personalData.job,
-        email: `mailto:${personalData.gmail}`,
-        sameAs: `${base_url}${locale}`,
-        knowsLanguage: personalData.languages.map((lang) => {
-            return {
-                "@type": "Language",
-                name: t(`Languages.${lang}`),
-                alternateName: lang,
-            };
-        }),
-        nationality: personalData.nationality.map((nat) => {
-            return {
-                "@type": "Country",
-                name: t(`Languages.${nat}`),
-                alternateName: nat,
-            };
-        }),
-    };
 
     return (
         <html lang={locale}>
             <head>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(personJsonLd),
-                    }}
-                />
+                <NextIntlClientProvider locale={locale}>
+                    <JSONLD locale={locale} />
+                </NextIntlClientProvider>
             </head>
             <body>
                 <NextIntlClientProvider locale={locale}>

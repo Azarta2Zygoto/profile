@@ -3,6 +3,7 @@
 import { useFormatter, useTranslations } from "next-intl";
 import { JSX } from "react";
 
+import { dateFormatOptions } from "@/data/data";
 import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
 
@@ -25,19 +26,19 @@ export default function ShortProject(): JSX.Element {
                     <br />
                     <p className="p-minor">
                         {key.period.in &&
-                            format.dateTime(new Date(key.period.in), {
-                                year: "numeric",
-                                month: "long",
-                            })}
+                            format.dateTime(
+                                new Date(key.period.in),
+                                dateFormatOptions,
+                            )}
                         {key.period.start &&
                             key.period.end &&
-                            `${format.dateTime(new Date(key.period.start), {
-                                year: "numeric",
-                                month: "long",
-                            })} - ${format.dateTime(new Date(key.period.end), {
-                                year: "numeric",
-                                month: "long",
-                            })}`}
+                            `${format.dateTime(
+                                new Date(key.period.start),
+                                dateFormatOptions,
+                            )} - ${format.dateTime(
+                                new Date(key.period.end),
+                                dateFormatOptions,
+                            )}`}
                         {key.study &&
                             " → " +
                                 studyData.find((s) => s.id === key.study)?.name}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { JSX } from "react";
 
+import { dateFormatOptions } from "@/data/data";
 import { base_path } from "@/data/env";
 import studyData from "@/data/study.json";
 import { Linkedin, Website } from "@/data/svg";
@@ -61,19 +62,19 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                     </div>
                     <p className="p-minor">
                         {key.period.in &&
-                            format.dateTime(new Date(key.period.in), {
-                                year: "numeric",
-                                month: "long",
-                            })}
+                            format.dateTime(
+                                new Date(key.period.in),
+                                dateFormatOptions,
+                            )}
                         {key.period.start &&
                             key.period.end &&
-                            `${format.dateTime(new Date(key.period.start), {
-                                year: "numeric",
-                                month: "long",
-                            })} - ${format.dateTime(new Date(key.period.end), {
-                                year: "numeric",
-                                month: "long",
-                            })}`}
+                            `${format.dateTime(
+                                new Date(key.period.start),
+                                dateFormatOptions,
+                            )} - ${format.dateTime(
+                                new Date(key.period.end),
+                                dateFormatOptions,
+                            )}`}
                         {key.study &&
                             " → " +
                                 studyData.find((s) => s.id === key.study)?.name}
