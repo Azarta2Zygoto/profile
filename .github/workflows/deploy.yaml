@@ -76,8 +76,6 @@ jobs:
         run: |
           touch .env
           echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" >> .env
-          echo "NEXT_PUBLIC_BASE_PATH=${{ secrets.NEXT_PUBLIC_BASE_PATH }}" >> .env
-          echo "NEXT_PUBLIC_NODE_ENV=${{ secrets.NEXT_PUBLIC_NODE_ENV }}" >> .env
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build

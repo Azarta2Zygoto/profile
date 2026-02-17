@@ -2,19 +2,25 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { JSX } from "react";
 
-import { base_path } from "@/data/env";
+import { APP_CONFIG } from "@/data/config";
+import { ASSETS, buildAssetPath } from "@/data/constants";
 import data from "@/data/personal_data.json";
 
 import Contact from "./personal/contact";
 
-export default function Bar() {
+/**
+ * Bar Component - Sidebar displaying user profile information
+ * @returns {JSX.Element} A profile sidebar with photo, name, and contact information
+ */
+export default function Bar(): JSX.Element {
     const t = useTranslations("Bar");
 
     return (
         <div className="bar-container">
             <Image
-                src={base_path + "photo.jpg"}
+                src={buildAssetPath(ASSETS.IMAGES.PHOTO, APP_CONFIG.basePath)}
                 alt={t("alt-profile-picture")}
                 className="img-profile"
                 width={516}

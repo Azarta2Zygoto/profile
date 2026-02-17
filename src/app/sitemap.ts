@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { base_url } from "@/data/env";
+import { base_url } from "@/data/config";
 import path_json from "@/data/path.json";
 import { routing } from "@/i18n/routing";
 

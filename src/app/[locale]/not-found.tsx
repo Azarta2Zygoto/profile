@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
+import { type JSX } from "react";
 
 import { Link } from "@/i18n/navigation";
 
-export default function NotFound() {
+export default function NotFound(): JSX.Element {
     const t = useTranslations("NotFound");
 
     return (

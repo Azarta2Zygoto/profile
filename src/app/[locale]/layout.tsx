@@ -6,7 +6,8 @@ import Bar from "@/components/bar";
 import Footer from "@/components/footer";
 import { GlobalProvider } from "@/components/globalProvider";
 import Header from "@/components/header";
-import { base_url } from "@/data/env";
+import { APP_CONFIG } from "@/data/config";
+import { ASSETS, buildAssetPath } from "@/data/constants";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
@@ -19,7 +20,7 @@ export async function generateMetadata(props: {
     const t = await getTranslations({ locale });
 
     return {
-        metadataBase: new URL(base_url),
+        metadataBase: new URL(APP_CONFIG.baseUrl),
         title: {
             default: t("Metadata.title"),
             template: "%s - " + t("Metadata.siteName"),
@@ -27,9 +28,9 @@ export async function generateMetadata(props: {
         description: t("Metadata.description"),
         keywords: t("Metadata.keywords"),
         icons: {
-            icon: "/profile/logo-200.png",
-            shortcut: "/profile/logo-200.png",
-            apple: "/profile/logo-200.png",
+            icon: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
+            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
+            apple: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
         },
         authors: [
             {
@@ -40,7 +41,7 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             url: "/",
-            images: "/logo-200.png",
+            images: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
             type: "website",
             siteName: t("Metadata.siteName"),
             locale: "fr_FR",
@@ -50,15 +51,13 @@ export async function generateMetadata(props: {
             card: "summary_large_image",
             title: t("Metadata.title"),
             description: t("Metadata.description"),
-            images: "/logo-200.png",
+            images: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
         },
         alternates: {
-            ...(routing.defaultLocale === locale
-                ? {}
-                : { canonical: `${base_url}${locale}` }),
+            canonical: `${APP_CONFIG.baseUrl}${routing.defaultLocale}`,
             languages: routing.locales.reduce(
                 (acc, locale) => {
-                    acc[locale] = `${base_url}${locale}`;
+                    acc[locale] = `${APP_CONFIG.baseUrl}${locale}`;
                     return acc;
                 },
                 {} as Record<string, string>,

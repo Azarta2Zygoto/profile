@@ -2,9 +2,7 @@
 
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-import { node_env } from "@/data/env";
+import { type JSX, useEffect, useState } from "react";
 
 import "./globals.css";
 
@@ -14,9 +12,9 @@ export default function Error({
 }: {
     error: Error & { digest?: string };
     reset: () => void;
-}) {
+}): JSX.Element {
     const [showDetails, setShowDetails] = useState(false);
-    const isDevelopment = node_env === "development";
+    const isDevelopment = process.env.NODE_ENV === "development";
 
     useEffect(() => {
         // Log error with contextual information

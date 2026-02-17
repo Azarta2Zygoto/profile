@@ -1,20 +1,22 @@
 "use client";
 
+import Head from "next/head";
 import Link from "next/link";
+import { type JSX } from "react";
 
 import "./globals.css";
 
-export default function NotFound() {
+export default function NotFound(): JSX.Element {
     return (
         <html lang="fr">
-            <head>
+            <Head>
                 <title>Erreur - Profil</title>
                 <meta
                     name="description"
                     content="Page d'erreur 404 du site web faisant office de
                     portfolio"
                 />
-            </head>
+            </Head>
             <body>
                 <main
                     className="error-main"

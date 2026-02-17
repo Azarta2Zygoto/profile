@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { JSX } from "react";
 
-import { base_path } from "@/data/env";
+import { APP_CONFIG } from "@/data/config";
 import studyData from "@/data/study.json";
 import { Website } from "@/data/svg";
 import { Link } from "@/i18n/navigation";
@@ -43,7 +43,7 @@ export default function ShortStudy({
                             >
                                 {key.logo ? (
                                     <Image
-                                        src={`${base_path}logo/${key.logo}`}
+                                        src={`${APP_CONFIG.basePath}logo/${key.logo}`}
                                         alt={`${key.name} logo`}
                                         width={30}
                                         height={30}

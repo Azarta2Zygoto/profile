@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { JSX } from "react";
 
+import { APP_CONFIG } from "@/data/config";
 import { dateFormatOptions } from "@/data/data";
-import { base_path } from "@/data/env";
 import studyData from "@/data/study.json";
 import { Linkedin, Website } from "@/data/svg";
 import { Github } from "@/data/svg";
@@ -48,7 +48,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             >
                                 {key.commanditaire.logo ? (
                                     <Image
-                                        src={`${base_path}logo/${key.commanditaire.logo}`}
+                                        src={`${APP_CONFIG.basePath}logo/${key.commanditaire.logo}`}
                                         alt={`${key.commanditaire.name} logo`}
                                         width={30}
                                         height={30}

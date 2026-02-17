@@ -7,7 +7,8 @@ import { JSX } from "react";
 
 import FlagSelectMenu from "@/components/personal/flagSelectMenu";
 import ThemeSwitch from "@/components/personal/themeSwitch";
-import { base_path } from "@/data/env";
+import { APP_CONFIG } from "@/data/config";
+import { ASSETS, buildAssetPath } from "@/data/constants";
 import locales_json from "@/data/locales.json";
 import path from "@/data/path.json";
 import { Link } from "@/i18n/navigation";
@@ -31,9 +32,10 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
     return (
         <header role="banner">
             <Image
-                src={base_path + "logo.svg"}
+                src={buildAssetPath(ASSETS.IMAGES.LOGO, APP_CONFIG.basePath)}
                 alt={t("alt-logo")}
                 className="img-logo"
+                priority
                 width={40}
                 height={40}
             />

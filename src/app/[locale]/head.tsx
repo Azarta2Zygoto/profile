@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { type JSX } from "react";
 
-import { base_url } from "@/data/env";
+import { APP_CONFIG } from "@/data/config";
 import personalData from "@/data/personal_data.json";
 
 interface JSONLDProps {
@@ -17,10 +17,10 @@ export default function JSONLD({ locale }: JSONLDProps): JSX.Element {
         "@context": "https://schema.org",
         "@type": "Person",
         name: `${personalData.lastname} ${personalData.firstname}`,
-        url: `${base_url}${locale}`,
+        url: `${APP_CONFIG.baseUrl}${locale}`,
         jobTitle: personalData.job,
         email: `mailto:${personalData.gmail}`,
-        sameAs: `${base_url}${locale}`,
+        sameAs: `${APP_CONFIG.baseUrl}${locale}`,
         knowsLanguage: personalData.languages.map((lang) => {
             return {
                 "@type": "Language",
