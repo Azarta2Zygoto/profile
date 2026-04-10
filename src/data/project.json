@@ -112,6 +112,7 @@
         "period": {
             "in": "2026-03-01"
         },
+        "study": "centrale",
         "languages": ["React", "TypeScript", "HTML", "CSS"],
         "tools": ["NEXT.JS", "d3.js"],
         "creators": [

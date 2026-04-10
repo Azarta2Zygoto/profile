@@ -284,6 +284,13 @@ li {
     margin-top: 0.5rem;
     text-align: left;
 }
+.h3-secondary {
+    display: inline-block;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: left;
+}
 .h4-primary {
     display: inline-block;
     font-size: clamp(1rem, 2vw, 1.2rem);

@@ -14,7 +14,8 @@
             {
                 "id": "visualisation",
                 "tools": ["D3.js", "Tableau", "Observablehq"],
-                "languages": ["JavaScript"]
+                "languages": ["JavaScript"],
+                "projects": ["wood-viz"]
             },
             {
                 "id": "database",

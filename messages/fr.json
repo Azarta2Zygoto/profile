@@ -95,7 +95,7 @@
         },
         "projectsContent": {
             "randou": {
-                "name": "Application web pour la détection et la lecture de panneaux de randonnée.",
+                "name": "Application web pour la détection et la lecture de panneaux de randonnée",
                 "description": "Mise en place d'un outil d'identification et de lecture de panneaux de randonée. Cet ouil est alors utilisé pour générer des panneaux en 3D avec Blender. Toutes les données sont enregistrées dans une base de données pour être ensuite être visualisées sur une application web."
             },
             "stage-application": {
