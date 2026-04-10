@@ -6,7 +6,7 @@ import { JSX } from "react";
 
 import { APP_CONFIG } from "@/data/config";
 import { ASSETS, buildAssetPath } from "@/data/constants";
-import data from "@/data/personal_data.json";
+import data from "@/data/profile-data.json";
 
 import Contact from "./personal/contact";
 

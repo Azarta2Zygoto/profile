@@ -2,7 +2,7 @@
 
 import { JSX, type ReactNode } from "react";
 
-import data from "@/data/personal_data.json";
+import data from "@/data/profile-data.json";
 import { Github, Gmail, Linkedin } from "@/data/svg";
 
 interface ContactProps {
@@ -38,7 +38,7 @@ export default function Contact({ children }: ContactProps): JSX.Element {
             <li className="li-bar">
                 <a
                     className="inline-icon underline-anim"
-                    href={"mailto:" + data.gmail}
+                    href={`mailto:${data.gmail}`}
                 >
                     <Gmail />
                     {data.gmail}

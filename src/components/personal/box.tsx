@@ -11,7 +11,7 @@ interface BoxProps {
 }
 
 export default function Box({ name, className, style }: BoxProps): JSX.Element {
-    const langColor = (color as { [key: string]: ColorScheme })[name];
+    const langColor = (color as Record<string, ColorScheme>)[name];
     return (
         <span
             className={cn("box", className)}

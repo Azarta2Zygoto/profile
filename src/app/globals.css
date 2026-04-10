@@ -202,7 +202,7 @@ nav {
 }
 .page-container {
     max-width: clamp(900px, 70vw, 1100px);
-    padding: 1rem;
+    padding: 2.5rem;
 }
 img {
     max-width: 100%;
@@ -243,6 +243,7 @@ img {
     align-items: center;
     width: fit-content;
     height: max-content;
+    margin-right: 0.2rem;
 }
 ul {
     list-style-type: none;

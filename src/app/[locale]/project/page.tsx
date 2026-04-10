@@ -35,7 +35,13 @@ export default function ProjectPage(): JSX.Element {
     const [littleProjectContent, setLittleProjectContent] = useState<
         Array<ProjectType>
     >(constLittleProjectContent);
-    const [selectedOrder, setSelectedOrder] = useState<OrderType>("default");
+    const [selectedOrder, setSelectedOrder] = useState<{
+        value: OrderType;
+        label: string;
+    }>({
+        value: "default",
+        label: t("default"),
+    });
 
     function handleLanguagesChange(selected: string[]) {
         const selectedLanguages = selected.map((lang) => ({
@@ -63,7 +69,10 @@ export default function ProjectPage(): JSX.Element {
     }
 
     function handleOrderChange(order: OrderType) {
-        setSelectedOrder(order);
+        setSelectedOrder({
+            value: order,
+            label: t(order),
+        });
         setLargeProjectContent((prevProjects) =>
             projectOrdering(prevProjects, order),
         );
@@ -134,7 +143,7 @@ export default function ProjectPage(): JSX.Element {
                             label: t(order),
                             value: order,
                         }))}
-                        selectedOption={t(selectedOrder)}
+                        selectedOption={selectedOrder}
                         onOptionSelect={(option) =>
                             handleOrderChange(option as OrderType)
                         }

@@ -21,7 +21,7 @@
             "purpose": "any maskable"
         },
         {
-            "src": "/profile/logo.ico",
+            "src": "/profile/favicon.ico",
             "type": "image/x-icon"
         }
     ]

@@ -7,16 +7,18 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 
-interface SubAccordeonItem {
+interface SubAccordionItem {
     title: string;
     content: JSX.Element;
 }
 
-interface AccordeonProps {
-    items: SubAccordeonItem | Array<SubAccordeonItem>;
+interface AccordionProps {
+    items: SubAccordionItem | Array<SubAccordionItem>;
 }
 
-export default function Accordeon({ items }: AccordeonProps): JSX.Element {
+export default function ImplementAccordion({
+    items,
+}: AccordionProps): JSX.Element {
     return (
         <Accordion
             type="single"
@@ -28,15 +30,15 @@ export default function Accordeon({ items }: AccordeonProps): JSX.Element {
                     <AccordionItem
                         key={index}
                         value={`item-${index}`}
-                        className="accordeon"
+                        className="Accordion"
                     >
                         <AccordionTrigger
-                            className="open-accordeon"
+                            className="open-Accordion"
                             style={{ display: "none" }}
                         >
                             {item.title}
                         </AccordionTrigger>
-                        <AccordionContent className="in-accordeon">
+                        <AccordionContent className="in-Accordion">
                             {item.content}
                         </AccordionContent>
                     </AccordionItem>
@@ -44,12 +46,12 @@ export default function Accordeon({ items }: AccordeonProps): JSX.Element {
             ) : (
                 <AccordionItem
                     value="item-0"
-                    className="accordeon"
+                    className="Accordion"
                 >
-                    <AccordionTrigger className="open-accordeon">
+                    <AccordionTrigger className="open-Accordion">
                         {items.title}
                     </AccordionTrigger>
-                    <AccordionContent className="in-accordeon">
+                    <AccordionContent className="in-Accordion">
                         {items.content}
                     </AccordionContent>
                 </AccordionItem>

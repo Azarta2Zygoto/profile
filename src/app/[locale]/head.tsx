@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { type JSX } from "react";
 
 import { APP_CONFIG } from "@/data/config";
-import personalData from "@/data/personal_data.json";
+import personalData from "@/data/profile-data.json";
 
 interface JSONLDProps {
     locale: string;

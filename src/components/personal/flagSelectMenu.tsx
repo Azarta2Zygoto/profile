@@ -1,8 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { JSX, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
@@ -12,10 +10,11 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { FranceFlag, UKFlag } from "@/data/svg";
+import { FranceFlag, UKFlag, Website } from "@/data/svg";
+import { Link, usePathname } from "@/i18n/navigation";
 
 interface FlagSelectMenuProps {
-    options: (string | { label: string; value: string | number })[];
+    options: { label: string; value: string }[];
     selectedOption: string;
 }
 
@@ -24,9 +23,9 @@ export default function FlagSelectMenu({
     selectedOption,
 }: FlagSelectMenuProps): JSX.Element {
     const t = useTranslations("DefaultTexts");
+    const pathname = usePathname();
 
     const [isOpen, setIsOpen] = useState(false);
-    const pathname = usePathname();
 
     return (
         <Popover
@@ -36,7 +35,6 @@ export default function FlagSelectMenu({
             <PopoverTrigger
                 className="btn btn-select"
                 id="locale-select-menu"
-                onClick={() => setIsOpen(!isOpen)}
                 style={{ height: "40px" }}
                 aria-label={t("selectLanguage")}
             >
@@ -47,28 +45,20 @@ export default function FlagSelectMenu({
                 />
             </PopoverTrigger>
             <PopoverContent className="select-menu-options">
-                {options.map((option, i) => (
+                {options.map((option) => (
                     <Link
-                        key={i}
-                        href={`/${typeof option === "string" ? option : option.value}/${pathname.split("/").slice(2).join("/")}`}
+                        key={option.value}
+                        href={pathname}
+                        locale={option.value}
                         className={`btn btn-option ${
-                            selectedOption ===
-                            (typeof option === "string"
-                                ? option
-                                : option.value.toString())
+                            selectedOption === option.value
                                 ? "btn-option-selected"
                                 : ""
                         }`}
-                        aria-label={
-                            typeof option === "string" ? option : option.label
-                        }
+                        aria-label={option.label}
                     >
-                        {chooseFlag(
-                            typeof option === "string"
-                                ? option
-                                : option.value.toString(),
-                        )}
-                        {typeof option === "string" ? option : option.label}
+                        {chooseFlag(option.value)}
+                        {option.label}
                     </Link>
                 ))}
             </PopoverContent>
@@ -88,6 +78,6 @@ function chooseFlag(countryCode: string): JSX.Element {
         case "en":
             return <UKFlag />;
         default:
-            return <></>;
+            return <Website />;
     }
 }

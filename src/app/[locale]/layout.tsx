@@ -41,7 +41,10 @@ export async function generateMetadata(props: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             url: "/",
-            images: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
+            images: {
+                url: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
+                alt: t("Metadata.siteName"),
+            },
             type: "website",
             siteName: t("Metadata.siteName"),
             locale: "fr_FR",
@@ -51,7 +54,10 @@ export async function generateMetadata(props: {
             card: "summary_large_image",
             title: t("Metadata.title"),
             description: t("Metadata.description"),
-            images: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
+            images: {
+                url: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
+                alt: t("Metadata.siteName"),
+            },
         },
         alternates: {
             canonical: `${APP_CONFIG.baseUrl}${routing.defaultLocale}`,

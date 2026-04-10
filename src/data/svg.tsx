@@ -24,10 +24,10 @@ export function IconSVG({
 }: IconSVGProps): JSX.Element {
     return (
         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox={viewBox}
             height={height}
             width={width}
-            viewBox={viewBox}
-            xmlns="http://www.w3.org/2000/svg"
             focusable="false"
             fill={fill}
             role="img"

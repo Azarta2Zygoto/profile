@@ -12,7 +12,7 @@ import { Linkedin, Website } from "@/data/svg";
 import { Github } from "@/data/svg";
 import type { ProjectType } from "@/data/types";
 
-import Accordeon from "./personal/accordeon";
+import ImplementAccordion from "./personal/accordeon";
 import Box from "./personal/box";
 
 interface ProjectProps {
@@ -139,7 +139,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                         <></>
                                     )}
                                     {creator.name}
-                                    {idx < key.creators!.length - 1 && ", "}
+                                    {idx < key.creators!.length - 1 && ","}
                                 </span>
                             ))}
                         </p>
@@ -148,7 +148,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                         {t(`projectsContent.${key.id}.description`)}
                     </p>
                     {t.has(`projectsContent.${key.id}.paragraph`) && (
-                        <Accordeon
+                        <ImplementAccordion
                             items={{
                                 title: t("see-more"),
                                 content: (
