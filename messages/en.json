@@ -94,9 +94,13 @@
             }
         },
         "projectsContent": {
+            "randou": {
+                "name": "Web application to detect and read hiking signs",
+                "description": "Development of a web application to identify and read hiking signs. This tool is then used to generate 3D signs with Blender. All data is stored in a database to be visualized on a web application."
+            },
             "stage-application": {
                 "name": "Web Application for Sports Data Collection",
-                "description": "Web application development for collecting sports data with image and video processing for research purposes"
+                "description": "Yolo model development for collecting sports data with image and video processing for research purposes"
             },
             "jeu-inclusif": {
                 "name": "Inclusif : le jeu",
@@ -113,6 +117,10 @@
             "challenger": {
                 "name": "Challenger",
                 "description": "Design and development of a part of a web application to manage a student association's activities for the preparation and organization of the annual event."
+            },
+            "wood-viz": {
+                "name": "International wood trade visualization",
+                "description": "Based on official data from the French Ministry of Agriculture, interactive visualizations of international wood trade between France and the rest of the world were created to more easily understand commercial flows."
             },
             "miss-hestia": {
                 "name": "Showcase Website - Miss Hestia",

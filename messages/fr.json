@@ -94,9 +94,13 @@
             }
         },
         "projectsContent": {
+            "randou": {
+                "name": "Application web pour la détection et la lecture de panneaux de randonnée.",
+                "description": "Mise en place d'un outil d'identification et de lecture de panneaux de randonée. Cet ouil est alors utilisé pour générer des panneaux en 3D avec Blender. Toutes les données sont enregistrées dans une base de données pour être ensuite être visualisées sur une application web."
+            },
             "stage-application": {
-                "name": "Application web de collecte de données sportives",
-                "description": "Développement d'une application web pour la collecte de données sportives via le traitement d'images et vidéo à des fins de recherche."
+                "name": "Application web pour la collecte de données sportives",
+                "description": "Développement d'un modèle avec Yolo pour la collecte de données sportives via le traitement d'images et vidéo à des fins de recherche."
             },
             "jeu-inclusif": {
                 "name": "Inclusif : le jeu",
@@ -113,6 +117,10 @@
             "challenger": {
                 "name": "Le Challenger",
                 "description": "Développement de la gestion de permanences pour gérer les bénévoles afinde mettre en place l'un des plus grands événements sportifs étudiants de France."
+            },
+            "wood-viz": {
+                "name": "Echange internationaux de bois",
+                "description": "D'après les données officielles du Ministère de l'Agriculture, des visualisations interactives des échanges internationaux de bois entre la France et le reste du monde ont été créées pour plus facilement comprendre les flux commerciaux."
             },
             "miss-hestia": {
                 "name": "Site vitrine - Miss Hestia",

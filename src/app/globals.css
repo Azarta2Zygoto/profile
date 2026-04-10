@@ -298,6 +298,7 @@ p {
 .p-minor {
     display: inline-flex;
     font-size: clamp(0.8rem, 1.2vw, 0.85rem);
+    flex-wrap: wrap;
     text-transform: capitalize;
 }
 .btn {

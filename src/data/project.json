@@ -1,5 +1,31 @@
 [
     {
+        "id": "randou",
+        "commanditaire": {
+            "name": "LIRIS",
+            "url": "https://liris.cnrs.fr/",
+            "logo": "logo_liris.png"
+        },
+        "period": {
+            "start": "2026-01-01",
+            "end": "2026-03-30"
+        },
+        "large": true,
+        "languages": ["React", "Python", "SQL"],
+        "tools": ["NEXT.JS", "FastAPI", "GitHub", "SQLite", "SQLAlchemy"],
+        "creators": [
+            {
+                "name": "Loïs Baudet"
+            },
+            {
+                "name": "Amaury Blanqué"
+            },
+            {
+                "name": "Ludivine Li"
+            }
+        ]
+    },
+    {
         "id": "stage-application",
         "commanditaire": {
             "name": "LIRIS",
@@ -80,6 +106,26 @@
                 "name": "Aïki Humeau"
             }
         ]
+    },
+    {
+        "id": "wood-viz",
+        "period": {
+            "in": "2026-03-01"
+        },
+        "languages": ["React", "TypeScript", "HTML", "CSS"],
+        "tools": ["NEXT.JS", "d3.js"],
+        "creators": [
+            {
+                "name": "Clément Petitjean"
+            }
+        ],
+        "websites": [
+            {
+                "name": "Visualization Wood",
+                "url": "https://azarta2zygoto.github.io/visualization-wood/"
+            }
+        ],
+        "repo": "https://github.com/Azarta2Zygoto/visualization-wood"
     },
     {
         "id": "miss-hestia",
