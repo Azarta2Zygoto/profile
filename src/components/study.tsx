@@ -70,11 +70,11 @@ export default function Study({
 
     return (
         <section>
-            {studyContent.map((key, index) => (
+            {studyContent.map((key) => (
                 <div
-                    key={index}
-                    className="study-container"
+                    key={key.id}
                     id={key.id}
+                    className="study-container"
                 >
                     <div className="icon-title">
                         <h2 className="h2-secondary">
@@ -180,13 +180,13 @@ export default function Study({
                                                         `projectsContent.${project}.name`,
                                                     )
                                                         ? t(
-                                                              `projectsContent.${project}.name`,
-                                                          )
+                                                            `projectsContent.${project}.name`,
+                                                        )
                                                         : project}
                                                 </Link>
                                                 {projIndex <
                                                     lesson.projects!.length -
-                                                        1 && ", "}
+                                                    1 && ", "}
                                             </Fragment>
                                         ),
                                     )}

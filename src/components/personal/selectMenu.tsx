@@ -45,8 +45,8 @@ export default function SelectMenu({
             onOpenChange={setIsOpen}
         >
             <PopoverTrigger
-                className="btn btn-select"
                 id={id}
+                className="btn btn-select"
                 style={{ ...style, height: "40px" }}
             >
                 {selectedOption.label}
@@ -60,15 +60,12 @@ export default function SelectMenu({
                     <button
                         key={option.value}
                         type="button"
-                        aria-label={option.label}
-                        className={`btn btn-option ${
-                            selectedOption.value === option.value
+                        className={`btn btn-option ${selectedOption.value === option.value
                                 ? "btn-option-selected"
                                 : ""
-                        }`}
-                        onClick={() =>
-                            handleOptionSelect(option.value.toString())
-                        }
+                            }`}
+                        onClick={() => handleOptionSelect(option.value)}
+                        aria-label={option.label}
                     >
                         {option.label}
                     </button>

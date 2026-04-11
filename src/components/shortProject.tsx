@@ -15,9 +15,9 @@ export default function ShortProject(): JSX.Element {
 
     return (
         <section>
-            {projectData.slice(0, 4).map((key, index) => (
+            {projectData.slice(0, 4).map((key) => (
                 <div
-                    key={index}
+                    key={key.id}
                     className="card-container"
                 >
                     <h3 className="h3-primary">
@@ -41,7 +41,7 @@ export default function ShortProject(): JSX.Element {
                             )}`}
                         {key.study &&
                             " → " +
-                                studyData.find((s) => s.id === key.study)?.name}
+                            studyData.find((s) => s.id === key.study)?.name}
                     </p>
                     <div className="box-container">
                         {key.languages.length > 0 &&

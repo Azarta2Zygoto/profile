@@ -77,7 +77,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             )}`}
                         {key.study &&
                             " → " +
-                                studyData.find((s) => s.id === key.study)?.name}
+                            studyData.find((s) => s.id === key.study)?.name}
                     </p>
                     <br />
                     {key.creators && key.creators.length > 0 && (
@@ -87,7 +87,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             </strong>
                             {key.creators.map((creator, idx) => (
                                 <span
-                                    key={idx}
+                                    key={creator.name}
                                     className="inline-text"
                                 >
                                     {creator.linkedin ? (
@@ -156,32 +156,32 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                         {t.has(
                                             `projectsContent.${key.id}.paragraph.text`,
                                         ) && (
-                                            <p>
-                                                {t(
-                                                    `projectsContent.${key.id}.paragraph.text`,
-                                                )}
-                                            </p>
-                                        )}
+                                                <p>
+                                                    {t(
+                                                        `projectsContent.${key.id}.paragraph.text`,
+                                                    )}
+                                                </p>
+                                            )}
                                         {t.has(
                                             `projectsContent.${key.id}.paragraph.li`,
                                         ) && (
-                                            <ul className="list-items">
-                                                {t
-                                                    .raw(
-                                                        `projectsContent.${key.id}.paragraph.li`,
-                                                    )
-                                                    .map(
-                                                        (
-                                                            item: string,
-                                                            idx: number,
-                                                        ) => (
-                                                            <li key={idx}>
-                                                                {item}
-                                                            </li>
-                                                        ),
-                                                    )}
-                                            </ul>
-                                        )}
+                                                <ul className="list-items">
+                                                    {t
+                                                        .raw(
+                                                            `projectsContent.${key.id}.paragraph.li`,
+                                                        )
+                                                        .map(
+                                                            (
+                                                                item: string,
+                                                                idx: number,
+                                                            ) => (
+                                                                <li key={idx}>
+                                                                    {item}
+                                                                </li>
+                                                            ),
+                                                        )}
+                                                </ul>
+                                            )}
                                     </div>
                                 ),
                             }}
@@ -196,8 +196,8 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                         </strong>
                         {key.languages.map((lang) => (
                             <Box
-                                name={lang}
                                 key={lang}
+                                name={lang}
                             />
                         ))}
                     </div>

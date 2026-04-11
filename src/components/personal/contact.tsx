@@ -1,5 +1,3 @@
-"use client";
-
 import { JSX, type ReactNode } from "react";
 
 import data from "@/data/profile-data.json";

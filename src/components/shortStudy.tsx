@@ -20,9 +20,9 @@ export default function ShortStudy({
 
     return (
         <section>
-            {studyData.map((key, index) => (
+            {studyData.map((key) => (
                 <div
-                    key={index}
+                    key={key.id}
                     className="card-container"
                 >
                     <div className="icon-title">
@@ -37,9 +37,10 @@ export default function ShortStudy({
                                         ? `/${locale}`
                                         : "")
                                 }
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="external-link"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                aria-label={t(`${key.id}.title`)}
                             >
                                 {key.logo ? (
                                     <Image
@@ -64,16 +65,16 @@ export default function ShortStudy({
                     </p>
                     <p>{t("some-lessons")}</p>
                     <ul className="list-items">
-                        {key.lessons.slice(0, 3).map((lesson, lessonIndex) => (
-                            <li key={lessonIndex}>
+                        {key.lessons.slice(0, 3).map((lesson) => (
+                            <li key={lesson.id}>
                                 {t(`${key.id}.lessons.${lesson.id}.name`)}
                             </li>
                         ))}
                     </ul>
                     <Link
+                        href={`/study#${key.id}`}
                         className="link-secondary underline-anim"
                         style={{ marginLeft: "1.5rem" }}
-                        href={`/study#${key.id}`}
                     >
                         {t("see-more")} →
                     </Link>

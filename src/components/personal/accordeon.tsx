@@ -26,16 +26,13 @@ export default function ImplementAccordion({
             className="w-full"
         >
             {Array.isArray(items) ? (
-                items.map((item, index) => (
+                items.map((item) => (
                     <AccordionItem
-                        key={index}
-                        value={`item-${index}`}
+                        key={item.title}
+                        value={`item-${item.title}`}
                         className="Accordion"
                     >
-                        <AccordionTrigger
-                            className="open-Accordion"
-                            style={{ display: "none" }}
-                        >
+                        <AccordionTrigger className="open-Accordion">
                             {item.title}
                         </AccordionTrigger>
                         <AccordionContent className="in-Accordion">
@@ -45,7 +42,7 @@ export default function ImplementAccordion({
                 ))
             ) : (
                 <AccordionItem
-                    value="item-0"
+                    value={`item-${items.title}`}
                     className="Accordion"
                 >
                     <AccordionTrigger className="open-Accordion">
