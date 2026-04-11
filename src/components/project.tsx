@@ -99,6 +99,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                             style={{
                                                 margin: "0 0.15rem",
                                             }}
+                                            aria-label={`${creator.name} LinkedIn`}
                                         >
                                             <Linkedin
                                                 width={16}
@@ -114,6 +115,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                             style={{
                                                 margin: "0 0.15rem",
                                             }}
+                                            aria-label={`${creator.name} GitHub`}
                                         >
                                             <Github
                                                 width={16}
@@ -129,6 +131,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                             style={{
                                                 margin: "0 0.15rem",
                                             }}
+                                            aria-label={`${creator.name} Website`}
                                         >
                                             <Website
                                                 width={16}

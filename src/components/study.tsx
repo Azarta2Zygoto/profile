@@ -91,6 +91,7 @@ export default function Study({
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="external-link"
+                                aria-label={t(`${key.id}.title`)}
                             >
                                 {key.logo ? (
                                     <Image

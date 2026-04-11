@@ -40,12 +40,12 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
                 height={40}
             />
             <nav role="navigation">
-                {Object.entries(path).map(([key, route], index) => {
+                {Object.entries(path).map(([key, route]) => {
                     const isActive = activeNavLink(pathname, locale, route);
 
                     return (
                         <Link
-                            key={index}
+                            key={key}
                             href={`/${route.replace(/^\//, "")}`}
                             className={`btn ${isActive ? "active" : ""}`}
                             aria-current={isActive ? "page" : undefined}
