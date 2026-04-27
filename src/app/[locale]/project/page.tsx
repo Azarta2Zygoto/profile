@@ -44,25 +44,19 @@ export default function ProjectPage(): JSX.Element {
     });
 
     function handleLanguagesChange(selected: string[]) {
-        const selectedLanguages = selected.map((lang) => ({
-            label: lang,
-            value: lang,
-        }));
-        if (selectedLanguages.length === 0) {
+        const selectedLanguageValues = new Set(selected);
+
+        if (selectedLanguageValues.size === 0) {
             setLargeProjectContent(constLargeProjectContent);
             setLittleProjectContent(constLittleProjectContent);
             return;
         }
 
         const filteredLarge = constLargeProjectContent.filter((project) =>
-            project.languages.some((lang) =>
-                selectedLanguages.map((l) => l.value).includes(lang),
-            ),
+            project.languages.some((lang) => selectedLanguageValues.has(lang)),
         );
         const filteredLittle = constLittleProjectContent.filter((project) =>
-            project.languages.some((lang) =>
-                selectedLanguages.map((l) => l.value).includes(lang),
-            ),
+            project.languages.some((lang) => selectedLanguageValues.has(lang)),
         );
         setLargeProjectContent(filteredLarge);
         setLittleProjectContent(filteredLittle);

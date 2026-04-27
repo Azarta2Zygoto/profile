@@ -1,39 +1,36 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { permanentRedirect } from "next/navigation";
-import { type JSX, Suspense, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { type JSX, useEffect, useRef } from "react";
 
-/**
- * Redirect page that detects user locale and redirects to appropriate locale route
- * @returns {JSX.Element} HTML structure with redirect logic in Suspense
- */
 export default function RedirectPage(): JSX.Element {
+    return <RedirectPageInternal />;
+}
+
+function RedirectPageInternal(): JSX.Element {
+    const router = useRouter();
+    const hasRedirected = useRef(false);
+
+    useEffect(() => {
+        if (hasRedirected.current) return;
+        hasRedirected.current = true;
+
+        const browserLocales = [navigator.language, ...navigator.languages]
+            .filter(Boolean)
+            .map((locale) => locale.toLowerCase());
+
+        const locale = browserLocales.some((value) => value.startsWith("fr"))
+            ? "fr"
+            : "en";
+
+        router.replace(`/${locale}`);
+    }, [router]);
+
     return (
         <html lang="fr">
             <body>
-                <Suspense>
-                    <RedirectPageInternal />
-                </Suspense>
+                <p className="p-minor">Redirection...</p>
             </body>
         </html>
     );
-}
-
-/**
- * Internal component that handles the actual redirect logic
- * Extracts user language preference and redirects to locale-specific route
- * @returns {JSX.Element} Empty fragment after redirect is triggered
- */
-function RedirectPageInternal(): JSX.Element {
-    const pathname = usePathname();
-
-    useEffect(() => {
-        const navigatorLocale = navigator.language.startsWith("fr")
-            ? "fr"
-            : "en";
-        permanentRedirect(`/${navigatorLocale}${pathname}`);
-    });
-
-    return <></>;
 }

@@ -77,7 +77,7 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                             )}`}
                         {key.study &&
                             " → " +
-                            studyData.find((s) => s.id === key.study)?.name}
+                                studyData.find((s) => s.id === key.study)?.name}
                     </p>
                     <br />
                     {key.creators && key.creators.length > 0 && (
@@ -159,32 +159,27 @@ export default function Project({ projectContent }: ProjectProps): JSX.Element {
                                         {t.has(
                                             `projectsContent.${key.id}.paragraph.text`,
                                         ) && (
-                                                <p>
-                                                    {t(
-                                                        `projectsContent.${key.id}.paragraph.text`,
-                                                    )}
-                                                </p>
-                                            )}
+                                            <p>
+                                                {t(
+                                                    `projectsContent.${key.id}.paragraph.text`,
+                                                )}
+                                            </p>
+                                        )}
                                         {t.has(
                                             `projectsContent.${key.id}.paragraph.li`,
                                         ) && (
-                                                <ul className="list-items">
-                                                    {t
-                                                        .raw(
-                                                            `projectsContent.${key.id}.paragraph.li`,
-                                                        )
-                                                        .map(
-                                                            (
-                                                                item: string,
-                                                                idx: number,
-                                                            ) => (
-                                                                <li key={idx}>
-                                                                    {item}
-                                                                </li>
-                                                            ),
-                                                        )}
-                                                </ul>
-                                            )}
+                                            <ul className="list-items">
+                                                {t
+                                                    .raw(
+                                                        `projectsContent.${key.id}.paragraph.li`,
+                                                    )
+                                                    .map((item: string) => (
+                                                        <li key={item}>
+                                                            {item}
+                                                        </li>
+                                                    ))}
+                                            </ul>
+                                        )}
                                     </div>
                                 ),
                             }}

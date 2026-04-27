@@ -24,12 +24,13 @@ export default function Study({
     languages,
 }: StudyProps): JSX.Element {
     const t = useTranslations("HomePage");
+    const selectedLanguageValues = new Set(languages.map((l) => l.value));
     const studyContent = (studyData as StudyType[])
         .filter((study) => {
             if (languages.length === 0) return true;
             return study.lessons.some((lesson) =>
                 lesson.languages.some((lang) =>
-                    languages.map((l) => l.value).includes(lang),
+                    selectedLanguageValues.has(lang),
                 ),
             );
         })
@@ -43,7 +44,7 @@ export default function Study({
                 )
                     return true;
                 return lesson.languages.some((lang) =>
-                    languages.map((l) => l.value).includes(lang),
+                    selectedLanguageValues.has(lang),
                 );
             }),
         })) as StudyType[];
@@ -112,9 +113,9 @@ export default function Study({
                         {key.city + ", France"}
                     </p>
                     <p>{t(`${key.id}.description`)}</p>
-                    {key.lessons.map((lesson, lessonIndex) => (
+                    {key.lessons.map((lesson) => (
                         <div
-                            key={lessonIndex}
+                            key={lesson.id}
                             className="card-container"
                         >
                             <h3 className="h4-primary">
@@ -181,13 +182,13 @@ export default function Study({
                                                         `projectsContent.${project}.name`,
                                                     )
                                                         ? t(
-                                                            `projectsContent.${project}.name`,
-                                                        )
+                                                              `projectsContent.${project}.name`,
+                                                          )
                                                         : project}
                                                 </Link>
                                                 {projIndex <
                                                     lesson.projects!.length -
-                                                    1 && ", "}
+                                                        1 && ", "}
                                             </Fragment>
                                         ),
                                     )}
