@@ -5,8 +5,9 @@ import Image from "next/image";
 import { Fragment, JSX } from "react";
 
 import { APP_CONFIG } from "@/data/config";
+import { LinkExternal } from "@/data/icons/link-external";
+import { Website } from "@/data/icons/website";
 import studyData from "@/data/study.json";
-import { LinkExternal, Website } from "@/data/svg";
 import type { Locale, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
 

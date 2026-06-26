@@ -1,7 +1,9 @@
 import { JSX, type ReactNode } from "react";
 
+import { Github } from "@/data/icons/github";
+import { Gmail } from "@/data/icons/gmail";
+import { Linkedin } from "@/data/icons/linkedin";
 import data from "@/data/profile-data.json";
-import { Github, Gmail, Linkedin } from "@/data/svg";
 
 interface ContactProps {
     children?: ReactNode;

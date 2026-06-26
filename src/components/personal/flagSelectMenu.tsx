@@ -10,7 +10,9 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { FranceFlag, UKFlag, Website } from "@/data/svg";
+import { FranceFlag } from "@/data/icons/france-flag";
+import { UKFlag } from "@/data/icons/uk-flag";
+import { Website } from "@/data/icons/website";
 import { Link, usePathname } from "@/i18n/navigation";
 
 interface FlagSelectMenuProps {

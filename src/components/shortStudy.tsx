@@ -5,8 +5,8 @@ import Image from "next/image";
 import { JSX } from "react";
 
 import { APP_CONFIG } from "@/data/config";
+import { Website } from "@/data/icons/website";
 import studyData from "@/data/study.json";
-import { Website } from "@/data/svg";
 import { Link } from "@/i18n/navigation";
 
 interface ShortStudyProps {

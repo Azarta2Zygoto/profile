@@ -8,12 +8,7 @@ export default function NotFound(): JSX.Element {
 
     return (
         <div className="error-main">
-            <h1
-                className="h1-primary"
-                id="error-title"
-            >
-                {t("title")}
-            </h1>
+            <h1 className="h1-primary">{t("title")}</h1>
             <section>
                 <p>{t("description")}</p>
             </section>

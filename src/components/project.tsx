@@ -7,9 +7,10 @@ import { JSX } from "react";
 
 import { APP_CONFIG } from "@/data/config";
 import { dateFormatOptions } from "@/data/data";
+import { Github } from "@/data/icons/github";
+import { Linkedin } from "@/data/icons/linkedin";
+import { Website } from "@/data/icons/website";
 import studyData from "@/data/study.json";
-import { Linkedin, Website } from "@/data/svg";
-import { Github } from "@/data/svg";
 import type { ProjectType } from "@/data/types";
 
 import ImplementAccordion from "./personal/accordeon";
