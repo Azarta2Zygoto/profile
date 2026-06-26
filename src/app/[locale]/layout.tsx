@@ -97,7 +97,7 @@ export default async function RootLayout({
                 <NextIntlClientProvider locale={locale}>
                     <GlobalProvider>
                         <Header locale={locale} />
-                        <main role="main">
+                        <main>
                             <Bar />
                             <div className="page-container">{children}</div>
                         </main>

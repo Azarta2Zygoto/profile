@@ -1,15 +1,15 @@
-import { JSX, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import { Github } from "@/data/icons/github";
-import { Gmail } from "@/data/icons/gmail";
-import { Linkedin } from "@/data/icons/linkedin";
+import { Github } from "@/components/icons/github";
+import { Gmail } from "@/components/icons/gmail";
+import { Linkedin } from "@/components/icons/linkedin";
 import data from "@/data/profile-data.json";
 
 interface ContactProps {
     children?: ReactNode;
 }
 
-export default function Contact({ children }: ContactProps): JSX.Element {
+export default function Contact({ children }: ContactProps): ReactNode {
     return (
         <ul>
             {children}

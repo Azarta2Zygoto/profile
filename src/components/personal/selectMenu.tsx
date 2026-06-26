@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, type JSX, useState } from "react";
+import { type CSSProperties, type ReactNode, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
 
@@ -29,7 +29,7 @@ export default function SelectMenu({
     selectedOption,
     style,
     onOptionSelect,
-}: SelectMenuProps): JSX.Element {
+}: SelectMenuProps): ReactNode {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleOptionSelect(option: string | number) {
@@ -60,10 +60,11 @@ export default function SelectMenu({
                     <button
                         key={option.value}
                         type="button"
-                        className={`btn btn-option ${selectedOption.value === option.value
+                        className={`btn btn-option ${
+                            selectedOption.value === option.value
                                 ? "btn-option-selected"
                                 : ""
-                            }`}
+                        }`}
                         onClick={() => handleOptionSelect(option.value)}
                         aria-label={option.label}
                     >

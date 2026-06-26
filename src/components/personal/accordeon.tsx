@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import {
     Accordion,
@@ -9,7 +9,7 @@ import {
 
 interface SubAccordionItem {
     title: string;
-    content: JSX.Element;
+    content: ReactNode;
 }
 
 interface AccordionProps {
@@ -18,7 +18,7 @@ interface AccordionProps {
 
 export default function ImplementAccordion({
     items,
-}: AccordionProps): JSX.Element {
+}: AccordionProps): ReactNode {
     return (
         <Accordion
             type="single"

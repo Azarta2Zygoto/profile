@@ -1,16 +1,16 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function Linkedin(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 24,
-        width: 24,
-        fill: "#0077B7",
-        arialLabel: "LinkedIn Logo",
-        title: "LinkedIn",
-    };
+const defaults = {
+    height: 24,
+    width: 24,
+    fill: "#0077B7",
+    ariaLabel: "LinkedIn Logo",
+    title: "LinkedIn",
+};
 
+export function Linkedin(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

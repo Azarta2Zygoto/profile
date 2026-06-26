@@ -1,17 +1,17 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function LinkExternal(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 14,
-        width: 14,
-        fill: "currentColor",
-        arialLabel: "External Link Icon",
-        title: "External Link",
-        viewBox: "0 0 16 16",
-    };
+const defaults = {
+    height: 14,
+    width: 14,
+    fill: "currentColor",
+    ariaLabel: "External Link Icon",
+    title: "External Link",
+    viewBox: "0 0 16 16",
+};
 
+export function LinkExternal(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

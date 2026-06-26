@@ -1,17 +1,17 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function Website(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 20,
-        width: 20,
-        fill: "var(--fg)",
-        arialLabel: "Website Logo",
-        title: "Website",
-        viewBox: "0 -10 490 490",
-    };
+const defaults = {
+    height: 20,
+    width: 20,
+    fill: "var(--fg)",
+    ariaLabel: "Website Logo",
+    title: "Website",
+    viewBox: "0 -10 490 490",
+};
 
+export function Website(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

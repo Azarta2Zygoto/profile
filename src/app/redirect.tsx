@@ -1,13 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { type JSX, useEffect, useRef } from "react";
+import { type ReactNode, useEffect, useRef } from "react";
 
-export default function RedirectPage(): JSX.Element {
+export default function RedirectPage(): ReactNode {
     return <RedirectPageInternal />;
 }
 
-function RedirectPageInternal(): JSX.Element {
+function RedirectPageInternal(): ReactNode {
     const router = useRouter();
     const hasRedirected = useRef(false);
 

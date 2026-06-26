@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import { APP_CONFIG } from "@/data/config";
 import { ASSETS, buildAssetPath } from "@/data/constants";
@@ -12,9 +12,9 @@ import Contact from "./personal/contact";
 
 /**
  * Bar Component - Sidebar displaying user profile information
- * @returns {JSX.Element} A profile sidebar with photo, name, and contact information
+ * @returns {ReactNode} A profile sidebar with photo, name, and contact information
  */
-export default function Bar(): JSX.Element {
+export default function Bar(): ReactNode {
     const t = useTranslations("Bar");
 
     return (

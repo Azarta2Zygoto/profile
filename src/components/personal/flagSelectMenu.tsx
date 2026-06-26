@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { JSX, useState } from "react";
+import { type ReactNode, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
 
@@ -10,9 +10,9 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { FranceFlag } from "@/data/icons/france-flag";
-import { UKFlag } from "@/data/icons/uk-flag";
-import { Website } from "@/data/icons/website";
+import { FranceFlag } from "@/components/icons/france-flag";
+import { UKFlag } from "@/components/icons/uk-flag";
+import { Website } from "@/components/icons/website";
 import { Link, usePathname } from "@/i18n/navigation";
 
 interface FlagSelectMenuProps {
@@ -23,7 +23,7 @@ interface FlagSelectMenuProps {
 export default function FlagSelectMenu({
     options,
     selectedOption,
-}: FlagSelectMenuProps): JSX.Element {
+}: FlagSelectMenuProps): ReactNode {
     const t = useTranslations("DefaultTexts");
     const pathname = usePathname();
 
@@ -68,7 +68,7 @@ export default function FlagSelectMenu({
     );
 }
 
-function chooseFlag(countryCode: string): JSX.Element {
+function chooseFlag(countryCode: string): ReactNode {
     switch (countryCode) {
         case "fr":
             return (

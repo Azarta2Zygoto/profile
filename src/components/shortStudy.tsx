@@ -2,10 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import { APP_CONFIG } from "@/data/config";
-import { Website } from "@/data/icons/website";
+import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
 
@@ -15,7 +15,7 @@ interface ShortStudyProps {
 
 export default function ShortStudy({
     locale = "fr",
-}: ShortStudyProps): JSX.Element {
+}: ShortStudyProps): ReactNode {
     const t = useTranslations("HomePage");
 
     return (

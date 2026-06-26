@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, JSX, useState } from "react";
+import { Fragment, type ReactNode, useState } from "react";
 
 import SelectMenu from "@/components/personal/selectMenu";
 import Project from "@/components/project";
@@ -18,7 +18,7 @@ const languagesOptions: { label: string; value: string }[] = Object.keys(
     value: lang,
 }));
 
-export default function ProjectPage(): JSX.Element {
+export default function ProjectPage(): ReactNode {
     const t = useTranslations("ProjectPage");
     const tHome = useTranslations("HomePage");
 

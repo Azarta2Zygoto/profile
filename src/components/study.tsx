@@ -2,11 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { Fragment, JSX } from "react";
+import { Fragment, type ReactNode } from "react";
 
 import { APP_CONFIG } from "@/data/config";
-import { LinkExternal } from "@/data/icons/link-external";
-import { Website } from "@/data/icons/website";
+import { LinkExternal } from "@/components/icons/link-external";
+import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import type { Locale, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
@@ -23,7 +23,7 @@ export default function Study({
     locale = "fr",
     total,
     languages,
-}: StudyProps): JSX.Element {
+}: StudyProps): ReactNode {
     const t = useTranslations("HomePage");
     const selectedLanguageValues = new Set(languages.map((l) => l.value));
     const studyContent = (studyData as StudyType[])

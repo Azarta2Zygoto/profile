@@ -1,15 +1,15 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function FranceFlag(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 24,
-        width: 36,
-        arialLabel: "France Flag",
-        viewBox: "0 0 3 2",
-    };
+const defaults = {
+    height: 24,
+    width: 36,
+    ariaLabel: "France Flag",
+    viewBox: "0 0 3 2",
+};
 
+export function FranceFlag(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

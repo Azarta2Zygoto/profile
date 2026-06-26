@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { type JSX } from "react";
+import { type ReactNode } from "react";
 
 import { APP_CONFIG } from "@/data/config";
 import personalData from "@/data/profile-data.json";
@@ -10,7 +10,7 @@ interface JSONLDProps {
     locale: string;
 }
 
-export default function JSONLD({ locale }: JSONLDProps): JSX.Element {
+export default function JSONLD({ locale }: JSONLDProps): ReactNode {
     const t = useTranslations("Languages");
 
     const personJsonLd = {

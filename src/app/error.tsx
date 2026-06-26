@@ -1,8 +1,7 @@
 "use client";
 
-import Head from "next/head";
 import Link from "next/link";
-import { type JSX, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 
 import "./globals.css";
 
@@ -12,7 +11,7 @@ export default function Error({
 }: {
     error: Error & { digest?: string };
     reset: () => void;
-}): JSX.Element {
+}): ReactNode {
     const [showDetails, setShowDetails] = useState(false);
     const isDevelopment = process.env.NODE_ENV === "development";
 
@@ -31,17 +30,9 @@ export default function Error({
 
     return (
         <html lang="fr">
-            <Head>
-                <title>Erreur - Profil</title>
-                <meta
-                    name="description"
-                    content="Page d'erreur du portfolio"
-                />
-            </Head>
             <body>
                 <main
                     className="error-main"
-                    role="main"
                     aria-labelledby="error-title"
                 >
                     <h1
@@ -139,6 +130,7 @@ export default function Error({
                         }}
                     >
                         <button
+                            type="button"
                             className="btn"
                             style={{ width: 200, height: "3rem" }}
                             onClick={() => reset()}

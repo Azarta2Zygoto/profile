@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormatter, useTranslations } from "next-intl";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import { dateFormatOptions } from "@/data/data";
 import projectData from "@/data/project.json";
@@ -9,7 +9,7 @@ import studyData from "@/data/study.json";
 
 import Box from "./personal/box";
 
-export default function ShortProject(): JSX.Element {
+export default function ShortProject(): ReactNode {
     const format = useFormatter();
     const t = useTranslations("HomePage");
 
@@ -41,7 +41,7 @@ export default function ShortProject(): JSX.Element {
                             )}`}
                         {key.study &&
                             " → " +
-                            studyData.find((s) => s.id === key.study)?.name}
+                                studyData.find((s) => s.id === key.study)?.name}
                     </p>
                     <div className="box-container">
                         {key.languages.length > 0 &&

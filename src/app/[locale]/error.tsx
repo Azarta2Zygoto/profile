@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { type JSX, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 
 import { Link } from "@/i18n/navigation";
 
@@ -11,7 +11,7 @@ export default function Error({
 }: {
     error: Error & { digest?: string };
     reset: () => void;
-}): JSX.Element {
+}): ReactNode {
     const t = useTranslations("ErrorPage");
 
     const [showDetails, setShowDetails] = useState(false);
@@ -33,7 +33,6 @@ export default function Error({
     return (
         <main
             className="error-main"
-            role="main"
             aria-labelledby="error-title"
         >
             <h1
@@ -123,6 +122,7 @@ export default function Error({
                 }}
             >
                 <button
+                    type="button"
                     className="btn"
                     style={{ minWidth: "150px", padding: "0.75rem 1.5rem" }}
                     onClick={() => reset()}

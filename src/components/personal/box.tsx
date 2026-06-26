@@ -1,4 +1,4 @@
-import { CSSProperties, JSX } from "react";
+import { CSSProperties, type ReactNode } from "react";
 
 import color from "@/data/language-color.json";
 import type { ColorScheme } from "@/data/types";
@@ -10,7 +10,7 @@ interface BoxProps {
     style?: CSSProperties;
 }
 
-export default function Box({ name, className, style }: BoxProps): JSX.Element {
+export default function Box({ name, className, style }: BoxProps): ReactNode {
     const langColor = (color as Record<string, ColorScheme>)[name];
     return (
         <span

@@ -2,8 +2,8 @@
 
 import React, {
     createContext,
+    use,
     useCallback,
-    useContext,
     useEffect,
     useMemo,
     useState,
@@ -82,7 +82,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
 };
 
 export const useGlobal = () => {
-    const context = useContext(GlobalContext);
+    const context = use(GlobalContext);
     if (!context) {
         throw new Error("useGlobal must be used within a GlobalProvider");
     }

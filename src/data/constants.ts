@@ -26,20 +26,10 @@ export const ASSETS = {
  * Route segment constants for building locale-aware URLs
  * These are combined with locale prefixes to create full routes
  */
-export const ROUTES = {
+const ROUTES = {
     HOME: "/",
     STUDY: "/study",
     PROJECT: "/project",
-} as const;
-
-/**
- * Route keywords for use in templates and navigation
- * Maps internal keys to actual route paths
- */
-export const ROUTE_KEYS = {
-    HOME: "home",
-    STUDY: "study",
-    PROJECT: "project",
 } as const;
 
 // ============================================================================

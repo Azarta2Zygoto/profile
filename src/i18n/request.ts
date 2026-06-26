@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { getRequestConfig } from "next-intl/server";
 
 import { routing } from "./routing";
+import type { Locale } from "./routing";
 
 export const formats = {
     number: {
@@ -20,9 +21,16 @@ export default getRequestConfig(async ({ requestLocale }) => {
         ? requested
         : routing.defaultLocale;
 
+    const messageLoaders: Record<Locale, () => Promise<{ default: any }>> = {
+        fr: () => import("../../messages/fr.json"),
+        en: () => import("../../messages/en.json"),
+    };
+
+    const messages = (await messageLoaders[locale]()).default;
+
     return {
         locale: locale,
-        messages: (await import(`../../messages/${locale}.json`)).default,
+        messages: messages,
         formats,
         timeZone: "Europe/Paris",
     };

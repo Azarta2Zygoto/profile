@@ -1,17 +1,17 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function Link45deg(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 28,
-        width: 28,
-        fill: "currentColor",
-        arialLabel: "Link Icon",
-        title: "Link",
-        viewBox: "0 0 16 16",
-    };
+const defaults = {
+    height: 28,
+    width: 28,
+    fill: "currentColor",
+    ariaLabel: "Link Icon",
+    title: "Link",
+    viewBox: "0 0 16 16",
+};
 
+export function Link45deg(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

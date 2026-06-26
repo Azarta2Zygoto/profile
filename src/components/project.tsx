@@ -3,13 +3,13 @@
 import { useFormatter, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { JSX } from "react";
+import { type ReactNode } from "react";
 
 import { APP_CONFIG } from "@/data/config";
 import { dateFormatOptions } from "@/data/data";
-import { Github } from "@/data/icons/github";
-import { Linkedin } from "@/data/icons/linkedin";
-import { Website } from "@/data/icons/website";
+import { Github } from "@/components/icons/github";
+import { Linkedin } from "@/components/icons/linkedin";
+import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import type { ProjectType } from "@/data/types";
 
@@ -20,7 +20,7 @@ interface ProjectProps {
     projectContent: Array<ProjectType>;
 }
 
-export default function Project({ projectContent }: ProjectProps): JSX.Element {
+export default function Project({ projectContent }: ProjectProps): ReactNode {
     const format = useFormatter();
     const t = useTranslations("HomePage");
 

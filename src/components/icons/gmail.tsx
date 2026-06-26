@@ -1,16 +1,16 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function Gmail(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 24,
-        width: 24,
-        arialLabel: "Gmail Logo",
-        title: "Gmail",
-        viewBox: "0 0 514 514",
-    };
+const defaults = {
+    height: 24,
+    width: 24,
+    ariaLabel: "Gmail Logo",
+    title: "Gmail",
+    viewBox: "0 0 514 514",
+};
 
+export function Gmail(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

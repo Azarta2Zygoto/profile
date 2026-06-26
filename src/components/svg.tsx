@@ -1,10 +1,10 @@
-import type { JSX, ReactNode } from "react";
+import type { ReactNode } from "react";
 
 export interface SvgProps {
     height?: string | number;
     width?: string | number;
     fill?: string;
-    arialLabel?: string;
+    ariaLabel?: string;
     title?: string;
 }
 
@@ -17,11 +17,11 @@ export function IconSVG({
     height,
     width,
     fill,
-    arialLabel,
+    ariaLabel,
     title,
     children,
     viewBox = "0 0 24 24",
-}: IconSVGProps): JSX.Element {
+}: IconSVGProps): ReactNode {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export function IconSVG({
             focusable="false"
             fill={fill}
             role="img"
-            arial-label={arialLabel}
+            aria-label={ariaLabel}
         >
             {title && <title>{title}</title>}
             {children}

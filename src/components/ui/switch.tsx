@@ -12,11 +12,7 @@ interface SwitchProps extends React.ComponentProps<
     symbol?: React.ReactNode;
 }
 
-function Switch({
-    className,
-    symbol,
-    ...props
-}: SwitchProps): React.JSX.Element {
+function Switch({ className, symbol, ...props }: SwitchProps): React.ReactNode {
     return (
         <SwitchPrimitive.Root
             data-slot="switch"

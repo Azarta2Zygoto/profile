@@ -5,7 +5,7 @@ import { Fragment, use } from "react";
 
 import ShortProject from "@/components/shortProject";
 import ShortStudy from "@/components/shortStudy";
-import { Link45deg } from "@/data/icons/link45deg";
+import { Link45deg } from "@/components/icons/link45deg";
 import { Link } from "@/i18n/navigation";
 
 const listComponents = ["study", "project"] as const;

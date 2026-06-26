@@ -1,17 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import Contact from "./personal/contact";
 
-export default function Footer(): JSX.Element {
+export default function Footer(): ReactNode {
     const t = useTranslations("Footer");
     return (
-        <footer
-            className="footer-container"
-            role="contentinfo"
-        >
+        <footer className="footer-container">
             <div className="contact">
                 <p>{t("contact-me")}</p>
                 <Contact />

@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import FlagSelectMenu from "@/components/personal/flagSelectMenu";
 import ThemeSwitch from "@/components/personal/themeSwitch";
@@ -25,12 +25,12 @@ interface HeaderProps {
     locale: string;
 }
 
-export default function Header({ locale }: HeaderProps): JSX.Element {
+export default function Header({ locale }: HeaderProps): ReactNode {
     const t = useTranslations("Header");
     const pathname = usePathname();
 
     return (
-        <header role="banner">
+        <header>
             <Image
                 src={buildAssetPath(ASSETS.IMAGES.LOGO, APP_CONFIG.basePath)}
                 alt={t("alt-logo")}
@@ -39,7 +39,7 @@ export default function Header({ locale }: HeaderProps): JSX.Element {
                 width={40}
                 height={40}
             />
-            <nav role="navigation">
+            <nav>
                 {Object.entries(path).map(([key, route]) => {
                     const isActive = activeNavLink(pathname, locale, route);
 

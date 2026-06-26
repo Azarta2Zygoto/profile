@@ -1,16 +1,16 @@
-import type { JSX } from "react";
+import type { ReactNode } from "react";
 
-import { IconSVG, type SvgProps } from "@/data/svg";
+import { IconSVG, type SvgProps } from "@/components/svg";
 
-export function Github(props: SvgProps): JSX.Element {
-    const defaults = {
-        height: 24,
-        width: 24,
-        fill: "var(--fg)",
-        arialLabel: "GitHub Logo",
-        title: "GitHub",
-    };
+const defaults = {
+    height: 24,
+    width: 24,
+    fill: "var(--fg)",
+    ariaLabel: "GitHub Logo",
+    title: "GitHub",
+};
 
+export function Github(props: SvgProps): ReactNode {
     return (
         <IconSVG
             {...defaults}

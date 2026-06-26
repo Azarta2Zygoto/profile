@@ -1,24 +1,14 @@
-import Head from "next/head";
 import Link from "next/link";
-import { type JSX } from "react";
+import { type ReactNode } from "react";
 
 import "./globals.css";
 
-export default function NotFound(): JSX.Element {
+export default function NotFound(): ReactNode {
     return (
         <html lang="fr">
-            <Head>
-                <title>Erreur - Profil</title>
-                <meta
-                    name="description"
-                    content="Page d'erreur 404 du site web faisant office de
-                    portfolio"
-                />
-            </Head>
             <body>
                 <main
                     className="error-main"
-                    role="main"
                     aria-labelledby="error-title"
                 >
                     <h1

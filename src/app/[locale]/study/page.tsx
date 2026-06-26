@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, JSX, use, useState } from "react";
+import { Fragment, type ReactNode, use, useState } from "react";
 
 import Study from "@/components/study";
 import { MultiSelect } from "@/components/ui/multi-select";
@@ -18,7 +18,7 @@ export default function StudyPage({
     params,
 }: {
     params: Promise<{ locale: string }>;
-}): JSX.Element {
+}): ReactNode {
     const { locale } = use(params);
 
     const t = useTranslations("StudyPage");

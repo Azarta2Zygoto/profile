@@ -1,13 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { JSX } from "react";
+import type { ReactNode } from "react";
 
 import { Switch } from "@/components/ui/switch";
 
 import { useGlobal } from "../globalProvider";
 
-export default function ThemeSwitch(): JSX.Element {
+export default function ThemeSwitch(): ReactNode {
     const t = useTranslations("ThemeSwitch");
     const { theme, setTheme } = useGlobal();
 

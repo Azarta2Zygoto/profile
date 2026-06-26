@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
-import { type JSX } from "react";
+import { type ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
 
-export default function NotFound(): JSX.Element {
+export default function NotFound(): ReactNode {
     const t = useTranslations("NotFound");
 
     return (
