@@ -21,6 +21,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
         ? requested
         : routing.defaultLocale;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const messageLoaders: Record<Locale, () => Promise<{ default: any }>> = {
         fr: () => import("../../messages/fr.json"),
         en: () => import("../../messages/en.json"),

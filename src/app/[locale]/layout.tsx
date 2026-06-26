@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { type Locale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -94,6 +95,12 @@ export default async function RootLayout({
                 </NextIntlClientProvider>
             </head>
             <body>
+                {process.env.NODE_ENV === "development" && (
+                    <Script
+                        strategy="afterInteractive"
+                        src="https://unpkg.com/react-scan/dist/auto.global.js"
+                    />
+                )}
                 <NextIntlClientProvider locale={locale}>
                     <GlobalProvider>
                         <Header locale={locale} />
