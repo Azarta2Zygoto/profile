@@ -5,14 +5,14 @@ import { type ReactNode, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
 
+import { FranceFlag } from "@/components/icons/france-flag";
+import { UKFlag } from "@/components/icons/uk-flag";
+import { Website } from "@/components/icons/website";
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { FranceFlag } from "@/components/icons/france-flag";
-import { UKFlag } from "@/components/icons/uk-flag";
-import { Website } from "@/components/icons/website";
 import { Link, usePathname } from "@/i18n/navigation";
 
 interface FlagSelectMenuProps {

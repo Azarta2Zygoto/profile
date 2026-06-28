@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-import { APP_CONFIG } from "@/data/config";
 import { Website } from "@/components/icons/website";
+import { APP_CONFIG } from "@/data/config";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
 

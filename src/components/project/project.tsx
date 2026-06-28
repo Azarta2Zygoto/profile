@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-import { APP_CONFIG } from "@/data/config";
-import { dateFormatOptions } from "@/data/data";
 import { Github } from "@/components/icons/github";
 import { Linkedin } from "@/components/icons/linkedin";
 import { Website } from "@/components/icons/website";
+import { APP_CONFIG } from "@/data/config";
+import { dateFormatOptions } from "@/data/data";
 import studyData from "@/data/study.json";
 import type { ProjectType } from "@/data/types";
 

@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import React from "react";
+
 import { APP_CONFIG } from "@/data/config";
 import { ASSETS, buildAssetPath } from "@/data/constants";
-import React from "react";
 
 export const viewport: Viewport = {
     width: "device-width",
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
     metadataBase: new URL(APP_CONFIG.baseUrl),
     title: "Quentin Potiron - Mon Profil",
     description: "Site web faisant office de portfolio",
-    keywords: "Portfolio, Profil, Développement Web, Analyse de données, Informatique",
+    keywords:
+        "Portfolio, Profil, Développement Web, Analyse de données, Informatique",
     alternates: {
         canonical: "https://www.azarta.fr/profile",
         languages: {

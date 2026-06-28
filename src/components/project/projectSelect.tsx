@@ -1,14 +1,18 @@
 "use client";
 
-import { type ReactNode, useState, memo } from "react";
 import { useTranslations } from "next-intl";
-import { orderProjectList } from "@/data/data";
+import { type ReactNode, memo, useState } from "react";
+
 import SelectMenu from "@/components/personal/selectMenu";
-import type { OrderType, ProjectType } from "@/data/types";
+import { orderProjectList } from "@/data/data";
 import projectData from "@/data/project.json";
+import type { OrderType, ProjectType } from "@/data/types";
 
 interface ProjectSelectProps {
-    onOrderChange: (largeProjects: Array<ProjectType>, littleProjects: Array<ProjectType>) => void;
+    onOrderChange: (
+        largeProjects: Array<ProjectType>,
+        littleProjects: Array<ProjectType>,
+    ) => void;
 }
 
 export default function ProjectSelect({
@@ -16,7 +20,6 @@ export default function ProjectSelect({
 }: ProjectSelectProps): ReactNode {
     const t = useTranslations("ProjectPage");
     const tHome = useTranslations("HomePage");
-
 
     const [selectedOrder, setSelectedOrder] = useState<{
         value: OrderType;
@@ -32,8 +35,14 @@ export default function ProjectSelect({
             label: t(order),
         });
         onOrderChange(
-            projectOrdering(projectData.filter((project) => project.large), order),
-            projectOrdering(projectData.filter((project) => !project.large), order),
+            projectOrdering(
+                projectData.filter((project) => project.large),
+                order,
+            ),
+            projectOrdering(
+                projectData.filter((project) => !project.large),
+                order,
+            ),
         );
     }
 
@@ -47,13 +56,13 @@ export default function ProjectSelect({
                     const dateA = a.period.start
                         ? new Date(a.period.start)
                         : a.period.in
-                            ? new Date(a.period.in)
-                            : null;
+                          ? new Date(a.period.in)
+                          : null;
                     const dateB = b.period.start
                         ? new Date(b.period.start)
                         : b.period.in
-                            ? new Date(b.period.in)
-                            : null;
+                          ? new Date(b.period.in)
+                          : null;
                     if (dateA && dateB) {
                         return dateB.getTime() - dateA.getTime();
                     } else if (dateA) {
@@ -82,9 +91,7 @@ export default function ProjectSelect({
 
     return (
         <span className="rows">
-            <label htmlFor="project-order-select">
-                {t("order-by")}
-            </label>
+            <label htmlFor="project-order-select">{t("order-by")}</label>
             <SelectMenu
                 id="project-order-select"
                 options={orderProjectList.map((order) => ({
