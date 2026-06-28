@@ -8,12 +8,8 @@ import { APP_CONFIG } from "@/data/config";
 import { ASSETS, buildAssetPath } from "@/data/constants";
 import data from "@/data/profile-data.json";
 
-import Contact from "./personal/contact";
+import Social from "./personal/social";
 
-/**
- * Bar Component - Sidebar displaying user profile information
- * @returns {ReactNode} A profile sidebar with photo, name, and contact information
- */
 export default function Bar(): ReactNode {
     const t = useTranslations("Bar");
 
@@ -23,15 +19,14 @@ export default function Bar(): ReactNode {
                 src={buildAssetPath(ASSETS.IMAGES.PHOTO, APP_CONFIG.basePath)}
                 alt={t("alt-profile-picture")}
                 className="img-profile"
-                width={516}
-                height={516}
+                width={128}
+                height={128}
             />
-            <h2 className="h2-primary text-center">
+            <h2 className="h2-primary">
                 {data.firstname + " " + data.lastname}
             </h2>
-            <Contact>
-                <li>{t("student") + data.job}</li>
-            </Contact>
+            <p>{t("student") + data.job}</p>
+            <Social />
         </div>
     );
 }

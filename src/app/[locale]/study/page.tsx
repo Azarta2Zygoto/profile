@@ -3,8 +3,8 @@
 import { useTranslations } from "next-intl";
 import { Fragment, type ReactNode, use, useState } from "react";
 
-import Study from "@/components/study";
-import { MultiSelect } from "@/components/ui/multi-select";
+import { MultiSelect } from "@/components/personal/multi-select";
+import Study from "@/components/study/study";
 import language_json from "@/data/language-color.json";
 
 const languagesOptions: { label: string; value: string }[] = Object.keys(

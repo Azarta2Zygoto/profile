@@ -1,15 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, type ReactNode, useState } from "react";
+import { Fragment, type ReactNode, useCallback, useState } from "react";
 
-import SelectMenu from "@/components/personal/selectMenu";
-import Project from "@/components/project";
-import { MultiSelect } from "@/components/ui/multi-select";
-import { orderProjectList } from "@/data/data";
+import { MultiSelect } from "@/components/personal/multi-select";
+import Project from "@/components/project/project";
+import ProjectSelect from "@/components/project/projectSelect";
 import language_json from "@/data/language-color.json";
 import projectData from "@/data/project.json";
-import type { OrderType, ProjectType } from "@/data/types";
+import type { ProjectType } from "@/data/types";
 
 const languagesOptions: { label: string; value: string }[] = Object.keys(
     language_json,
@@ -18,16 +17,13 @@ const languagesOptions: { label: string; value: string }[] = Object.keys(
     value: lang,
 }));
 
+const [constLargeProjectContent, constLittleProjectContent] = [
+    projectData.filter((project) => project.large) as Array<ProjectType>,
+    projectData.filter((project) => !project.large) as Array<ProjectType>,
+];
+
 export default function ProjectPage(): ReactNode {
     const t = useTranslations("ProjectPage");
-    const tHome = useTranslations("HomePage");
-
-    const constLargeProjectContent = (projectData as Array<ProjectType>).filter(
-        (project) => project.large,
-    );
-    const constLittleProjectContent = (
-        projectData as Array<ProjectType>
-    ).filter((project) => !project.large);
 
     const [largeProjectContent, setLargeProjectContent] = useState<
         Array<ProjectType>
@@ -35,15 +31,8 @@ export default function ProjectPage(): ReactNode {
     const [littleProjectContent, setLittleProjectContent] = useState<
         Array<ProjectType>
     >(constLittleProjectContent);
-    const [selectedOrder, setSelectedOrder] = useState<{
-        value: OrderType;
-        label: string;
-    }>({
-        value: "default",
-        label: t("default"),
-    });
 
-    function handleLanguagesChange(selected: string[]) {
+    const handleLanguagesChange = (selected: string[]) => {
         const selectedLanguageValues = new Set(selected);
 
         if (selectedLanguageValues.size === 0) {
@@ -60,63 +49,15 @@ export default function ProjectPage(): ReactNode {
         );
         setLargeProjectContent(filteredLarge);
         setLittleProjectContent(filteredLittle);
-    }
+    };
 
-    function handleOrderChange(order: OrderType) {
-        setSelectedOrder({
-            value: order,
-            label: t(order),
-        });
-        setLargeProjectContent((prevProjects) =>
-            projectOrdering(prevProjects, order),
-        );
-        setLittleProjectContent((prevProjects) =>
-            projectOrdering(prevProjects, order),
-        );
-    }
-
-    function projectOrdering(
-        projects: Array<ProjectType>,
-        order: OrderType,
-    ): Array<ProjectType> {
-        switch (order) {
-            case "date":
-                return [...projects].sort((a, b) => {
-                    const dateA = a.period.start
-                        ? new Date(a.period.start)
-                        : a.period.in
-                          ? new Date(a.period.in)
-                          : null;
-                    const dateB = b.period.start
-                        ? new Date(b.period.start)
-                        : b.period.in
-                          ? new Date(b.period.in)
-                          : null;
-                    if (dateA && dateB) {
-                        return dateB.getTime() - dateA.getTime();
-                    } else if (dateA) {
-                        return -1;
-                    } else if (dateB) {
-                        return 1;
-                    }
-                    return 0;
-                });
-            case "lexicographical":
-                return [...projects].sort((a, b) =>
-                    tHome(`projectsContent.${a.id}.name`).localeCompare(
-                        tHome(`projectsContent.${b.id}.name`),
-                    ),
-                );
-            case "default":
-                return projectData.filter((project) =>
-                    projects.some((p) => p.id === project.id),
-                );
-            default:
-                return projectData.filter((project) =>
-                    projects.some((p) => p.id === project.id),
-                );
-        }
-    }
+    const handleOrderChange = (
+        largeProjects: Array<ProjectType>,
+        littleProjects: Array<ProjectType>,
+    ) => {
+        setLargeProjectContent(largeProjects);
+        setLittleProjectContent(littleProjects);
+    };
 
     return (
         <Fragment>
@@ -125,25 +66,9 @@ export default function ProjectPage(): ReactNode {
             <div className="rows">
                 <MultiSelect
                     options={languagesOptions}
-                    onValueChange={(values) => handleLanguagesChange(values)}
+                    onValueChange={handleLanguagesChange}
                 />
-                <span className="rows">
-                    <label htmlFor="project-order-select">
-                        {t("order-by")}
-                    </label>
-                    <SelectMenu
-                        id="project-order-select"
-                        options={orderProjectList.map((order) => ({
-                            label: t(order),
-                            value: order,
-                        }))}
-                        selectedOption={selectedOrder}
-                        onOptionSelect={(option) =>
-                            handleOrderChange(option as OrderType)
-                        }
-                        style={{ minWidth: "150px" }}
-                    />
-                </span>
+                <ProjectSelect onOrderChange={handleOrderChange} />
             </div>
             {largeProjectContent.length === 0 &&
                 littleProjectContent.length === 0 && (

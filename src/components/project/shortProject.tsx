@@ -7,7 +7,7 @@ import { dateFormatOptions } from "@/data/data";
 import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
 
-import Box from "./personal/box";
+import Box from "../personal/box";
 
 export default function ShortProject(): ReactNode {
     const format = useFormatter();

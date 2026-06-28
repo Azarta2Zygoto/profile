@@ -4,14 +4,14 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 
-import { APP_CONFIG } from "@/data/config";
 import { LinkExternal } from "@/components/icons/link-external";
 import { Website } from "@/components/icons/website";
+import { APP_CONFIG } from "@/data/config";
 import studyData from "@/data/study.json";
 import type { Locale, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
 
-import Box from "./personal/box";
+import Box from "../personal/box";
 
 interface StudyProps {
     locale: string;

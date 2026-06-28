@@ -1,8 +1,16 @@
 {
     "lastname": "Potiron",
     "firstname": "Quentin",
-    "linkedin": "https://www.linkedin.com/in/quentin-potiron-424146309/",
-    "github": "https://github.com/Azarta2Zygoto",
+    "socials": [
+        {
+            "type": "linkedin",
+            "url": "https://www.linkedin.com/in/quentin-potiron-424146309/"
+        },
+        {
+            "type": "github",
+            "url": "https://github.com/Azarta2Zygoto"
+        }
+    ],
     "gmail": "quentin.potiron@gmail.com",
     "job": "Centrale Lyon",
     "languages": ["fr", "en", "es"],

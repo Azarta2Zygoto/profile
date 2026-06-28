@@ -89,19 +89,17 @@ export default async function RootLayout({
 
     return (
         <html lang={locale}>
-            <head>
-                <NextIntlClientProvider locale={locale}>
+            <NextIntlClientProvider locale={locale}>
+                <head>
                     <JSONLD locale={locale} />
-                </NextIntlClientProvider>
-            </head>
-            <body>
-                {process.env.NODE_ENV === "development" && (
-                    <Script
-                        strategy="afterInteractive"
-                        src="https://unpkg.com/react-scan/dist/auto.global.js"
-                    />
-                )}
-                <NextIntlClientProvider locale={locale}>
+                </head>
+                <body>
+                    {process.env.NODE_ENV === "development" && (
+                        <Script
+                            strategy="afterInteractive"
+                            src="https://unpkg.com/react-scan/dist/auto.global.js"
+                        />
+                    )}
                     <GlobalProvider>
                         <Header locale={locale} />
                         <main>
@@ -110,8 +108,8 @@ export default async function RootLayout({
                         </main>
                         <Footer />
                     </GlobalProvider>
-                </NextIntlClientProvider>
-            </body>
+                </body>
+            </NextIntlClientProvider>
         </html>
     );
 }

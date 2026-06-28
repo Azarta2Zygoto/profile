@@ -1,3 +1,5 @@
+import path_json from "./path.json";
+
 /**
  * Application-wide constants for paths, asset names, and configuration values
  */
@@ -19,20 +21,6 @@ export const ASSETS = {
 } as const;
 
 // ============================================================================
-// ROUTE SEGMENTS and PATHS
-// ============================================================================
-
-/**
- * Route segment constants for building locale-aware URLs
- * These are combined with locale prefixes to create full routes
- */
-const ROUTES = {
-    HOME: "/",
-    STUDY: "/study",
-    PROJECT: "/project",
-} as const;
-
-// ============================================================================
 // PATH FORMATTING
 // ============================================================================
 
@@ -48,7 +36,7 @@ const ROUTES = {
  */
 export const buildLocalePath = (
     locale: string,
-    route: string = ROUTES.HOME,
+    route: string = path_json.home,
 ): string => {
     const normalizedRoute = route.replace(/^\/|\/$/g, "");
     return normalizedRoute ? `/${locale}/${normalizedRoute}` : `/${locale}`;

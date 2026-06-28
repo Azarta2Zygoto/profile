@@ -13,8 +13,8 @@ import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import type { ProjectType } from "@/data/types";
 
-import ImplementAccordion from "./personal/accordeon";
-import Box from "./personal/box";
+import ImplementAccordion from "../personal/accordeon";
+import Box from "../personal/box";
 
 interface ProjectProps {
     projectContent: Array<ProjectType>;
