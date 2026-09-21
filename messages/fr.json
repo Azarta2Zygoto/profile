@@ -96,7 +96,7 @@
         "projectsContent": {
             "randou": {
                 "name": "Application web pour la détection et la lecture de panneaux de randonnée",
-                "description": "Mise en place d'un outil d'identification et de lecture de panneaux de randonée. Cet ouil est alors utilisé pour générer des panneaux en 3D avec Blender. Toutes les données sont enregistrées dans une base de données pour être ensuite être visualisées sur une application web."
+                "description": "Mise en place d'un outil d'identification et de lecture de panneaux de randonée. Cet outil est alors utilisé pour générer des panneaux en 3D avec Blender. Toutes les données sont enregistrées dans une base de données pour être ensuite être visualisées sur une application web."
             },
             "stage-application": {
                 "name": "Application web pour la collecte de données sportives",
@@ -153,6 +153,33 @@
             "profile": {
                 "name": "Portfolio Personnel",
                 "description": "Création d'un site web pour faire part de mon profil et de mes projets réalisés. C'est le site web sur lequel vous êtes actuellement."
+            },
+            "my-newro-factory": {
+                "name": "My Newro Factory",
+                "description": "Mise en place d'une application web interne pour permettre la montée en compétence des développeurs de l'entreprise. Cette application permet de une gestion des utilisateurs et des questionnaires avec la mise en place d'un historique et de statisques pour suivre la progression des employées.",
+                "paragraph": {
+                    "text": "Le projet a été fait dans une équipe de 4 personnes avec une méthodologie de gestion agile Scrum. Ce projet de formation a notamment servi à apprendre l'utilisation de Jave et de son écosystème : ",
+                    "li": [
+                        "Utilisation de Spring pour la gestion du cycle de vie des composants",
+                        "Utilisation de Spring Security pour la gestion de l'authentification et de l'autorisation",
+                        "Utilisation de Hibernate avec à la fois JPA Repository et HQL pour la gestion de la base de données",
+                        "Utilisation de Docker pour la mise en place d'environnements de développement et de production",
+                        "D'autres outils ont pu être utilisés comme Maven, Hibernate Validator, Junit, Mockito ou Jackson."
+                    ]
+                }
+            },
+            "simulateur": {
+                "name": "Simulateur",
+                "description": "Transformation d'une application web Java existante pour ajouter de la persistance des données et une interface utilisateur. Celle-ci sert à faciliter les tests, à faire des démonstrations et à former les nouveaux utilisateurs à l'une des solutions logicielles d'Hologarde.",
+                "paragraph": {
+                    "text": "Le projet a été mené par 2 juniors avec l'aide de 2 seniors pour la revue de code et faisant office de Product Owner. Les points importants du projet sont :",
+                    "li": [
+                        "Mise en place d'une interface utilisateur avec principalement des questionnaires",
+                        "Utilisation de MapBox avec React pour permettre de poser des marqueurs et des figures géométriques sur une carte",
+                        "Ajout d'un Server Side Events pour permettre la mise à jour en temps réel des status des objets de la simulation",
+                        "Création d'une base de données en PostgreSQL avec une optimisation de la structure des tables de données avec Hibernate"
+                    ]
+                }
             }
         }
     },

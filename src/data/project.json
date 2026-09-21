@@ -1,11 +1,37 @@
 [
     {
+        "id": "simulateur",
+        "commanditaire": {
+            "name": "Hologarde",
+            "url": "https://hologarde.com/",
+            "logo": "hologarde.png"
+        },
+        "period": {
+            "start": "2026-07-15",
+            "end": "2026-09-30"
+        },
+        "large": true,
+        "languages": ["Java", "React"],
+        "tools": [
+            "Spring Boot",
+            "Maven",
+            "Redux",
+            "Redux Toolkit",
+            "Server Side Events",
+            "PostgreSQL",
+            "Bitbucket",
+            "Azure DevOps",
+            "REST API"
+        ]
+    },
+    {
         "id": "randou",
         "commanditaire": {
             "name": "LIRIS",
             "url": "https://liris.cnrs.fr/",
-            "logo": "logo_liris.png"
+            "logo": "liris.png"
         },
+        "study": "centrale",
         "period": {
             "start": "2026-01-01",
             "end": "2026-03-30"
@@ -30,7 +56,7 @@
         "commanditaire": {
             "name": "LIRIS",
             "url": "https://liris.cnrs.fr/",
-            "logo": "logo_liris.png"
+            "logo": "liris.png"
         },
         "period": {
             "start": "2025-05-01",
@@ -84,14 +110,34 @@
         ]
     },
     {
+        "id": "my-newro-factory",
+        "commanditaire": {
+            "name": "OXYL",
+            "url": "https://www.oxyl.fr",
+            "logo": "oxyl.png"
+        },
+        "period": {
+            "start": "2026-04-07",
+            "end": "2026-07-10"
+        },
+        "languages": ["Java", "Angular", "TypeScript", "HTML", "CSS"],
+        "tools": [
+            "Spring",
+            "Maven",
+            "Spring Security",
+            "MySQL",
+            "GitLab",
+            "REST API"
+        ]
+    },
+    {
         "id": "challenger",
         "commanditaire": {
             "name": "Association étudiante Challenge",
             "url": "https://challenge-centrale-lyon.fr/",
-            "logo": "logo_challenge.png"
+            "logo": "challenge.png"
         },
         "study": "centrale",
-        "large": true,
         "period": {
             "start": "2023-10-01",
             "end": "2024-06-30"

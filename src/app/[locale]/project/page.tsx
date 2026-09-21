@@ -6,12 +6,12 @@ import { Fragment, type ReactNode, useState } from "react";
 import { MultiSelect } from "@/components/personal/multi-select";
 import Project from "@/components/project/project";
 import ProjectSelect from "@/components/project/projectSelect";
-import language_json from "@/data/category-color.json";
+import CATEGORY_COLORS from "@/data/category-color.json";
 import projectData from "@/data/project.json";
 import { SelectOption } from "@/types/common.types";
 import type { Project as ProjectType } from "@/types/project.types";
 
-const languagesOptions: SelectOption[] = Object.keys(language_json).map(
+const languagesOptions: SelectOption[] = Object.keys(CATEGORY_COLORS).map(
     (lang) => ({
         label: lang,
         value: lang,

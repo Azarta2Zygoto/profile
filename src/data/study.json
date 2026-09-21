@@ -4,7 +4,7 @@
         "name": "Centrale Lyon",
         "city": "Lyon",
         "link": "https://www.ec-lyon.fr",
-        "logo": "2024_LOGO-CENTRALE-H_ROUGE_RVB.png",
+        "logo": "centrale-lyon.png",
         "locales": ["en"],
         "period": {
             "start": "2023",
@@ -74,7 +74,7 @@
         "name": "Université Claude Bernard Lyon 1",
         "city": "Lyon",
         "link": "https://www.univ-lyon1.fr",
-        "logo": "LogoLyon1Sig_CoulCmjn300dpi.png",
+        "logo": "universite-lyon.png",
         "period": {
             "start": "2025",
             "end": "Present"
@@ -101,7 +101,7 @@
         "name": "Pierre de Fermat",
         "city": "Toulouse",
         "link": "https://fermat.mon-ent-occitanie.fr/",
-        "logo": "logo_pierre_de_fermat.svg",
+        "logo": "pierre-de-fermat.svg",
         "period": {
             "start": "2021",
             "end": "2023"

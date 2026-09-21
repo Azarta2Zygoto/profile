@@ -153,6 +153,33 @@
             "profile": {
                 "name": "Portfolio Website",
                 "description": "Realization of a portfolio website to share my profile and many of my projects done. This is the website you are currently on."
+            },
+            "my-newro-factory": {
+                "name": "My Newro Factory",
+                "description": "Development of an internal web application to help the company's developers improve their skills. The application provides user and questionnaire management, along with historical records and statistics to track employee progress.",
+                "paragraph": {
+                    "text": "The project was developed by a team of four using the Agile Scrum methodology. This training project was an opportunity to learn Java and its ecosystem, including:",
+                    "li": [
+                        "Using Spring to manage the lifecycle of components",
+                        "Using Spring Security to handle authentication and authorization",
+                        "Using Hibernate with both JPA Repository and HQL to manage the database",
+                        "Using Docker to set up development and production environments",
+                        "Using other tools such as Maven, Hibernate Validator, JUnit, Mockito, and Jackson."
+                    ]
+                }
+            },
+            "simulateur": {
+                "name": "Simulator",
+                "description": "Modernization of an existing Java web application to add data persistence and a user interface. The application is designed to facilitate testing and demonstrations, as well as train new users on one of Hologarde's software solutions.",
+                "paragraph": {
+                    "text": "The project was carried out by two junior developers, with two senior developers providing code reviews and acting as Product Owners. Key aspects of the project include:",
+                    "li": [
+                        "Developing a user interface primarily based on questionnaires",
+                        "Using Mapbox with React to place markers and geometric shapes on a map",
+                        "Implementing Server-Sent Events (SSE) to update the status of simulation objects in real time",
+                        "Creating a PostgreSQL database and optimizing the data table structure using Hibernate"
+                    ]
+                }
             }
         }
     },

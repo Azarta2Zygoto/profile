@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Script from "next/script";
 import { PropsWithChildren } from "react";
@@ -13,6 +13,7 @@ import { APP_CONFIG, ASSETS } from "@/types/common.constants";
 import { LocaleProps } from "@/types/common.types";
 import { buildAssetPath } from "@/utils/path.utils";
 
+import notFound from "../not-found";
 import JSONLD from "./head";
 
 export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
@@ -82,6 +83,10 @@ export default async function RootLayout({
 }: Readonly<PropsWithChildren<LocaleProps>>) {
     const { locale } = await params;
 
+    if (!hasLocale(routing.locales, locale)) {
+        return notFound();
+    }
+
     return (
         <html
             lang={locale}
@@ -90,6 +95,8 @@ export default async function RootLayout({
             <NextIntlClientProvider locale={locale}>
                 <head>
                     <JSONLD locale={locale} />
+                </head>
+                <body>
                     <Script
                         id="theme-script"
                         strategy="beforeInteractive"
@@ -118,8 +125,6 @@ export default async function RootLayout({
                             })();
                         `}
                     </Script>
-                </head>
-                <body>
                     {process.env.NODE_ENV === "development" && (
                         <Script
                             strategy="afterInteractive"

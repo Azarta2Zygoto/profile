@@ -5,10 +5,11 @@ import { Fragment, type ReactNode, use, useState } from "react";
 
 import { MultiSelect } from "@/components/personal/multi-select";
 import Study from "@/components/study/study";
-import language_json from "@/data/category-color.json";
+import CATEGORY_COLORS from "@/data/category-color.json";
+import type { Locale } from "@/i18n/routing";
 import type { LocaleProps, SelectOption } from "@/types/common.types";
 
-const languagesOptions: SelectOption[] = Object.keys(language_json).map(
+const languagesOptions: SelectOption[] = Object.keys(CATEGORY_COLORS).map(
     (lang) => ({
         label: lang,
         value: lang,
@@ -45,7 +46,7 @@ export default function StudyPage({
             />
             <Study
                 languages={languages}
-                locale={locale}
+                locale={locale as Locale}
                 total={languagesOptions.length}
             />
         </Fragment>
