@@ -3,32 +3,33 @@
 import { useTranslations } from "next-intl";
 import { type ReactNode } from "react";
 
-import { APP_CONFIG } from "@/data/config";
-import personalData from "@/data/profile-data.json";
+import profile from "@/data/profile.json";
+import { Locale } from "@/i18n/routing";
+import { APP_CONFIG } from "@/types/common.constants";
 
-interface JSONLDProps {
-    locale: string;
+interface Props {
+    locale: Locale;
 }
 
-export default function JSONLD({ locale }: JSONLDProps): ReactNode {
+export default function JSONLD({ locale }: Readonly<Props>): ReactNode {
     const t = useTranslations("Languages");
 
     const personJsonLd = {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: `${personalData.lastname} ${personalData.firstname}`,
+        name: `${profile.lastname} ${profile.firstname}`,
         url: `${APP_CONFIG.baseUrl}${locale}`,
-        jobTitle: personalData.job,
-        email: `mailto:${personalData.gmail}`,
+        jobTitle: profile.job,
+        email: `mailto:${profile.gmail}`,
         sameAs: `${APP_CONFIG.baseUrl}${locale}`,
-        knowsLanguage: personalData.languages.map((lang) => {
+        knowsLanguage: profile.languages.map((lang) => {
             return {
                 "@type": "Language",
                 name: t(lang),
                 alternateName: lang,
             };
         }),
-        nationality: personalData.nationality.map((nat) => {
+        nationality: profile.nationality.map((nat) => {
             return {
                 "@type": "Country",
                 name: t(nat),

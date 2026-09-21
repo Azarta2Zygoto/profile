@@ -1,21 +1,22 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, type ReactNode, useCallback, useState } from "react";
+import { Fragment, type ReactNode, useState } from "react";
 
 import { MultiSelect } from "@/components/personal/multi-select";
 import Project from "@/components/project/project";
 import ProjectSelect from "@/components/project/projectSelect";
-import language_json from "@/data/language-color.json";
+import language_json from "@/data/category-color.json";
 import projectData from "@/data/project.json";
-import type { ProjectType } from "@/data/types";
+import { SelectOption } from "@/types/common.types";
+import type { Project as ProjectType } from "@/types/project.types";
 
-const languagesOptions: { label: string; value: string }[] = Object.keys(
-    language_json,
-).map((lang) => ({
-    label: lang,
-    value: lang,
-}));
+const languagesOptions: SelectOption[] = Object.keys(language_json).map(
+    (lang) => ({
+        label: lang,
+        value: lang,
+    }),
+);
 
 const [constLargeProjectContent, constLittleProjectContent] = [
     projectData.filter((project) => project.large) as Array<ProjectType>,

@@ -5,25 +5,24 @@ import { Fragment, type ReactNode, use, useState } from "react";
 
 import { MultiSelect } from "@/components/personal/multi-select";
 import Study from "@/components/study/study";
-import language_json from "@/data/language-color.json";
+import language_json from "@/data/category-color.json";
+import type { LocaleProps, SelectOption } from "@/types/common.types";
 
-const languagesOptions: { label: string; value: string }[] = Object.keys(
-    language_json,
-).map((lang) => ({
-    label: lang,
-    value: lang,
-}));
+const languagesOptions: SelectOption[] = Object.keys(language_json).map(
+    (lang) => ({
+        label: lang,
+        value: lang,
+    }),
+);
 
 export default function StudyPage({
     params,
-}: {
-    params: Promise<{ locale: string }>;
-}): ReactNode {
+}: Readonly<LocaleProps>): ReactNode {
     const { locale } = use(params);
 
     const t = useTranslations("StudyPage");
     const [languages, setLanguages] =
-        useState<{ label: string; value: string }[]>(languagesOptions);
+        useState<SelectOption[]>(languagesOptions);
 
     function handleLanguagesChange(selected: string[]) {
         const selectedLanguages = selected.map((lang) => ({

@@ -9,7 +9,7 @@ const defaults = {
     viewBox: "0 0 3 2",
 };
 
-export function FranceFlag(props: SvgProps): ReactNode {
+export function FranceFlag(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

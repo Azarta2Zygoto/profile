@@ -11,7 +11,7 @@ const defaults = {
     viewBox: "0 0 16 16",
 };
 
-export function LinkExternal(props: SvgProps): ReactNode {
+export function LinkExternal(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

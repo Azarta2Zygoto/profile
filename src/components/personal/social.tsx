@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Gmail } from "@/components/icons/gmail";
-import data from "@/data/profile-data.json";
+import data from "@/data/profile.json";
 
 import { SOCIAL_MAP } from "./socialMap";
 

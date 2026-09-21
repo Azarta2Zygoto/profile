@@ -2,5 +2,15 @@
     "i18n-ally.sourceLanguage": "fr",
     "i18n-ally.displayLanguage": "fr",
     "i18n-ally.localesPaths": ["messages", "src/i18n"],
-    "i18n-ally.keystyle": "nested"
+    "i18n-ally.keystyle": "nested",
+    "json.schemas": [
+        {
+            "fileMatch": ["project.json"],
+            "url": "./src/schemas/project.schema.json"
+        },
+        {
+            "fileMatch": ["study.json"],
+            "url": "./src/schemas/study.schema.json"
+        }
+    ]
 }

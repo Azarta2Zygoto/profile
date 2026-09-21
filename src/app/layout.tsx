@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import React from "react";
+import type { PropsWithChildren } from "react";
 
-import { APP_CONFIG } from "@/data/config";
-import { ASSETS, buildAssetPath } from "@/data/constants";
+import { APP_CONFIG, ASSETS } from "@/types/common.constants";
+import { buildAssetPath } from "@/utils/path.utils";
+
+import "./globals.css";
 
 export const viewport: Viewport = {
     width: "device-width",
@@ -59,10 +61,6 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return <>{children}</>;
+export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
+    return children;
 }

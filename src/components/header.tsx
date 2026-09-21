@@ -6,30 +6,23 @@ import type { ReactNode } from "react";
 
 import FlagSelectMenu from "@/components/personal/flagSelectMenu";
 import ThemeSwitch from "@/components/personal/themeSwitch";
-import { APP_CONFIG } from "@/data/config";
-import { ASSETS, buildAssetPath } from "@/data/constants";
-import locales_json from "@/data/locales.json";
+import { Locale, SELECT_LOCALE } from "@/i18n/routing";
+import { ASSETS } from "@/types/common.constants";
+import { buildAssetPath } from "@/utils/path.utils";
 
 import Navigation from "./navigation";
 
-const correctedLocale: { label: string; value: string }[] = Object.entries(
-    locales_json,
-).map(([key, locale]) => ({
-    label: locale.name as string,
-    value: key,
-}));
-
-interface HeaderProps {
-    locale: string;
+interface Props {
+    locale: Locale;
 }
 
-export default function Header({ locale }: HeaderProps): ReactNode {
+export default function Header({ locale }: Readonly<Props>): ReactNode {
     const t = useTranslations("Header");
 
     return (
         <header>
             <Image
-                src={buildAssetPath(ASSETS.IMAGES.LOGO, APP_CONFIG.basePath)}
+                src={buildAssetPath(ASSETS.IMAGES.LOGO)}
                 alt={t("alt-logo")}
                 className="img-logo"
                 priority
@@ -40,7 +33,7 @@ export default function Header({ locale }: HeaderProps): ReactNode {
             <div className="rows">
                 <ThemeSwitch />
                 <FlagSelectMenu
-                    options={correctedLocale}
+                    options={SELECT_LOCALE}
                     selectedOption={locale}
                 />
             </div>

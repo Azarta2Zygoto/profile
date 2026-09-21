@@ -11,7 +11,7 @@ const defaults = {
     viewBox: "0 -10 490 490",
 };
 
-export function Website(props: SvgProps): ReactNode {
+export function Website(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

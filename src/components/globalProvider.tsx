@@ -1,6 +1,8 @@
 "use client";
 
-import React, {
+import {
+    FC,
+    PropsWithChildren,
     createContext,
     use,
     useCallback,
@@ -13,38 +15,37 @@ import {
     DEFAULT_THEME,
     THEME_ATTRIBUTE,
     THEME_STORAGE_KEY,
-    THEME_VALUES,
-} from "@/data/constants";
-import type { Themes } from "@/data/types";
+} from "@/types/common.constants";
+import { ThemeEnum } from "@/types/common.types";
 
-const GlobalContext = createContext<{
-    theme: Themes;
-    setTheme: (theme: Themes) => void;
-} | null>(null);
+interface GlobalContextProps {
+    theme: ThemeEnum;
+    setTheme: (theme: ThemeEnum) => void;
+}
 
-export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
-    children,
-}) => {
-    const [theme, setTheme] = useState<Themes>(() => {
+const GlobalContext = createContext<GlobalContextProps | null>(null);
+
+export const GlobalProvider: FC<PropsWithChildren> = ({ children }) => {
+    const [theme, setTheme] = useState<ThemeEnum>(() => {
         if (typeof window === "undefined") return DEFAULT_THEME;
 
         const storedTheme = localStorage.getItem(
             THEME_STORAGE_KEY,
-        ) as Themes | null;
-        if (storedTheme && Object.values(THEME_VALUES).includes(storedTheme)) {
+        ) as ThemeEnum | null;
+        if (storedTheme && Object.values(ThemeEnum).includes(storedTheme)) {
             return storedTheme;
         }
         const prefersDark = window.matchMedia(
             "(prefers-color-scheme: dark)",
         ).matches;
-        return prefersDark ? THEME_VALUES.DARK : THEME_VALUES.LIGHT;
+        return prefersDark ? ThemeEnum.DARK : ThemeEnum.LIGHT;
     });
 
     /**
      * Updates the theme state and synchronizes with external systems (localStorage, DOM).
      * This follows an event-driven pattern instead of relying on useEffect for state syncing.
      */
-    const changeTheme = useCallback((newTheme: Themes) => {
+    const changeTheme = useCallback((newTheme: ThemeEnum) => {
         setTheme(newTheme);
         localStorage.setItem(THEME_STORAGE_KEY, newTheme);
     }, []);
@@ -61,7 +62,7 @@ export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
             // Only follow system if the user hasn't explicitly set a preference
             const hasUserPreference = !!localStorage.getItem(THEME_STORAGE_KEY);
             if (!hasUserPreference) {
-                changeTheme(e.matches ? THEME_VALUES.DARK : THEME_VALUES.LIGHT);
+                changeTheme(e.matches ? ThemeEnum.DARK : ThemeEnum.LIGHT);
             }
         };
 

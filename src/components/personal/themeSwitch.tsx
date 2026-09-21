@@ -3,9 +3,9 @@
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
+import { useGlobal } from "@/components/globalProvider";
 import { Switch } from "@/components/ui/switch";
-
-import { useGlobal } from "../globalProvider";
+import { ThemeEnum } from "@/types/common.types";
 
 export default function ThemeSwitch(): ReactNode {
     const t = useTranslations("ThemeSwitch");
@@ -13,11 +13,13 @@ export default function ThemeSwitch(): ReactNode {
 
     return (
         <Switch
-            checked={theme === "dark"}
-            onCheckedChange={(isDark) => setTheme(isDark ? "dark" : "light")}
+            checked={theme === ThemeEnum.DARK}
+            onCheckedChange={(isDark) =>
+                setTheme(isDark ? ThemeEnum.DARK : ThemeEnum.LIGHT)
+            }
             className="theme-switch"
             aria-label={t("switch")}
-            symbol={theme === "dark" ? "🌙" : "☀️"}
+            symbol={theme === ThemeEnum.DARK ? "🌙" : "☀️"}
         />
     );
 }

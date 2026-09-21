@@ -12,13 +12,11 @@ interface SubAccordionItem {
     content: ReactNode;
 }
 
-interface AccordionProps {
+interface Props {
     items: SubAccordionItem | Array<SubAccordionItem>;
 }
 
-export default function ImplementAccordion({
-    items,
-}: AccordionProps): ReactNode {
+export default function CustomAccordion({ items }: Readonly<Props>): ReactNode {
     return (
         <Accordion
             type="single"

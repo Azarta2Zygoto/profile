@@ -10,7 +10,7 @@ const defaults = {
     viewBox: "0 0 514 514",
 };
 
-export function Gmail(props: SvgProps): ReactNode {
+export function Gmail(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

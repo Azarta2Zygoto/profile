@@ -1,20 +1,17 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, use } from "react";
+import { Fragment, ReactNode, use } from "react";
 
 import { Link45deg } from "@/components/icons/link45deg";
 import ShortProject from "@/components/project/shortProject";
 import ShortStudy from "@/components/study/shortStudy";
 import { Link } from "@/i18n/navigation";
+import { LocaleProps } from "@/types/common.types";
 
 const listComponents = ["study", "project"] as const;
 
-export default function HomePage({
-    params,
-}: {
-    params: Promise<{ locale: string }>;
-}) {
+export default function HomePage({ params }: Readonly<LocaleProps>): ReactNode {
     const { locale } = use(params);
     const t = useTranslations("HomePage");
     return (

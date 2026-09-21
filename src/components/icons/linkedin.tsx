@@ -10,7 +10,7 @@ const defaults = {
     title: "LinkedIn",
 };
 
-export function Linkedin(props: SvgProps): ReactNode {
+export function Linkedin(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

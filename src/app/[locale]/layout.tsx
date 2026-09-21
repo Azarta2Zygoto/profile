@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { type Locale, NextIntlClientProvider } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Script from "next/script";
+import { PropsWithChildren } from "react";
 
 import Bar from "@/components/bar";
 import Footer from "@/components/footer";
 import { GlobalProvider } from "@/components/globalProvider";
 import Header from "@/components/header";
-import { APP_CONFIG } from "@/data/config";
-import { ASSETS, buildAssetPath } from "@/data/constants";
 import { routing } from "@/i18n/routing";
+import { APP_CONFIG, ASSETS } from "@/types/common.constants";
+import { LocaleProps } from "@/types/common.types";
+import { buildAssetPath } from "@/utils/path.utils";
 
-import "../globals.css";
 import JSONLD from "./head";
 
-export async function generateMetadata(props: {
-    params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-    const { locale } = (await props.params) as { locale: Locale };
+export async function generateMetadata(props: LocaleProps): Promise<Metadata> {
+    const { locale } = await props.params;
     const t = await getTranslations({ locale });
 
     return {
@@ -80,24 +79,51 @@ export function generateStaticParams() {
 export default async function RootLayout({
     children,
     params,
-}: Readonly<{
-    children: React.ReactNode;
-    params: Promise<{ locale: string }>;
-}>) {
-    const { locale } = (await params) as { locale: Locale };
-    setRequestLocale(locale);
+}: Readonly<PropsWithChildren<LocaleProps>>) {
+    const { locale } = await params;
 
     return (
-        <html lang={locale}>
+        <html
+            lang={locale}
+            suppressHydrationWarning
+        >
             <NextIntlClientProvider locale={locale}>
                 <head>
                     <JSONLD locale={locale} />
+                    <Script
+                        id="theme-script"
+                        strategy="beforeInteractive"
+                    >
+                        {`
+                            (function () {
+                                const DEFAULT_THEME = "LIGHT";
+                                const THEME_ATTRIBUTE = "data-theme";
+                                const THEME_STORAGE_KEY = "theme";
+
+                                try {
+                                    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+                                    const theme = storedTheme || DEFAULT_THEME;
+                                    console.log("Theme set to:", theme);
+
+                                    document.documentElement.setAttribute(
+                                        THEME_ATTRIBUTE,
+                                        theme
+                                    );
+                                } catch (error) {
+                                    document.documentElement.setAttribute(
+                                        THEME_ATTRIBUTE,
+                                        DEFAULT_THEME
+                                    );
+                                }
+                            })();
+                        `}
+                    </Script>
                 </head>
                 <body>
                     {process.env.NODE_ENV === "development" && (
                         <Script
                             strategy="afterInteractive"
-                            src="https://unpkg.com/react-scan/dist/auto.global.js"
+                            src="https://unpkg.com/react-scan@latest/dist/auto.global.js"
                         />
                     )}
                     <GlobalProvider>

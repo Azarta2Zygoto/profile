@@ -8,19 +8,19 @@ import { type ReactNode } from "react";
 import { Github } from "@/components/icons/github";
 import { Linkedin } from "@/components/icons/linkedin";
 import { Website } from "@/components/icons/website";
-import { APP_CONFIG } from "@/data/config";
-import { dateFormatOptions } from "@/data/data";
+import Box from "@/components/personal/box";
+import ImplementAccordion from "@/components/personal/customAccordion";
 import studyData from "@/data/study.json";
-import type { ProjectType } from "@/data/types";
+import { APP_CONFIG, DATE_FORMAT } from "@/types/common.constants";
+import type { Project } from "@/types/project.types";
 
-import ImplementAccordion from "../personal/accordeon";
-import Box from "../personal/box";
-
-interface ProjectProps {
-    projectContent: Array<ProjectType>;
+interface Props {
+    projectContent: Array<Project>;
 }
 
-export default function Project({ projectContent }: ProjectProps): ReactNode {
+export default function Project({
+    projectContent,
+}: Readonly<Props>): ReactNode {
     const format = useFormatter();
     const t = useTranslations("HomePage");
 
@@ -65,16 +65,16 @@ export default function Project({ projectContent }: ProjectProps): ReactNode {
                         {key.period.in &&
                             format.dateTime(
                                 new Date(key.period.in),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )}
                         {key.period.start &&
                             key.period.end &&
                             `${format.dateTime(
                                 new Date(key.period.start),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )} - ${format.dateTime(
                                 new Date(key.period.end),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )}`}
                         {key.study &&
                             " → " +

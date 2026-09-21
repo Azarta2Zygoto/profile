@@ -9,18 +9,14 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
+import { SelectOption } from "@/types/common.types";
 
-interface SelectOption {
-    label: string;
-    value: string | number;
-}
-
-interface SelectMenuProps {
+interface Props {
     id: string;
     options: SelectOption[];
     selectedOption: SelectOption;
     style?: CSSProperties;
-    onOptionSelect: (option: string | number) => void;
+    onSelect: (option: string | number) => void;
 }
 
 export default function SelectMenu({
@@ -28,13 +24,13 @@ export default function SelectMenu({
     options,
     selectedOption,
     style,
-    onOptionSelect,
-}: SelectMenuProps): ReactNode {
+    onSelect,
+}: Readonly<Props>): ReactNode {
     const [isOpen, setIsOpen] = useState(false);
 
-    function handleOptionSelect(option: string | number) {
+    function handleSelect(option: string | number) {
         if (option !== selectedOption.value) {
-            onOptionSelect(option);
+            onSelect(option);
         }
         setIsOpen(false);
     }
@@ -65,7 +61,7 @@ export default function SelectMenu({
                                 ? "btn-option-selected"
                                 : ""
                         }`}
-                        onClick={() => handleOptionSelect(option.value)}
+                        onClick={() => handleSelect(option.value)}
                         aria-label={option.label}
                     >
                         {option.label}

@@ -6,27 +6,28 @@ import { Fragment, type ReactNode } from "react";
 
 import { LinkExternal } from "@/components/icons/link-external";
 import { Website } from "@/components/icons/website";
-import { APP_CONFIG } from "@/data/config";
+import Box from "@/components/personal/box";
 import studyData from "@/data/study.json";
-import type { Locale, StudyType } from "@/data/types";
 import { Link } from "@/i18n/navigation";
+import { Locale } from "@/i18n/routing";
+import { APP_CONFIG } from "@/types/common.constants";
+import { SelectOption } from "@/types/common.types";
+import type { Study } from "@/types/study.types";
 
-import Box from "../personal/box";
-
-interface StudyProps {
-    locale: string;
+interface Props {
+    locale: Locale;
     total: number;
-    languages: { label: string; value: string }[];
+    languages: SelectOption[];
 }
 
 export default function Study({
-    locale = "fr",
+    locale,
     total,
     languages,
-}: StudyProps): ReactNode {
+}: Readonly<Props>): ReactNode {
     const t = useTranslations("HomePage");
     const selectedLanguageValues = new Set(languages.map((l) => l.value));
-    const studyContent = (studyData as StudyType[])
+    const studyContent = (studyData as Study[])
         .filter((study) => {
             if (languages.length === 0) return true;
             return study.lessons.some((lesson) =>
@@ -48,7 +49,7 @@ export default function Study({
                     selectedLanguageValues.has(lang),
                 );
             }),
-        })) as StudyType[];
+        })) as Study[];
 
     if (studyContent.length === 0) {
         return (
@@ -86,7 +87,7 @@ export default function Study({
                             <Link
                                 href={
                                     key.link +
-                                    (key.locales?.includes(locale as Locale)
+                                    (key.locales?.includes(locale)
                                         ? `/${locale}`
                                         : "")
                                 }

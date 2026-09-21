@@ -14,8 +14,7 @@ export const formats = {
     },
 } satisfies Formats;
 
-export default getRequestConfig(async ({ requestLocale }) => {
-    const requested = await requestLocale;
+export default getRequestConfig(async ({ locale: requested }) => {
     const locale = hasLocale(routing.locales, requested)
         ? requested
         : routing.defaultLocale;

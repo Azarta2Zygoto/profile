@@ -3,11 +3,10 @@
 import { useFormatter, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
-import { dateFormatOptions } from "@/data/data";
+import Box from "@/components/personal/box";
 import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
-
-import Box from "../personal/box";
+import { DATE_FORMAT } from "@/types/common.constants";
 
 export default function ShortProject(): ReactNode {
     const format = useFormatter();
@@ -28,16 +27,16 @@ export default function ShortProject(): ReactNode {
                         {key.period.in &&
                             format.dateTime(
                                 new Date(key.period.in),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )}
                         {key.period.start &&
                             key.period.end &&
                             `${format.dateTime(
                                 new Date(key.period.start),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )} - ${format.dateTime(
                                 new Date(key.period.end),
-                                dateFormatOptions,
+                                DATE_FORMAT,
                             )}`}
                         {key.study &&
                             " → " +

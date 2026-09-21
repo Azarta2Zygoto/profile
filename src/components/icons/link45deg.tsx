@@ -11,7 +11,7 @@ const defaults = {
     viewBox: "0 0 16 16",
 };
 
-export function Link45deg(props: SvgProps): ReactNode {
+export function Link45deg(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

@@ -8,7 +8,7 @@ export interface SvgProps {
     title?: string;
 }
 
-interface IconSVGProps extends SvgProps {
+interface Props extends SvgProps {
     viewBox?: string;
     children: ReactNode;
 }
@@ -21,7 +21,7 @@ export function IconSVG({
     title,
     children,
     viewBox = "0 0 24 24",
-}: IconSVGProps): ReactNode {
+}: Readonly<Props>): ReactNode {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"

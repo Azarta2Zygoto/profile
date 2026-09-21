@@ -10,7 +10,7 @@ const defaults = {
     title: "GitHub",
 };
 
-export function Github(props: SvgProps): ReactNode {
+export function Github(props: Readonly<SvgProps>): ReactNode {
     return (
         <IconSVG
             {...defaults}

@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
-import Contact from "./personal/social";
+import Contact from "@/components/personal/social";
 
 export default function Footer(): ReactNode {
     const t = useTranslations("Footer");

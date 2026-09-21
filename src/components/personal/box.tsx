@@ -1,16 +1,20 @@
 import { CSSProperties, type ReactNode } from "react";
 
-import color from "@/data/language-color.json";
-import type { ColorScheme } from "@/data/types";
+import color from "@/data/category-color.json";
 import { cn } from "@/lib/utils";
+import type { ColorScheme } from "@/types/common.types";
 
-interface BoxProps {
+interface Props {
     name: string;
     className?: string;
     style?: CSSProperties;
 }
 
-export default function Box({ name, className, style }: BoxProps): ReactNode {
+export default function Box({
+    name,
+    className,
+    style,
+}: Readonly<Props>): ReactNode {
     const langColor = (color as Record<string, ColorScheme>)[name];
     return (
         <span

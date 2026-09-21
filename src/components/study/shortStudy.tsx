@@ -5,17 +5,17 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { Website } from "@/components/icons/website";
-import { APP_CONFIG } from "@/data/config";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
+import { APP_CONFIG } from "@/types/common.constants";
 
-interface ShortStudyProps {
+interface Props {
     locale: string;
 }
 
 export default function ShortStudy({
     locale = "fr",
-}: ShortStudyProps): ReactNode {
+}: Readonly<Props>): ReactNode {
     const t = useTranslations("HomePage");
 
     return (

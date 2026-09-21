@@ -1,12 +1,26 @@
 import { defineRouting } from "next-intl/routing";
 
-import locales_json from "@/data/locales.json";
+const LOCALES = {
+    fr: {
+        name: "Français",
+    },
+    en: {
+        name: "English",
+    },
+} as const;
+
+export const SELECT_LOCALE: { label: string; value: string }[] = Object.entries(
+    LOCALES,
+).map(([key, locale]) => ({
+    label: locale.name,
+    value: key,
+}));
 
 export const routing = defineRouting({
-    locales: Object.keys(locales_json) as Locale[],
+    locales: Object.keys(LOCALES) as Locale[],
     defaultLocale: "fr" as Locale,
     localePrefix: "always",
     localeDetection: false,
 });
 
-export type Locale = keyof typeof locales_json;
+export type Locale = keyof typeof LOCALES;

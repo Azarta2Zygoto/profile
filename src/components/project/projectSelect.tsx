@@ -1,35 +1,36 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { type ReactNode, memo, useState } from "react";
+import { type ReactNode, useState } from "react";
 
 import SelectMenu from "@/components/personal/selectMenu";
-import { orderProjectList } from "@/data/data";
 import projectData from "@/data/project.json";
-import type { OrderType, ProjectType } from "@/data/types";
+import { ORDER_CATEGORY } from "@/types/common.constants";
+import { Ordering } from "@/types/common.types";
+import { Project } from "@/types/project.types";
 
-interface ProjectSelectProps {
+interface Props {
     onOrderChange: (
-        largeProjects: Array<ProjectType>,
-        littleProjects: Array<ProjectType>,
+        largeProjects: Array<Project>,
+        littleProjects: Array<Project>,
     ) => void;
 }
 
 export default function ProjectSelect({
     onOrderChange,
-}: ProjectSelectProps): ReactNode {
+}: Readonly<Props>): ReactNode {
     const t = useTranslations("ProjectPage");
     const tHome = useTranslations("HomePage");
 
     const [selectedOrder, setSelectedOrder] = useState<{
-        value: OrderType;
+        value: Ordering;
         label: string;
     }>({
         value: "default",
         label: t("default"),
     });
 
-    function handleOrderChange(order: OrderType) {
+    function handleOrderChange(order: Ordering) {
         setSelectedOrder({
             value: order,
             label: t(order),
@@ -47,9 +48,9 @@ export default function ProjectSelect({
     }
 
     function projectOrdering(
-        projects: Array<ProjectType>,
-        order: OrderType,
-    ): Array<ProjectType> {
+        projects: Array<Project>,
+        order: Ordering,
+    ): Array<Project> {
         switch (order) {
             case "date":
                 return projects.sort((a, b) => {
@@ -94,14 +95,12 @@ export default function ProjectSelect({
             <label htmlFor="project-order-select">{t("order-by")}</label>
             <SelectMenu
                 id="project-order-select"
-                options={orderProjectList.map((order) => ({
+                options={ORDER_CATEGORY.map((order) => ({
                     label: t(order),
                     value: order,
                 }))}
                 selectedOption={selectedOrder}
-                onOptionSelect={(option) =>
-                    handleOrderChange(option as OrderType)
-                }
+                onSelect={(option) => handleOrderChange(option as Ordering)}
                 style={{ minWidth: "150px" }}
             />
         </span>

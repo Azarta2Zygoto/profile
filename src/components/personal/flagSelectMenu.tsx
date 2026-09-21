@@ -14,16 +14,17 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 import { Link, usePathname } from "@/i18n/navigation";
+import { SelectOption } from "@/types/common.types";
 
-interface FlagSelectMenuProps {
-    options: { label: string; value: string }[];
+interface Props {
+    options: SelectOption[];
     selectedOption: string;
 }
 
 export default function FlagSelectMenu({
     options,
     selectedOption,
-}: FlagSelectMenuProps): ReactNode {
+}: Readonly<Props>): ReactNode {
     const t = useTranslations("DefaultTexts");
     const pathname = usePathname();
 
