@@ -4,7 +4,6 @@ import { type ReactNode } from "react";
 import { Link } from "@/i18n/navigation";
 
 export default function NotFoundPage(): ReactNode {
-    console.log("NotFoundPage rendered");
     const t = useTranslations("NotFound");
 
     return (
