@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { type ReactNode } from "react";
 
+import Box from "@/components/custom/box";
+import ImplementAccordion from "@/components/custom/customAccordion";
 import { Github } from "@/components/icons/github";
 import { Linkedin } from "@/components/icons/linkedin";
 import { Website } from "@/components/icons/website";
-import Box from "@/components/personal/box";
-import ImplementAccordion from "@/components/personal/customAccordion";
 import studyData from "@/data/study.json";
 import { APP_CONFIG, DATE_FORMAT } from "@/types/common.constants";
 import type { Project } from "@/types/project.types";

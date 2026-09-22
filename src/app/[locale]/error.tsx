@@ -1,28 +1,15 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { type ReactNode } from "react";
 
-import { ErrorMain } from "../error";
+import ErrorPage, { ErrorProps } from "@/components/app/error";
 
-interface Props {
-    error: Error & { digest?: string };
-    reset: () => void;
-}
-
-export default function Error({ error, reset }: Readonly<Props>): ReactNode {
-    const t = useTranslations("ErrorPage");
-
+export default function Error({
+    error,
+    reset,
+}: Readonly<ErrorProps>): ReactNode {
     return (
-        <ErrorMain
-            message={{
-                title: t("title"),
-                description: t("description"),
-                retry: t("retry"),
-                retryAria: t("retry-aria"),
-                backToHome: t("back-to-home"),
-                advise: t("advise"),
-            }}
+        <ErrorPage
             error={error}
             reset={reset}
         />

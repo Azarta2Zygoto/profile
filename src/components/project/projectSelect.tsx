@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { type ReactNode, useState } from "react";
 
-import SelectMenu from "@/components/personal/selectMenu";
+import SelectMenu from "@/components/custom/selectMenu";
 import projectData from "@/data/project.json";
 import { ORDER_CATEGORY } from "@/types/common.constants";
 import { Ordering } from "@/types/common.types";

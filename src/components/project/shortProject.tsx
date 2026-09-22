@@ -3,7 +3,7 @@
 import { useFormatter, useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
-import Box from "@/components/personal/box";
+import Box from "@/components/custom/box";
 import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
 import { DATE_FORMAT } from "@/types/common.constants";

@@ -1,5 +1,3 @@
-import { ThemeEnum } from "./common.types";
-
 export const APP_CONFIG = {
     basePath: "/profile/",
     baseUrl:
@@ -19,10 +17,6 @@ export const ASSETS = {
         PHOTO: "photo.jpg",
     },
 } as const;
-
-export const DEFAULT_THEME = ThemeEnum.LIGHT;
-export const THEME_ATTRIBUTE = "data-theme";
-export const THEME_STORAGE_KEY = "theme";
 
 export const ORDER_CATEGORY = ["default", "date", "lexicographical"] as const;
 

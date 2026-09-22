@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-import Social from "@/components/personal/social";
+import Social from "@/components/custom/social";
 import profile from "@/data/profile.json";
 import { ASSETS } from "@/types/common.constants";
 import { buildAssetPath } from "@/utils/path.utils";

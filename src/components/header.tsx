@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
-import FlagSelectMenu from "@/components/personal/flagSelectMenu";
-import ThemeSwitch from "@/components/personal/themeSwitch";
+import FlagSelectMenu from "@/components/custom/flagSelectMenu";
+import ThemeSwitch from "@/components/custom/themeSwitch";
 import { Locale, SELECT_LOCALE } from "@/i18n/routing";
 import { ASSETS } from "@/types/common.constants";
 import { buildAssetPath } from "@/utils/path.utils";

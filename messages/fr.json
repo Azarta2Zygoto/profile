@@ -189,10 +189,10 @@
         "description": "Site web faisant office de portfolio",
         "keywords": "Portfolio, Profil, Développement Web, Analyse de données, Informatique",
         "locale": "fr_FR",
-        "projects-page-title": "Projets",
-        "study-page-title": "Formations",
-        "projects-page-desc": "Découvrez mes projets réalisés lors de mes études ou pour passe-temps",
-        "study-page-desc": "Découvrez mes formations et les cours que j'ai suivis"
+        "/project-title": "Projets",
+        "/study-title": "Formations",
+        "/project-desc": "Découvrez mes projets réalisés lors de mes études ou pour passe-temps",
+        "/study-desc": "Découvrez mes formations et les cours que j'ai suivis"
     },
     "Bar": {
         "alt-profile-picture": "Photo de profil",

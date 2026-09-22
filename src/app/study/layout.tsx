@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
+import Shell from "@/components/app/shell";
 import generateSubMetadata from "@/components/app/subMetadata";
+import { routing } from "@/i18n/routing";
 import { PATH } from "@/types/common.constants";
-import { AsyncLocaleProps } from "@/types/common.types";
 
-export async function generateMetadata(
-    props: Readonly<AsyncLocaleProps>,
-): Promise<Metadata> {
-    const { locale } = await props.params;
-    return generateSubMetadata(locale, PATH.study);
+export async function generateMetadata(): Promise<Metadata> {
+    return generateSubMetadata(routing.defaultLocale, PATH.study);
 }
 
 export default function StudyLayout({ children }: Readonly<PropsWithChildren>) {
-    return children;
+    return <Shell locale={routing.defaultLocale}>{children}</Shell>;
 }

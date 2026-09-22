@@ -4,9 +4,9 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fragment, type ReactNode } from "react";
 
+import Box from "@/components/custom/box";
 import { LinkExternal } from "@/components/icons/link-external";
 import { Website } from "@/components/icons/website";
-import Box from "@/components/personal/box";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
 import { Locale } from "@/i18n/routing";
