@@ -9,6 +9,7 @@ import { Locale } from "@/i18n/routing";
 import Bar from "../bar";
 import Footer from "../footer";
 import Header from "../header";
+import { HtmlLang } from "./htmlLang";
 import JSONLD from "./jsonLD";
 
 interface Props {
@@ -20,36 +21,28 @@ export default async function Shell({
     children,
 }: Readonly<PropsWithChildren<Props>>) {
     return (
-        <html
-            lang={locale}
-            suppressHydrationWarning
+        <NextIntlClientProvider
+            locale={locale}
+            messages={
+                (await import(`../../../messages/${locale}.json`)).default
+            }
         >
-            <NextIntlClientProvider
-                locale={locale}
-                messages={
-                    (await import(`../../../messages/${locale}.json`)).default
-                }
-            >
-                <head>
-                    <JSONLD locale={locale} />
-                </head>
-                <body>
-                    <ThemeProvider>
-                        {process.env.NODE_ENV === "development" && (
-                            <Script
-                                strategy="afterInteractive"
-                                src="https://unpkg.com/react-scan@latest/dist/auto.global.js"
-                            />
-                        )}
-                        <Header />
-                        <main>
-                            <Bar />
-                            <div className="page-container">{children}</div>
-                        </main>
-                        <Footer />
-                    </ThemeProvider>
-                </body>
-            </NextIntlClientProvider>
-        </html>
+            <HtmlLang />
+            <JSONLD locale={locale} />
+            <ThemeProvider>
+                {process.env.NODE_ENV === "development" && (
+                    <Script
+                        strategy="afterInteractive"
+                        src="https://unpkg.com/react-scan@latest/dist/auto.global.js"
+                    />
+                )}
+                <Header />
+                <main>
+                    <Bar />
+                    <div className="page-container">{children}</div>
+                </main>
+                <Footer />
+            </ThemeProvider>
+        </NextIntlClientProvider>
     );
 }

@@ -19,5 +19,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
-    return children;
+    return (
+        <html
+            lang="fr"
+            suppressHydrationWarning
+        >
+            <body>{children}</body>
+        </html>
+    );
 }
