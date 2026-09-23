@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Locale, routing } from "@/i18n/routing";
 import { APP_CONFIG, ASSETS } from "@/types/common.constants";
-import { buildAssetPath } from "@/utils/path.utils";
+import { buildAssetPath, getLocalizedUrl } from "@/utils/path.utils";
 
 export default async function generateGlobalMetadata(
     locale: Locale,
@@ -19,9 +19,9 @@ export default async function generateGlobalMetadata(
         description: t("Metadata.description"),
         keywords: t("Metadata.keywords"),
         icons: {
-            icon: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
-            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
-            apple: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile/"),
+            icon: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
+            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
+            apple: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
         },
         authors: [
             {
@@ -51,13 +51,12 @@ export default async function generateGlobalMetadata(
             },
         },
         alternates: {
-            canonical: `${APP_CONFIG.baseUrl}${routing.defaultLocale}`,
-            languages: routing.locales.reduce(
-                (acc, locale) => {
-                    acc[locale] = `${APP_CONFIG.baseUrl}${locale}`;
-                    return acc;
-                },
-                {} as Record<string, string>,
+            canonical: getLocalizedUrl(routing.defaultLocale),
+            languages: Object.fromEntries(
+                routing.locales.map((locale) => [
+                    locale,
+                    getLocalizedUrl(locale),
+                ]),
             ),
         },
     };

@@ -98,7 +98,7 @@ export default function Study({
                             >
                                 {key.logo ? (
                                     <Image
-                                        src={`${APP_CONFIG.basePath}logo/${key.logo}`}
+                                        src={`${APP_CONFIG.basePath}/logo/${key.logo}`}
                                         alt={`${key.name} logo`}
                                         width={30}
                                         height={30}

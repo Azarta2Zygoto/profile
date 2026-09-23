@@ -15,7 +15,7 @@ interface Props {
     locale: Locale;
 }
 
-export default function Shell({
+export default async function Shell({
     locale,
     children,
 }: Readonly<PropsWithChildren<Props>>) {
@@ -24,7 +24,12 @@ export default function Shell({
             lang={locale}
             suppressHydrationWarning
         >
-            <NextIntlClientProvider locale={locale}>
+            <NextIntlClientProvider
+                locale={locale}
+                messages={
+                    (await import(`../../../messages/${locale}.json`)).default
+                }
+            >
                 <head>
                     <JSONLD locale={locale} />
                 </head>
@@ -36,7 +41,7 @@ export default function Shell({
                                 src="https://unpkg.com/react-scan@latest/dist/auto.global.js"
                             />
                         )}
-                        <Header locale={locale} />
+                        <Header />
                         <main>
                             <Bar />
                             <div className="page-container">{children}</div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { type ReactNode, useState } from "react";
 
 import { ChevronDownIcon } from "lucide-react";
@@ -14,19 +14,12 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover";
 import { Link, usePathname } from "@/i18n/navigation";
-import { SelectOption } from "@/types/common.types";
+import { SELECT_LOCALE } from "@/i18n/routing";
 
-interface Props {
-    options: SelectOption[];
-    selectedOption: string;
-}
-
-export default function FlagSelectMenu({
-    options,
-    selectedOption,
-}: Readonly<Props>): ReactNode {
+export default function FlagSelectMenu(): ReactNode {
     const t = useTranslations("DefaultTexts");
     const pathname = usePathname();
+    const locale = useLocale();
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -41,22 +34,20 @@ export default function FlagSelectMenu({
                 style={{ height: "40px" }}
                 aria-label={t("selectLanguage")}
             >
-                {chooseFlag(selectedOption)}
+                {chooseFlag(locale)}
                 <ChevronDownIcon
                     className={`pointer-events-none size-4 translate-y-0.5 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     style={{ marginBottom: "4px" }}
                 />
             </PopoverTrigger>
             <PopoverContent className="select-menu-options">
-                {options.map((option) => (
+                {SELECT_LOCALE.map((option) => (
                     <Link
                         key={option.value}
                         href={pathname}
                         locale={option.value}
                         className={`btn btn-option ${
-                            selectedOption === option.value
-                                ? "btn-option-selected"
-                                : ""
+                            locale === option.value ? "btn-option-selected" : ""
                         }`}
                         aria-label={option.label}
                     >

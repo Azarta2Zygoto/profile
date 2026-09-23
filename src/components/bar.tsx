@@ -18,6 +18,7 @@ export default function Bar(): ReactNode {
                 src={buildAssetPath(ASSETS.IMAGES.PHOTO)}
                 alt={t("alt-profile-picture")}
                 className="img-profile"
+                loading="eager"
                 width={128}
                 height={128}
             />

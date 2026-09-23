@@ -19,7 +19,7 @@ export const SELECT_LOCALE: { label: string; value: string }[] = Object.entries(
 export const routing = defineRouting({
     locales: Object.keys(LOCALES) as Locale[],
     defaultLocale: "fr" as Locale,
-    localePrefix: "always",
+    localePrefix: "as-needed",
     localeDetection: false,
 });
 

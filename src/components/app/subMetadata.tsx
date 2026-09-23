@@ -3,7 +3,7 @@ import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
-import { APP_CONFIG } from "@/types/common.constants";
+import { getLocalizedUrl } from "@/utils/path.utils";
 
 export default async function generateSubMetadata(
     locale: Locale,
@@ -14,13 +14,12 @@ export default async function generateSubMetadata(
         title: t(`Metadata.${path}-title`),
         description: t(`Metadata.${path}-desc`),
         alternates: {
-            canonical: `${APP_CONFIG.baseUrl}${routing.defaultLocale}${path}`,
-            languages: routing.locales.reduce(
-                (acc, loc) => {
-                    acc[loc] = `${APP_CONFIG.baseUrl}${loc}${path}`;
-                    return acc;
-                },
-                {} as Record<string, string>,
+            canonical: getLocalizedUrl(routing.defaultLocale, path),
+            languages: Object.fromEntries(
+                routing.locales.map((locale) => [
+                    locale,
+                    getLocalizedUrl(locale, path),
+                ]),
             ),
         },
     };

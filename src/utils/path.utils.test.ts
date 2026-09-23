@@ -1,74 +1,68 @@
 import { describe, expect, it } from "vitest";
 
-import { buildAssetPath, buildLocalePath, isActiveNavLink } from "./path.utils";
+import { buildAssetPath, isActiveNavLink } from "./path.utils";
 
-describe("buildLocalePath", () => {
-    it("construit un chemin avec une route", () => {
-        expect(buildLocalePath("en", "/projects")).toBe("/en/projects");
+describe("isActiveNavLink", () => {
+    describe('when route is "/"', () => {
+        it("returns true for the root pathname", () => {
+            expect(isActiveNavLink("/", "/")).toBe(true);
+        });
+
+        it("returns true for a pathname with one segment", () => {
+            expect(isActiveNavLink("/fr", "/")).toBe(true);
+            expect(isActiveNavLink("/en", "/")).toBe(true);
+        });
+
+        it("returns false for a locale followed by a second segment", () => {
+            expect(isActiveNavLink("/fr/foo", "/")).toBe(false);
+            expect(isActiveNavLink("/en/foo", "/")).toBe(false);
+        });
+
+        it("returns false for a non-locale first segment followed by a second segment", () => {
+            expect(isActiveNavLink("/foo/bar", "/")).toBe(false);
+        });
+
+        it("returns false for a pathname with more than two segments", () => {
+            expect(isActiveNavLink("/fr/foo/bar", "/")).toBe(false);
+        });
+
+        it("returns false for an unknown locale", () => {
+            expect(isActiveNavLink("/xx/foo", "/")).toBe(false);
+        });
+
+        it("handles trailing slashes", () => {
+            expect(isActiveNavLink("/fr/", "/")).toBe(true);
+            expect(isActiveNavLink("/fr/foo/", "/")).toBe(false);
+        });
     });
 
-    it("fonctionne avec une autre locale", () => {
-        expect(buildLocalePath("fr", "/study")).toBe("/fr/study");
-    });
+    describe("when route is not /", () => {
+        it("returns true when pathname ends with the route", () => {
+            expect(isActiveNavLink("/fr/about", "/about")).toBe(true);
+            expect(isActiveNavLink("/en/about", "/about")).toBe(true);
+        });
 
-    it("supprime le slash au début de la route", () => {
-        expect(buildLocalePath("en", "projects")).toBe("/en/projects");
-    });
+        it("returns true when pathname is exactly the route", () => {
+            expect(isActiveNavLink("/about", "/about")).toBe(true);
+        });
 
-    it("supprime le slash à la fin de la route", () => {
-        expect(buildLocalePath("en", "/projects/")).toBe("/en/projects");
-    });
+        it("returns false when pathname does not end with the route", () => {
+            expect(isActiveNavLink("/fr/contact", "/about")).toBe(false);
+        });
 
-    it("supprime les slashs au début et à la fin", () => {
-        expect(buildLocalePath("en", "/projects/")).toBe("/en/projects");
-    });
+        it("works with nested routes", () => {
+            expect(isActiveNavLink("/fr/products/details", "/details")).toBe(
+                true,
+            );
+        });
 
-    it("retourne la locale seule pour une route vide", () => {
-        expect(buildLocalePath("en", "")).toBe("/en");
-    });
+        it("returns false when the route is only a partial suffix", () => {
+            expect(isActiveNavLink("/fr/about-us", "/about")).toBe(false);
+        });
 
-    it("retourne la locale seule pour une route '/'", () => {
-        expect(buildLocalePath("fr", "/")).toBe("/fr");
-    });
-
-    it("utilise la route par défaut si elle est omise", () => {
-        expect(buildLocalePath("en")).toBe("/en");
-    });
-});
-
-describe("activeNavLink", () => {
-    it("retourne true si le pathname correspond à la route", () => {
-        expect(isActiveNavLink("/en/projects", "en", "/projects")).toBe(true);
-    });
-
-    it("retourne false si le pathname ne correspond pas", () => {
-        expect(isActiveNavLink("/en/studies", "en", "/projects")).toBe(false);
-    });
-
-    it("retourne true avec une route sans slash initial", () => {
-        expect(isActiveNavLink("/en/projects", "en", "projects")).toBe(true);
-    });
-
-    it("retourne true pour la racine avec une route vide", () => {
-        expect(isActiveNavLink("/en", "en", "")).toBe(true);
-    });
-
-    it("retourne false si la locale est différente", () => {
-        expect(isActiveNavLink("/fr/projects", "en", "/projects")).toBe(false);
-    });
-
-    it("retourne false si le pathname contient un slash final", () => {
-        expect(isActiveNavLink("/en/projects/", "en", "/projects")).toBe(false);
-    });
-
-    it("retourne false si le pathname contient une route supplémentaire", () => {
-        expect(isActiveNavLink("/en/projects/details", "en", "/projects")).toBe(
-            false,
-        );
-    });
-
-    it("respecte la casse du pathname", () => {
-        expect(isActiveNavLink("/en/Projects", "en", "/projects")).toBe(false);
+        it("handles trailing slashes according to endsWith behavior", () => {
+            expect(isActiveNavLink("/fr/about/", "/about")).toBe(false);
+        });
     });
 });
 

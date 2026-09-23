@@ -49,7 +49,7 @@ export default function Project({
                             >
                                 {key.commanditaire.logo ? (
                                     <Image
-                                        src={`${APP_CONFIG.basePath}logo/${key.commanditaire.logo}`}
+                                        src={`${APP_CONFIG.basePath}/logo/${key.commanditaire.logo}`}
                                         alt={`${key.commanditaire.name} logo`}
                                         width={30}
                                         height={30}

@@ -5,22 +5,17 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
-import { Locale } from "@/i18n/routing";
 import { PATH } from "@/types/common.constants";
 import { isActiveNavLink } from "@/utils/path.utils";
 
-interface Props {
-    locale: Locale;
-}
-
-export default function Navigation({ locale }: Readonly<Props>): ReactNode {
+export default function Navigation(): ReactNode {
     const t = useTranslations("Header");
     const pathname = usePathname();
 
     return (
         <nav>
             {Object.entries(PATH).map(([key, route]) => {
-                const isActive = isActiveNavLink(pathname, locale, route);
+                const isActive = isActiveNavLink(pathname, route);
                 return (
                     <Link
                         key={key}

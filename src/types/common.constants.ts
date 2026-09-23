@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
-    basePath: "/profile/",
+    basePath: "/profile",
     baseUrl:
-        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/profile/",
+        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/profile",
 } as const;
 
 export const PATH = {
@@ -12,9 +12,9 @@ export const PATH = {
 
 export const ASSETS = {
     IMAGES: {
-        LOGO: "logo.svg",
-        LOGO_200: "logo-200.png",
-        PHOTO: "photo.jpg",
+        LOGO: "/logo.svg",
+        LOGO_200: "/logo-200.png",
+        PHOTO: "/photo.jpg",
     },
 } as const;
 
