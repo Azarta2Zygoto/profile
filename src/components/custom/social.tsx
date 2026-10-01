@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Gmail } from "@/components/icons/gmail";
 import data from "@/data/profile.json";
 
-import { SOCIAL_MAP } from "./social";
+import { SOCIAL_MAP } from "./socialMap";
 
 export default function Social(): ReactNode {
     return (
