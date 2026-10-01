@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Fragment, type ReactNode, useState } from "react";
 
-import { MultiSelect } from "@/components/custom/multi-select";
+import { MultiSelect } from "@/components/custom/multiSelect";
 import Project from "@/components/project/project";
 import ProjectSelect from "@/components/project/projectSelect";
 import CATEGORY_COLORS from "@/data/category-color.json";

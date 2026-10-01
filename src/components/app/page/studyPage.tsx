@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Fragment, type ReactNode, useState } from "react";
 
-import { MultiSelect } from "@/components/custom/multi-select";
+import { MultiSelect } from "@/components/custom/multiSelect";
 import Study from "@/components/study/study";
 import CATEGORY_COLORS from "@/data/category-color.json";
 import type { LocaleProps, SelectOption } from "@/types/common.types";

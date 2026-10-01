@@ -11,6 +11,14 @@
         {
             "fileMatch": ["study.json"],
             "url": "./src/schemas/study.schema.json"
+        },
+        {
+            "fileMatch": ["profile.json"],
+            "url": "./src/schemas/profile.schema.json"
+        },
+        {
+            "fileMatch": ["category-color.json"],
+            "url": "./src/schemas/category-color.schema.json"
         }
     ]
 }

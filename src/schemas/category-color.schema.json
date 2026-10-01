@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Technologies",
+    "type": "object",
+    "patternProperties": {
+        "^[A-Za-z0-9+#.-]+$": {
+            "type": "object",
+            "properties": {
+                "background": {
+                    "type": "string",
+                    "pattern": "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$"
+                },
+                "color": {
+                    "type": "string",
+                    "pattern": "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$"
+                }
+            },
+            "required": ["background", "color"],
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

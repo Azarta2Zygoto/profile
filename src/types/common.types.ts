@@ -1,16 +1,6 @@
 import { Locale } from "@/i18n/routing";
 
-export enum ThemeEnum {
-    LIGHT = "light",
-    DARK = "dark",
-}
-
 export type Ordering = "default" | "date" | "lexicographical";
-
-export interface ColorScheme {
-    background: string;
-    color: string;
-}
 
 export interface SelectOption<T = string> {
     label: string;
@@ -20,6 +10,7 @@ export interface SelectOption<T = string> {
 export interface AsyncLocaleProps {
     params: Promise<{ locale: string }>;
 }
+
 export interface LocaleProps {
     locale: Locale;
 }

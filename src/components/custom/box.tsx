@@ -2,12 +2,16 @@ import { CSSProperties, type ReactNode } from "react";
 
 import color from "@/data/category-color.json";
 import { cn } from "@/lib/utils";
-import type { ColorScheme } from "@/types/common.types";
 
 interface Props {
     name: string;
     className?: string;
     style?: CSSProperties;
+}
+
+interface ColorScheme {
+    background: string;
+    color: string;
 }
 
 export default function Box({

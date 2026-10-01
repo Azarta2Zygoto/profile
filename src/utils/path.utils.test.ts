@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { buildAssetPath, isActiveNavLink } from "./path.utils";
+import { routing } from "@/i18n/routing";
+import { APP_CONFIG } from "@/types/common.constants";
+
+import { buildAssetPath, getLocalizedUrl, isActiveNavLink } from "./path.utils";
 
 describe("isActiveNavLink", () => {
     describe('when route is "/"', () => {
@@ -89,5 +92,42 @@ describe("buildAssetPath", () => {
         expect(buildAssetPath("images/photo.jpg", "/assets/")).toBe(
             "/assets/images/photo.jpg",
         );
+    });
+});
+
+describe("getLocalizedUrl", () => {
+    it("returns the base URL without locale prefix for the default locale", () => {
+        const result = getLocalizedUrl(routing.defaultLocale);
+        expect(result).toBe(APP_CONFIG.baseUrl);
+    });
+    it("returns the base URL with path for the default locale", () => {
+        const result = getLocalizedUrl(routing.defaultLocale, "/about");
+        expect(result).toBe(`${APP_CONFIG.baseUrl}/about`);
+    });
+    it("adds the locale prefix for a non-default locale", () => {
+        const locale = routing.defaultLocale === "fr" ? "en" : "fr";
+        const result = getLocalizedUrl(locale);
+        expect(result).toBe(`${APP_CONFIG.baseUrl}/${locale}`);
+    });
+    it("adds the locale prefix and path for a non-default locale", () => {
+        const locale = routing.defaultLocale === "fr" ? "en" : "fr";
+        const result = getLocalizedUrl(locale, "/about");
+        expect(result).toBe(`${APP_CONFIG.baseUrl}/${locale}/about`);
+    });
+    it("uses an empty path by default", () => {
+        const result = getLocalizedUrl(routing.defaultLocale);
+        expect(result).toBe(APP_CONFIG.baseUrl);
+    });
+    it("preserves the path as provided", () => {
+        const result = getLocalizedUrl(routing.defaultLocale, "about");
+        expect(result).toBe(`${APP_CONFIG.baseUrl}about`);
+    });
+    it("supports nested paths", () => {
+        const result = getLocalizedUrl("en", "/products/category/item");
+        expect(result).toBe(`${APP_CONFIG.baseUrl}/en/products/category/item`);
+    });
+    it("preserves query parameters and hash", () => {
+        const result = getLocalizedUrl("en", "/search?q=test#results");
+        expect(result).toBe(`${APP_CONFIG.baseUrl}/en/search?q=test#results`);
     });
 });

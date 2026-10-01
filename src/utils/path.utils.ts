@@ -13,14 +13,14 @@ export function isActiveNavLink(pathname: string, route: string): boolean {
     return pathname.endsWith(route);
 }
 
-export const buildAssetPath = (
+export function buildAssetPath(
     assetName: string,
     basePath: string = APP_CONFIG.basePath,
-): string => {
+): string {
     return `${basePath}${assetName}`;
-};
+}
 
-export const getLocalizedUrl = (locale: string, path = "") => {
+export function getLocalizedUrl(locale: string, path = ""): string {
     const localePrefix = locale === routing.defaultLocale ? "" : `/${locale}`;
     return `${APP_CONFIG.baseUrl}${localePrefix}${path}`;
-};
+}

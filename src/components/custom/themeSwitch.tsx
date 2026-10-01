@@ -6,7 +6,11 @@ import type { ReactNode } from "react";
 import { useTheme } from "next-themes";
 
 import { Switch } from "@/components/ui/switch";
-import { ThemeEnum } from "@/types/common.types";
+
+enum ThemeEnum {
+    LIGHT = "light",
+    DARK = "dark",
+}
 
 export default function ThemeSwitch(): ReactNode {
     const t = useTranslations("ThemeSwitch");

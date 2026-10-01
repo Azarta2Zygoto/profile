@@ -1,0 +1,52 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Profil",
+    "type": "object",
+    "properties": {
+        "lastname": {
+            "type": "string"
+        },
+        "firstname": {
+            "type": "string"
+        },
+        "socials": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": ["linkedin", "github"]
+                    },
+                    "url": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": ["type", "url"],
+                "additionalProperties": false
+            }
+        },
+        "gmail": {
+            "type": "string",
+            "format": "email"
+        },
+        "job": {
+            "type": "string"
+        },
+        "languages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "nationality": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": ["lastname", "firstname"],
+    "additionalProperties": false
+}
