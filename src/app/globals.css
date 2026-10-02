@@ -136,8 +136,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
-    background-image: var(--url-bg);
-    background-repeat: repeat;
     color: var(--fg);
     font-family: Helvetica, sans-serif;
     overflow: auto;
@@ -146,6 +144,8 @@ body {
 main {
     display: flex;
     width: 100%;
+    background-image: var(--url-bg);
+    background-repeat: repeat;
 }
 footer {
     width: 100%;

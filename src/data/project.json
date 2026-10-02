@@ -1,6 +1,11 @@
 [
     {
         "id": "simulateur",
+        "creators": [
+            {
+                "name": "Ferdinand Alain"
+            }
+        ],
         "commanditaire": {
             "name": "Hologarde",
             "url": "https://hologarde.com/",
@@ -111,6 +116,17 @@
     },
     {
         "id": "my-newro-factory",
+        "creators": [
+            {
+                "name": "Ferdinand Alain"
+            },
+            {
+                "name": "David Guichard"
+            },
+            {
+                "name": "Pierre Valat"
+            }
+        ],
         "commanditaire": {
             "name": "OXYL",
             "url": "https://www.oxyl.fr",
