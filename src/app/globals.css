@@ -72,6 +72,7 @@
     --hover-bg: #1045af10;
     --selected-bg: #1045af35;
     --border-color: #333;
+    --url-bg: url("../assets/fond-light.svg");
 }
 
 :root[data-theme="dark"] {
@@ -84,6 +85,7 @@
     --hover-bg: #2c2c2c;
     --selected-bg: #3a3a3a;
     --border-color: #ccc;
+    --url-bg: url("../assets/fond-dark.svg");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -134,6 +136,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--bg);
+    background-image: var(--url-bg);
+    background-repeat: repeat;
     color: var(--fg);
     font-family: Helvetica, sans-serif;
     overflow: auto;
@@ -151,6 +155,7 @@ footer {
     text-align: center;
     font-size: 0.875rem;
     box-shadow: 0 -2px 4px var(--selected-bg);
+    background-color: var(--bg);
 }
 header {
     display: flex;
@@ -162,6 +167,7 @@ header {
     padding: 0.5rem 3rem;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--selected-bg);
+    background-color: var(--bg);
 }
 nav {
     display: flex;
@@ -188,6 +194,7 @@ nav {
     padding: 0.5rem clamp(1rem, 2vw, 2.5rem);
     margin-top: 5rem;
     border-right: 1px solid var(--fg);
+    backdrop-filter: blur(5px);
 }
 .bar-container::after {
     content: "";
@@ -202,7 +209,10 @@ nav {
 }
 .page-container {
     max-width: clamp(900px, 70vw, 1100px);
-    padding: 2.5rem;
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    margin: 1.5rem;
+    padding: 1rem;
 }
 img {
     max-width: 100%;
@@ -340,6 +350,7 @@ p {
 .btn.btn-select {
     text-align: left;
     justify-content: space-between;
+    background-color: var(--bg);
 }
 .btn.btn-select[aria-expanded="true"] {
     border-color: var(--color-special-shadow);
@@ -497,6 +508,7 @@ p {
     margin: 1rem 0;
     border: 1px solid var(--border-color);
     border-radius: 8px;
+    background-color: var(--bg);
     transition:
         border-color 0.3s,
         box-shadow 0.3s,
@@ -574,6 +586,7 @@ p {
     .page-container {
         max-width: 100vw;
         padding: 1rem;
+        margin: 0;
     }
     .contact {
         display: flex;
