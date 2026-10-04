@@ -13,7 +13,8 @@ export const PATH = {
 export const ASSETS = {
     IMAGES: {
         LOGO: "/logo.svg",
-        LOGO_200: "/logo-200.png",
+        LOGO_192: "/logo-192.png",
+        LOGO_512: "/logo-512.png",
         PHOTO: "/photo.jpg",
     },
 } as const;

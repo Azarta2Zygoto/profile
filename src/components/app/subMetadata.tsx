@@ -14,13 +14,14 @@ export default async function generateSubMetadata(
         title: t(`Metadata.${path}-title`),
         description: t(`Metadata.${path}-desc`),
         alternates: {
-            canonical: getLocalizedUrl(routing.defaultLocale, path),
-            languages: Object.fromEntries(
-                routing.locales.map((locale) => [
+            canonical: getLocalizedUrl(locale, path),
+            languages: Object.fromEntries([
+                ...routing.locales.map((locale) => [
                     locale,
                     getLocalizedUrl(locale, path),
                 ]),
-            ),
+                ["x-default", getLocalizedUrl("en", path)],
+            ]),
         },
     };
 }
