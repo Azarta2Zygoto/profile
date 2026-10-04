@@ -19,45 +19,65 @@ export default async function generateGlobalMetadata(
         description: t("Metadata.description"),
         keywords: t("Metadata.keywords"),
         icons: {
-            icon: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
-            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
-            apple: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/profile"),
+            icon: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
+            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
+            apple: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
         },
         authors: [
             {
                 name: "Quentin Potiron",
             },
         ],
+        creator: "Quentin Potiron",
+        publisher: "Quentin Potiron",
+        category: "IT & Software",
+        generator: "Next.js",
         openGraph: {
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             url: "/",
-            images: {
-                url: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
-                alt: t("Metadata.siteName"),
-            },
             type: "website",
             siteName: t("Metadata.siteName"),
-            locale: "fr_FR",
-            alternateLocale: "en_US",
+            locale: locale === "fr" ? "fr_FR" : "en_US",
+            alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
+            images: {
+                url: buildAssetPath(ASSETS.IMAGES.LOGO_512, "/"),
+                width: 512,
+                height: 512,
+                alt: t("Metadata.siteName"),
+            },
         },
         twitter: {
             card: "summary_large_image",
             title: t("Metadata.title"),
             description: t("Metadata.description"),
             images: {
-                url: buildAssetPath(ASSETS.IMAGES.LOGO_200, "/"),
+                url: buildAssetPath(ASSETS.IMAGES.LOGO_512, "/"),
+                width: 512,
+                height: 512,
                 alt: t("Metadata.siteName"),
             },
         },
         alternates: {
-            canonical: getLocalizedUrl(routing.defaultLocale),
-            languages: Object.fromEntries(
-                routing.locales.map((locale) => [
+            canonical: getLocalizedUrl(locale),
+            languages: Object.fromEntries([
+                ...routing.locales.map((locale) => [
                     locale,
                     getLocalizedUrl(locale),
                 ]),
-            ),
+                ["x-default", getLocalizedUrl("en")],
+            ]),
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+                "max-video-preview": -1,
+            },
         },
     };
 }
