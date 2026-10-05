@@ -1,0 +1,152 @@
+# Quentin Potiron - My Profile
+
+As a soon-to-be graduate of <link>Centrale Lyon</link>, I am looking for international work experience. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization, mobile development...
+
+## My Studies
+
+### General Engineering Program
+
+Comprehensive engineering education covering various fields such as computer science, mathematics, physics, and project management.
+
+- Data Visualization : Study of data visualization techniques, tools and best practices to effectively communicate information through graphical and interactive representations.
+- Relational Databases : Introduction to relational database concepts, SQL language, database design and optimization techniques.
+- Data Science : Introduction to data science concepts : data analysis, machine learning, and statistical modeling using Python.
+- Web Development : Learning the fundamental concepts of web development, including HTML, CSS, JavaScript, and client-server relationships.
+- C++ & Qt for GUI Development : Introduction to C++ programming and the Qt framework for developing graphical user interfaces.
+- Introduction to Artificial Intelligence : Overview of artificial intelligence concepts, including machine learning, neural networks, and natural language processing.
+- Computer Networks : Study of the principles of the 7 layers of the OSI standard, network protocols, and machine-to-machine communication.
+- Cybersecurity : Introduction to cybersecurity principles, including threat analysis, risk management, and security protocols with a general overview of the different types of attacks and defenses tools.
+- Big Data : Study of Big Data technologies and tools for processing large volumes of data.
+                
+[Link to the school's website](https://www.ec-lyon.fr)
+
+### Master's Degree in Information and Web Technologies
+
+Data science-focused program covering data visualization, Big Data, and data analysis techniques.
+
+- Data Analysis : Processing complex datasets to analyze and visualize while minimizing biases and data loss. Creation of an interactive user interface to visualize and analyze a large dataset.
+- Big Data : Study of Big Data technologies, from distributed data storage to processing frameworks like Hadoop and Spark with some works on stream processing of live data streams.
+                
+[Link to the school's website](https://www.univ-lyon1.fr)
+
+### Preparatory class for high schools
+
+Intensive two-year program preparing students for entrance exams to French engineering schools, focusing on mathematics, physics, and computer science.
+
+- Computer Science : Introduction to programming concepts as algorithms and problem-solving techniques.
+- Mathematics : Advanced study of mathematical concepts including calculus, algebra, and geometry.
+- Physics : In-depth study of physics concepts : mechanics, electricity, optics, quantum mechanics, chemistry...
+                
+[Link to the school's website](https://fermat.mon-ent-occitanie.fr/)
+
+## Projects
+
+Here are some projects carried out during my studies and in my free time.
+    
+### Web application to detect and read hiking signs
+
+Development of a web application to identify and read hiking signs. This tool is then used to generate 3D signs with Blender. All data is stored in a database to be visualized on a web application.
+
+
+### Web Application for Sports Data Collection
+
+Yolo model development for collecting sports data with image and video processing for research purposes
+
+
+### Inclusif : le jeu
+
+Development of a serious game into a web application to raise awareness about digital inclusion among web project during the creation, development and management process.
+
+This project was made in a group of seven people during a study project of a year. We learned to use Agile methodologies to manage the project and we used Figma to visualize the UI and Angular with HTML and CSS to actually make it. The project includes three main parts:
+
+- the serious game itself where the player has to make choices to create an inclusive web project ;
+- a questionnaire to evaluates the player's knowledge about digital inclusion ;
+- a self-assessment form to help the player evaluate their own web projects regarding digital inclusion.
+
+[Inclusif : le jeu](https://inclusivite-resin.grandlyon.com/jeu-en-ligne/accueil)
+[Quiz Inclusif : le jeu](https://inclusivite-resin.grandlyon.com/quiz/accueil)
+[Auto-évaluation d'inclusivité](https://inclusivite-resin.grandlyon.com/autoevaluation/accueil)
+
+### Challenger
+
+Design and development of a part of a web application to manage a student association's activities for the preparation and organization of the annual event.
+
+
+### International wood trade visualization
+
+Based on official data from the French Ministry of Agriculture, interactive visualizations of international wood trade between France and the rest of the world were created to more easily understand commercial flows.
+
+[Link to the project's repository](https://github.com/Azarta2Zygoto/visualization-wood)
+[Visualization Wood](https://azarta2zygoto.github.io/visualization-wood/)
+
+### Showcase Website - Miss Hestia
+
+Development of a showcase website to highlight an artist's artworks.
+
+[Miss Hestia - Artiste peintre](https://azarta2zygoto.github.io/miss-hestia/)
+
+### Conference Database Management
+
+Development of a web application to manage a false conference database. The purpose of the project is to optimize the database design, then to optimize SQL queries to finally create a simple user-friendly interface.
+
+
+### Covid Data Visualization
+
+Interactive user interface to visualize and analyze a large dataset.
+
+[Link to the project's repository](https://github.com/Azarta2Zygoto/dashboard-covid)
+[Covid Dashboard](https://azarta2zygoto.github.io/dashboard-covid/)
+
+### Search Engine
+
+Development of a simple search engine using natural language processing techniques. Furthermore, there is the implementation of a graph-based solution by taking into account the citations between documents.
+
+[Link to the project's repository](https://github.com/Azarta2Zygoto/moteur-recherche)
+
+### Web Draughts Game
+
+Implementation of a web-based draughts game to learn the basics of web development, JavaScript, and the concept of sockets.
+
+
+### 2048
+
+Realization of a 2048 in C++ using Qt GUI. Many additional features were added including an attempt to create a suika.
+
+
+### Useful Components
+
+Simple and reusable React component libraries to learn both the React framework and the creation of basic components.
+
+[Useful Components](https://azarta2zygoto.github.io/useful-components)
+
+### Portfolio Website
+
+Realization of a portfolio website to share my profile and many of my projects done. This is the website you are currently on.
+
+[Link to the project's repository](https://github.com/Azarta2Zygoto/profile)
+[Profile](https://azarta2zygoto.github.io/profile/)
+
+### My Newro Factory
+
+Development of an internal web application to help the company's developers improve their skills. The application provides user and questionnaire management, along with historical records and statistics to track employee progress.
+
+The project was developed by a team of four using the Agile Scrum methodology. This training project was an opportunity to learn Java and its ecosystem, including:
+
+- Using Spring to manage the lifecycle of components
+- Using Spring Security to handle authentication and authorization
+- Using Hibernate with both JPA Repository and HQL to manage the database
+- Using Docker to set up development and production environments
+- Using other tools such as Maven, Hibernate Validator, JUnit, Mockito, and Jackson.
+
+
+### Simulator
+
+Modernization of an existing Java web application to add data persistence and a user interface. The application is designed to facilitate testing and demonstrations, as well as train new users on one of Hologarde's software solutions.
+
+The project was carried out by two junior developers, with two senior developers providing code reviews and acting as Product Owners. Key aspects of the project include:
+
+- Developing a user interface primarily based on questionnaires
+- Using Mapbox with React to place markers and geometric shapes on a map
+- Implementing Server-Sent Events (SSE) to update the status of simulation objects in real time
+- Creating a PostgreSQL database and optimizing the data table structure using Hibernate
+

@@ -5,7 +5,7 @@
         "study": "Mes formations",
         "tools": "Boîte à outils : ",
         "project": "Projets",
-        "desc-projects": "Voici quelques projets réalisés pendant mes études et pendant mon temps libre.",
+        "desc-projects": "Voici quelques projets réalisés pendant mes études ou pendant mon temps libre.",
         "projects-link": "{count, plural, =1 {Projet} other {Projets}} en lien : ",
         "other-languages": "Autres languages utilisés : ",
         "commanditaire": "Commanditaire : ",
@@ -19,6 +19,8 @@
         "link-project": "Voir mes projets",
         "link-lesson": "Voir le cours associé",
         "link-external": "Voir le site web",
+        "link-school": "Lien vers le site de l'école",
+        "link-repo": "Lien vers le répertoire du projet",
         "creators": "{count, plural, =1 {Co-auteur} other {Co-auteurs}} : ",
         "centrale": {
             "title": "École d'ingénieurs généraliste",

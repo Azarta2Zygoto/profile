@@ -19,6 +19,8 @@
         "link-project": "Link to my projects",
         "link-lesson": "Link to the course",
         "link-external": "Link to their website",
+        "link-school": "Link to the school's website",
+        "link-repo": "Link to the project's repository",
         "creators": "{count, plural, =1 {Co-author} other {Co-authors}}: ",
         "centrale": {
             "title": "General Engineering Program",
