@@ -33,6 +33,7 @@ export default function FlagSelectMenu(): ReactNode {
                 id="locale-select-menu"
                 style={{ height: "40px" }}
                 aria-label={t("selectLanguage")}
+                title={t("selectLanguage")}
             >
                 {chooseFlag(locale)}
                 <ChevronDownIcon

@@ -22,5 +22,5 @@ export function buildAssetPath(
 
 export function getLocalizedUrl(locale: string, path = ""): string {
     const localePrefix = locale === routing.defaultLocale ? "" : `/${locale}`;
-    return `${APP_CONFIG.baseUrl}${localePrefix}${path}`;
+    return `${APP_CONFIG.baseUrl}${localePrefix}${path}`.replace(/\/+$/, "");
 }

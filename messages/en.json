@@ -1,7 +1,7 @@
 {
     "HomePage": {
-        "title": "Welcome to my profile",
-        "introduction": "I am currently a third-year student at <link>Centrale Lyon</link>. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization...",
+        "title": "Welcome to my portfolio",
+        "introduction": "As a soon-to-be graduate of <link>Centrale Lyon</link>, I am looking for international work experience. I am particularly enthusiast about web development and also interested in many topics around computer science: cybersecurity, data analysis, data visualization, mobile development...",
         "study": "My Studies",
         "tools": "Toolbox: ",
         "project": "Projects",
@@ -17,7 +17,8 @@
         "no-study-found-desc": "No study has taught me this language. Please check <link>projects</link> to see those related to this language.",
         "link-study": "Link to my studies",
         "link-project": "Link to my projects",
-        "link_lesson": "Link to the course",
+        "link-lesson": "Link to the course",
+        "link-external": "Link to their website",
         "creators": "{count, plural, =1 {Co-author} other {Co-authors}}: ",
         "centrale": {
             "title": "General Engineering Program",
@@ -253,7 +254,9 @@
         "no-project-found-desc": "This language or tool has not been used in any of these projects."
     },
     "ThemeSwitch": {
-        "switch": "Switch theme"
+        "switch": "Switch theme",
+        "to-dark": "Switch to dark theme",
+        "to-light": "Switch to light theme"
     },
     "Languages": {
         "en": "English",

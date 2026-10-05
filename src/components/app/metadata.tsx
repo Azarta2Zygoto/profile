@@ -10,13 +10,23 @@ export default async function generateGlobalMetadata(
 ): Promise<Metadata> {
     const t = await getTranslations({ locale });
 
+    const title = t("Metadata.title");
+    const description = t("Metadata.description");
+    const ogImage = {
+        url: buildAssetPath(ASSETS.IMAGES.LOGO_512, "/"),
+        width: 512,
+        height: 512,
+        type: "image/png",
+        alt: t("Metadata.siteName"),
+    };
+
     return {
         metadataBase: new URL(APP_CONFIG.baseUrl),
         title: {
-            default: t("Metadata.title"),
+            default: title,
             template: "%s - " + t("Metadata.siteName"),
         },
-        description: t("Metadata.description"),
+        description: description,
         keywords: t("Metadata.keywords"),
         icons: {
             icon: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
@@ -33,30 +43,20 @@ export default async function generateGlobalMetadata(
         category: "IT & Software",
         generator: "Next.js",
         openGraph: {
-            title: t("Metadata.title"),
-            description: t("Metadata.description"),
+            title: title,
+            description: description,
             url: "/",
             type: "website",
             siteName: t("Metadata.siteName"),
             locale: locale === "fr" ? "fr_FR" : "en_US",
             alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
-            images: {
-                url: buildAssetPath(ASSETS.IMAGES.LOGO_512, "/"),
-                width: 512,
-                height: 512,
-                alt: t("Metadata.siteName"),
-            },
+            images: ogImage,
         },
         twitter: {
             card: "summary_large_image",
-            title: t("Metadata.title"),
-            description: t("Metadata.description"),
-            images: {
-                url: buildAssetPath(ASSETS.IMAGES.LOGO_512, "/"),
-                width: 512,
-                height: 512,
-                alt: t("Metadata.siteName"),
-            },
+            title: title,
+            description: description,
+            images: ogImage,
         },
         alternates: {
             canonical: getLocalizedUrl(locale),

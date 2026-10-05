@@ -25,6 +25,7 @@ export default function ThemeSwitch(): ReactNode {
             className="theme-switch"
             aria-label={t("switch")}
             symbol={theme === ThemeEnum.DARK ? "🌙" : "☀️"}
+            title={theme === ThemeEnum.DARK ? t("to-light") : t("to-dark")}
         />
     );
 }

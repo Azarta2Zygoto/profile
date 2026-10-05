@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return Object.values(PATH).map((path) => ({
-        url: `${APP_CONFIG.baseUrl}${path}`,
+        url: `${APP_CONFIG.baseUrl}${path.replace(/\/+$/, "")}`,
         lastModified: new Date().toISOString(),
         changeFrequency: "monthly",
         priority: path === "/" ? 1 : 0.6,

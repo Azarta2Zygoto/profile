@@ -1,7 +1,7 @@
 {
     "HomePage": {
-        "title": "Bienvenue sur mon profil",
-        "introduction": "Je suis actuellement étudiant en troisième année à <link>Centrale Lyon</link>. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données...",
+        "title": "Bienvenue sur mon portfolio",
+        "introduction": "Bientôt diplomé de <link>Centrale Lyon</link>, je suis à la recherche d'une expérience à l'international. Je suis particulièrement passionné par le développement web et je m'intéresse aussi à de nombreux thèmes autour de l'informatique : cybersécurité, analyse de données, visualisation de données, développement d'applications sur téléphone...",
         "study": "Mes formations",
         "tools": "Boîte à outils : ",
         "project": "Projets",
@@ -15,13 +15,14 @@
         "visit-website": "Visiter {count, plural, =1 {le site} other {les sites}} web : ",
         "no-study-found": "Aucune formation trouvée.",
         "no-study-found-desc": "Aucune formation ne m'a enseigné ce langage. Regardez dans les <link>projets</link> pour voir ceux l'utilisant.",
-        "link-study": "Lien vers mes études",
-        "link-project": "Lien vers mes projets",
-        "link_lesson": "Lien vers le cours",
+        "link-study": "Voir mes études",
+        "link-project": "Voir mes projets",
+        "link-lesson": "Voir le cours associé",
+        "link-external": "Voir le site web",
         "creators": "{count, plural, =1 {Co-auteur} other {Co-auteurs}} : ",
         "centrale": {
             "title": "École d'ingénieurs généraliste",
-            "description": "Programme généraliste sur les domaines des mathématiques, de la physique, de l'informatique, de la mécanique, de l'électronique, de la gestion de projet et des sciences humaines.",
+            "description": "Programme généraliste dans les domaines des mathématiques, de la physique, de l'informatique, de la mécanique, de l'électronique et des sciences humaines. L'école propose de nombreux projets de groupe pour apprendre le travail en équipe et la gestion de projet.",
             "lessons": {
                 "visualisation": {
                     "name": "Visualisation interactive de données",
@@ -253,7 +254,9 @@
         "no-project-found-desc": "Aucun projet n'a été réalisé avec ce langage ou cet outil."
     },
     "ThemeSwitch": {
-        "switch": "Changer le thème"
+        "switch": "Changer le thème",
+        "to-dark": "Mettre le thème sombre",
+        "to-light": "Mettre le thème clair"
     },
     "Languages": {
         "en": "Anglais",

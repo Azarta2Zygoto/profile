@@ -41,6 +41,7 @@ export default function ShortStudy({
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 aria-label={t(`${key.id}.title`)}
+                                title={t(`link-external`)}
                             >
                                 {key.logo ? (
                                     <Image

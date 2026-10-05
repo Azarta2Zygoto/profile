@@ -95,6 +95,7 @@ export default function Study({
                                 rel="noopener noreferrer"
                                 className="external-link"
                                 aria-label={t(`${key.id}.title`)}
+                                title={t(`link-external`)}
                             >
                                 {key.logo ? (
                                     <Image
@@ -130,7 +131,7 @@ export default function Study({
                                         className="external-link"
                                     >
                                         <LinkExternal
-                                            title={t("link_lesson")}
+                                            title={t("link-lesson")}
                                         />
                                     </Link>
                                 )}{" "}

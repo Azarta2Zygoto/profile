@@ -46,6 +46,7 @@ export default function Project({
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="external-link"
+                                title={t(`link-external`)}
                             >
                                 {key.commanditaire.logo ? (
                                     <Image
