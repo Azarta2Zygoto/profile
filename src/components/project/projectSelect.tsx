@@ -5,9 +5,9 @@ import { type ReactNode, useState } from "react";
 
 import SelectMenu from "@/components/custom/selectMenu";
 import projectData from "@/data/project.json";
-import { ORDER_CATEGORY } from "@/types/common.constants";
-import { Ordering } from "@/types/common.types";
-import { Project } from "@/types/project.types";
+import { ORDER_CATEGORY } from "@/types/common.constant";
+import type { Ordering } from "@/types/common.type";
+import type { Project } from "@/types/project.type";
 
 interface Props {
     onOrderChange: (

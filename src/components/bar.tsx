@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 
 import Social from "@/components/custom/social";
 import profile from "@/data/profile.json";
-import { ASSETS } from "@/types/common.constants";
+import { ASSETS } from "@/types/common.constant";
 import { buildAssetPath } from "@/utils/path.utils";
 
 export default function Bar(): ReactNode {

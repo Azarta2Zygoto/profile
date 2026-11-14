@@ -6,7 +6,7 @@ import { Fragment, type ReactNode, useState } from "react";
 import { MultiSelect } from "@/components/custom/multiSelect";
 import Study from "@/components/study/study";
 import CATEGORY_COLORS from "@/data/category-color.json";
-import type { LocaleProps, SelectOption } from "@/types/common.types";
+import type { LocaleProps, SelectOption } from "@/types/common.type";
 
 const languagesOptions: SelectOption[] = Object.keys(CATEGORY_COLORS).map(
     (lang) => ({

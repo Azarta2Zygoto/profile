@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { routing } from "@/i18n/routing";
-import { APP_CONFIG, PATH } from "@/types/common.constants";
+import { APP_CONFIG, PATH } from "@/types/common.constant";
 import { getLocalizedUrl } from "@/utils/path.utils";
 
 export const dynamic = "force-static";

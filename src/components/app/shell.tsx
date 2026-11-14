@@ -4,7 +4,7 @@ import type { PropsWithChildren } from "react";
 
 import { ThemeProvider } from "next-themes";
 
-import { Locale } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
 
 import Bar from "../bar";
 import Footer from "../footer";

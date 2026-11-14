@@ -9,10 +9,10 @@ import { LinkExternal } from "@/components/icons/link-external";
 import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
-import { Locale } from "@/i18n/routing";
-import { APP_CONFIG } from "@/types/common.constants";
-import { SelectOption } from "@/types/common.types";
-import type { Study } from "@/types/study.types";
+import type { Locale } from "@/i18n/routing";
+import { APP_CONFIG } from "@/types/common.constant";
+import type { SelectOption } from "@/types/common.type";
+import type { Study } from "@/types/study.type";
 
 interface Props {
     locale: Locale;

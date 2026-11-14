@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n/routing";
+import type { Locale } from "@/i18n/routing";
 
 export interface Study {
     id: string;

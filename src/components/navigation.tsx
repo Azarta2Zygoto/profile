@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
-import { PATH } from "@/types/common.constants";
+import { PATH } from "@/types/common.constant";
 import { isActiveNavLink } from "@/utils/path.utils";
 
 export default function Navigation(): ReactNode {

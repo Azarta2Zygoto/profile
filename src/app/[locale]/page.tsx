@@ -3,8 +3,8 @@
 import { type ReactNode, use } from "react";
 
 import HomePage from "@/components/app/page/homePage";
-import { Locale } from "@/i18n/routing";
-import { AsyncLocaleProps } from "@/types/common.types";
+import type { Locale } from "@/i18n/routing";
+import type { AsyncLocaleProps } from "@/types/common.type";
 
 export default function Home({
     params,

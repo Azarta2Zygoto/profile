@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 import generateGlobalMetadata from "@/components/app/metadata";
 import Shell from "@/components/app/shell";
-import { Locale, routing } from "@/i18n/routing";
-import { AsyncLocaleProps } from "@/types/common.types";
+import { type Locale, routing } from "@/i18n/routing";
+import type { AsyncLocaleProps } from "@/types/common.type";
 
 import notFound from "../not-found";
 

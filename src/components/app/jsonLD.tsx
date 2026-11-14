@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { type ReactNode } from "react";
 
 import profile from "@/data/profile.json";
-import { APP_CONFIG } from "@/types/common.constants";
-import { LocaleProps } from "@/types/common.types";
+import { APP_CONFIG } from "@/types/common.constant";
+import type { LocaleProps } from "@/types/common.type";
 
 export default function JsonLD({ locale }: Readonly<LocaleProps>): ReactNode {
     const t = useTranslations("Languages");

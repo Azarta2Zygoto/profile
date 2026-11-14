@@ -1,4 +1,4 @@
-import { CSSProperties, type ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import color from "@/data/category-color.json";
 import { cn } from "@/lib/utils";

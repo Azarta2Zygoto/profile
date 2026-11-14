@@ -9,7 +9,7 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
-import { SelectOption } from "@/types/common.types";
+import type { SelectOption } from "@/types/common.type";
 
 interface Props {
     id: string;

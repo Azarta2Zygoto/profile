@@ -1,5 +1,5 @@
-import { Locale, routing } from "@/i18n/routing";
-import { APP_CONFIG } from "@/types/common.constants";
+import { type Locale, routing } from "@/i18n/routing";
+import { APP_CONFIG } from "@/types/common.constant";
 
 export function isActiveNavLink(pathname: string, route: string): boolean {
     if (route === "/") {

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
 import generateSubMetadata from "@/components/app/subMetadata";
-import { PATH } from "@/types/common.constants";
-import { AsyncLocaleProps } from "@/types/common.types";
+import { PATH } from "@/types/common.constant";
+import type { AsyncLocaleProps } from "@/types/common.type";
 
 export async function generateMetadata(
     props: Readonly<AsyncLocaleProps>,

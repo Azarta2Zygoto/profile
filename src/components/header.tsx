@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 
 import FlagSelectMenu from "@/components/custom/flagSelectMenu";
 import ThemeSwitch from "@/components/custom/themeSwitch";
-import { ASSETS } from "@/types/common.constants";
+import { ASSETS } from "@/types/common.constant";
 import { buildAssetPath } from "@/utils/path.utils";
 
 import Navigation from "./navigation";

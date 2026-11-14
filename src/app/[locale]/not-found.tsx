@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import NotFoundPage from "@/components/app/not-found";
 

@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import Box from "@/components/custom/box";
 import projectData from "@/data/project.json";
 import studyData from "@/data/study.json";
-import { DATE_FORMAT } from "@/types/common.constants";
+import { DATE_FORMAT } from "@/types/common.constant";
 
 export default function ShortProject(): ReactNode {
     const format = useFormatter();

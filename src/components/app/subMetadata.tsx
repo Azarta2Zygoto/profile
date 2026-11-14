@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Locale } from "next-intl";
+import type { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
 import { routing } from "@/i18n/routing";
@@ -16,9 +16,9 @@ export default async function generateSubMetadata(
         alternates: {
             canonical: getLocalizedUrl(locale, path),
             languages: Object.fromEntries([
-                ...routing.locales.map((locale) => [
-                    locale,
-                    getLocalizedUrl(locale, path),
+                ...routing.locales.map((loc) => [
+                    loc,
+                    getLocalizedUrl(loc, path),
                 ]),
                 ["x-default", getLocalizedUrl("en", path)],
             ]),

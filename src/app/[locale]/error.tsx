@@ -2,7 +2,7 @@
 
 import { type ReactNode } from "react";
 
-import ErrorPage, { ErrorProps } from "@/components/app/error";
+import ErrorPage, { type ErrorProps } from "@/components/app/error";
 
 export default function Error({
     error,

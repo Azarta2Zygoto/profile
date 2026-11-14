@@ -1,13 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Fragment, ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 import { Link45deg } from "@/components/icons/link45deg";
 import ShortProject from "@/components/project/shortProject";
 import ShortStudy from "@/components/study/shortStudy";
 import { Link } from "@/i18n/navigation";
-import { LocaleProps } from "@/types/common.types";
+import type { LocaleProps } from "@/types/common.type";
 
 const listComponents = ["study", "project"] as const;
 

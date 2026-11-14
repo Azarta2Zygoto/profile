@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
 import { Link } from "@/i18n/navigation";
-import { APP_CONFIG } from "@/types/common.constants";
+import { APP_CONFIG } from "@/types/common.constant";
 
 interface Props {
     locale: string;

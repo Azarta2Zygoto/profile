@@ -1,8 +1,8 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import { Locale, routing } from "@/i18n/routing";
-import { APP_CONFIG, ASSETS } from "@/types/common.constants";
+import { type Locale, routing } from "@/i18n/routing";
+import { APP_CONFIG, ASSETS } from "@/types/common.constant";
 import { buildAssetPath, getLocalizedUrl } from "@/utils/path.utils";
 
 export default async function generateGlobalMetadata(
@@ -24,14 +24,14 @@ export default async function generateGlobalMetadata(
         metadataBase: new URL(APP_CONFIG.baseUrl),
         title: {
             default: title,
-            template: "%s - " + t("Metadata.siteName"),
+            template: `%s - ${t("Metadata.siteName")}`,
         },
         description: description,
         keywords: t("Metadata.keywords"),
         icons: {
-            icon: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
-            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
-            apple: buildAssetPath(ASSETS.IMAGES.LOGO_192, "/profile"),
+            icon: buildAssetPath(ASSETS.IMAGES.LOGO_192),
+            shortcut: buildAssetPath(ASSETS.IMAGES.LOGO_192),
+            apple: buildAssetPath(ASSETS.IMAGES.LOGO_192),
         },
         authors: [
             {
@@ -61,10 +61,7 @@ export default async function generateGlobalMetadata(
         alternates: {
             canonical: getLocalizedUrl(locale),
             languages: Object.fromEntries([
-                ...routing.locales.map((locale) => [
-                    locale,
-                    getLocalizedUrl(locale),
-                ]),
+                ...routing.locales.map((loc) => [loc, getLocalizedUrl(loc)]),
                 ["x-default", getLocalizedUrl("en")],
             ]),
         },

@@ -11,8 +11,8 @@ import { Github } from "@/components/icons/github";
 import { Linkedin } from "@/components/icons/linkedin";
 import { Website } from "@/components/icons/website";
 import studyData from "@/data/study.json";
-import { APP_CONFIG, DATE_FORMAT } from "@/types/common.constants";
-import type { Project } from "@/types/project.types";
+import { APP_CONFIG, DATE_FORMAT } from "@/types/common.constant";
+import type { Project } from "@/types/project.type";
 
 interface Props {
     projectContent: Array<Project>;

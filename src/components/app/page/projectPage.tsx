@@ -8,8 +8,8 @@ import Project from "@/components/project/project";
 import ProjectSelect from "@/components/project/projectSelect";
 import CATEGORY_COLORS from "@/data/category-color.json";
 import projectData from "@/data/project.json";
-import { SelectOption } from "@/types/common.types";
-import type { Project as ProjectType } from "@/types/project.types";
+import type { SelectOption } from "@/types/common.type";
+import type { Project as ProjectType } from "@/types/project.type";
 
 const languagesOptions: SelectOption[] = Object.keys(CATEGORY_COLORS).map(
     (lang) => ({

@@ -598,7 +598,7 @@ export const MultiSelect = React.forwardRef<MultiSelectRef, MultiSelectProps>(
         const getOptionByValue = React.useCallback(
             (value: string): MultiSelectOption | undefined => {
                 const option = getAllOptions().find(
-                    (option) => option.value === value,
+                    (opt) => opt.value === value,
                 );
                 if (!option && process.env.NODE_ENV === "development") {
                     console.warn(

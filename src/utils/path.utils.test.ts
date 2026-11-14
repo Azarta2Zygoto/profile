@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { routing } from "@/i18n/routing";
-import { APP_CONFIG } from "@/types/common.constants";
+import { APP_CONFIG } from "@/types/common.constant";
 
 import { buildAssetPath, getLocalizedUrl, isActiveNavLink } from "./path.utils";
 
